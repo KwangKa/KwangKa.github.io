@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ubuntu 14.04 Spark单机环境搭建 - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="大数据这个领域是热火朝天，而Apache Spark则是一个炙手可热大数据神器。趁着现在还比较有空，赶紧学习Spark方面的东西。这篇文章主要是记录下在Ubuntu 14.04下搭建Spark单机环境的过程。这个过程主要有四个部分：
+
+安装Java
+安装Scala
+安装Spark
+安装sbt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 14.04 Spark单机环境搭建">
+<meta property="og:url" content="http://yoursite.com/2015/10/15/installspark/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="大数据这个领域是热火朝天，而Apache Spark则是一个炙手可热大数据神器。趁着现在还比较有空，赶紧学习Spark方面的东西。这篇文章主要是记录下在Ubuntu 14.04下搭建Spark单机环境的过程。这个过程主要有四个部分：
+
+安装Java
+安装Scala
+安装Spark
+安装sbt">
+<meta property="og:updated_time" content="2015-10-15T12:20:47.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu 14.04 Spark单机环境搭建">
+<meta name="twitter:description" content="大数据这个领域是热火朝天，而Apache Spark则是一个炙手可热大数据神器。趁着现在还比较有空，赶紧学习Spark方面的东西。这篇文章主要是记录下在Ubuntu 14.04下搭建Spark单机环境的过程。这个过程主要有四个部分：
+
+安装Java
+安装Scala
+安装Spark
+安装sbt">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-installspark" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu 14.04 Spark单机环境搭建
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/10/15/installspark/" class="article-date">
+  <time datetime="2015-10-15T12:13:45.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Spark/">Spark</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>大数据这个领域是热火朝天，而<a href="http://spark.apache.org/" target="_blank" rel="external">Apache Spark</a>则是一个炙手可热大数据神器。趁着现在还比较有空，赶紧学习Spark方面的东西。<br>这篇文章主要是记录下在Ubuntu 14.04下搭建Spark单机环境的过程。这个过程主要有四个部分：</p>
+<ul>
+<li>安装Java</li>
+<li>安装Scala</li>
+<li>安装Spark</li>
+<li>安装sbt</li>
+</ul>
+<a id="more"></a>
+<h2 id="安装Java">安装Java</h2><ul>
+<li><p>下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">Java SE</a>，然后解压</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo tar zxvf jdk-<span class="number">8</span>u60-linux-x64.gz -C /opt/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置环境变量<br>Ubuntu的环境变量又好几个地方可以配置，我这里配置的是/etc/profile文件。（关于Java环境变量的配置，网上的教程有各种各样的配法，我也看的挺乱的。比如下面的配置中，JRE_HOME这些不配好像也是可以的……）</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export <span class="constant">JAVA_HOME</span>=<span class="regexp">/opt/jdk</span>1.<span class="number">8.0_60</span></span><br><span class="line">export <span class="constant">JRE_HOME</span>=<span class="variable">$&#123;</span><span class="constant">JAVA_HOME</span>&#125;/jre</span><br><span class="line">export <span class="constant">CLASSPATH</span>=.<span class="symbol">:</span><span class="variable">$&#123;</span><span class="constant">JAVA_HOME</span>&#125;/<span class="class"><span class="keyword">lib</span>:$&#123;<span class="title">JRE_HOME</span>&#125;/<span class="title">lib</span></span></span><br><span class="line">export <span class="constant">PATH</span>=<span class="variable">$&#123;</span><span class="constant">JAVA_HOME</span>&#125;/<span class="symbol">bin:</span><span class="variable">$&#123;</span><span class="constant">JRE_HOME</span>&#125;/<span class="symbol">bin:</span><span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>检验Java有没配置成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br><span class="line">java version <span class="string">"1.8.0_60"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_60-b27)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span>-Bit Server VM (build <span class="number">25.60</span>-b23, mixed mode)</span><br><span class="line">$ javac -version</span><br><span class="line">javac <span class="number">1.8</span>.<span class="number">0</span>_60</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装Scala">安装Scala</h2><p>Scala安装过程和Java的类似，比较简单</p>
+<ul>
+<li><p><a href="http://www.scala-lang.org/download/" target="_blank" rel="external">官网</a>下载压缩包，然后解压</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mkdir /opt/scala</span><br><span class="line">$ sudo tar zxvf scala-<span class="number">2.11</span>.<span class="number">7</span>.tgz -C /opt/scala/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置环境变量 /etc/profile</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> SCALA_HOME=/opt/scala/scala-<span class="number">2.11</span>.<span class="number">7</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;SCALA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ scala -version</span><br><span class="line">Scala code runner version <span class="number">2.11</span>.<span class="number">7</span> -- Copyright <span class="number">2002</span>-<span class="number">2013</span>, LAMP/EPFL</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="安装Spark">安装Spark</h2><ul>
+<li><p><a href="http://spark.apache.org/" target="_blank" rel="external">官网</a>下载压缩文件。这里我选择的是1.5.1版本的Pre-build for Hadoop2.6 and later. 解压</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo tar zxvf spark-<span class="number">1.5</span>.<span class="number">1</span>-bin-hadoop2.<span class="number">6</span>.tgz</span><br><span class="line"><span class="comment"># 我直接放在home目录下了，可以选择放其他地方，比如/opt/spark</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置环境变量 /etc/profile</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> SPARK_HOME=/home/kaka/spark/spark-<span class="number">1.5</span>.<span class="number">1</span>-bin-hadoop2.<span class="number">6</span> <span class="comment"># 注意换成自己的路径</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;SPARK_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>到这里，应该就可以启动spark-shell，跟着Spark官网上的教程来学API了。</p>
+<h2 id="安装sbt">安装sbt</h2><p>安装sbt我参考的是这篇文章<a href="http://www.cnblogs.com/wrencai/p/3867898.html" target="_blank" rel="external">ubuntu14手动安装sbt</a></p>
+<ul>
+<li><p><a href="http://www.scala-sbt.org/" target="_blank" rel="external">官网</a>下载解压</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo tar zxvf sbt-<span class="number">0.13</span>.<span class="number">9</span>.tgz -C /opt/scala/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置环境变量 /etc/profile</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> SBT_HOME=/opt/scala/sbt</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;SBT_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建立启动sbt的脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /opt/scala/sbt/</span><br><span class="line">$ sudo touch sbt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 脚本内容如下，注意sbt-launch.jar的路径</span></span><br><span class="line">SBT_OPTS=<span class="string">"-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"</span></span><br><span class="line">java <span class="variable">$SBT_OPTS</span> -jar /opt/scala/sbt/bin/sbt-launch.jar <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改sbt文件权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chmod u+x sbt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试sbt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sbt sbt-version</span><br><span class="line">[info] Set current project to kaka (<span class="keyword">in</span> build file:/home/kaka/)</span><br><span class="line">[info] <span class="number">0.13</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>第一次执行的时候会下载很多东西，然后因为众所周知的国内网络的原因，这一步会比较慢，也很有可能会失败。可以参考这篇文章<a href="http://segmentfault.com/a/1190000002474507" target="_blank" rel="external">加速SBT下载依赖库的速度</a>来设置国内的sbt源。<br><br><br>到此为止，Spark的单机环境就搭建完毕，下一步就是认真地学习Spark了。</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Big-Data/">Big Data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spark/">Spark</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/15/installUbuntu/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于安装Ubuntu的一些事&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
