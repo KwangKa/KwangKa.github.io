@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 29) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第29关
+这一关要写的代码只有寥寥几行，但是很难想到。
+Page Source里面好像什么特别的提示都没有。但仔细看下，会发现后面有一大段空白，原来玄机就在这些空白中。把每一行的空格个数转成ASCII码，会发现是以BZ开头的一串字符，照例用bz2解压即可得到通关信息。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 29)">
+<meta property="og:url" content="http://yoursite.com/2015/02/12/pc29/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第29关
+这一关要写的代码只有寥寥几行，但是很难想到。
+Page Source里面好像什么特别的提示都没有。但仔细看下，会发现后面有一大段空白，原来玄机就在这些空白中。把每一行的空格个数转成ASCII码，会发现是以BZ开头的一串字符，照例用bz2解压即可得到通关信息。">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 29)">
+<meta name="twitter:description" content="第29关
+这一关要写的代码只有寥寥几行，但是很难想到。
+Page Source里面好像什么特别的提示都没有。但仔细看下，会发现后面有一大段空白，原来玄机就在这些空白中。把每一行的空格个数转成ASCII码，会发现是以BZ开头的一串字符，照例用bz2解压即可得到通关信息。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc29" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 29)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/02/12/pc29/" class="article-date">
+  <time datetime="2015-02-12T13:27:55.000Z" itemprop="datePublished">2015-02-12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/ring/guido.html" target="_blank" rel="external">第29关</a></p>
+<p>这一关要写的代码只有寥寥几行，但是很难想到。</p>
+<p>Page Source里面好像什么特别的提示都没有。但仔细看下，会发现后面有一大段空白，原来玄机就在这些空白中。把每一行的空格个数转成ASCII码，会发现是以BZ开头的一串字符，照例用bz2解压即可得到通关信息。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> bz2</span><br><span class="line"></span><br><span class="line">html = urllib.urlopen(<span class="string">'http://repeat:switch@www.pythonchallenge.com/pc/ring/guido.html'</span>).read()</span><br><span class="line">html = html.split(<span class="string">'\n'</span>)[<span class="number">12</span> : ]</span><br><span class="line">data = [chr(len(i)) <span class="keyword">for</span> i <span class="keyword">in</span> html]</span><br><span class="line"><span class="keyword">print</span> bz2.decompress(<span class="string">''</span>.join(data))</span><br></pre></td></tr></table></figure>
+<p>通关信息<font color="red">Isn’t it clear? I am yankeedoodle!</font>. 不太清楚yankeedoodle是什么东西，也不了解网页标题<strong>silence</strong>意义何在。</p>
+<p>下一关：<a href="http://www.pythonchallenge.com/pc/ring/yankeedoodle.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/ring/yankeedoodle.html</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/13/pc30/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 30)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/11/pc28/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 28)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

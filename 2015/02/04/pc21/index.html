@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 21) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="###第21关
+这一关不再是给出一个网址然后解谜，而是用到上一关得到文件——package.pack以及readme.txt， readme有关于这一关的提示：
+
+We used to play this game when we were kidsWhen I had no idea what to do, I looked backwards.
+
+这一关主要过程是对package.pack文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 21)">
+<meta property="og:url" content="http://yoursite.com/2015/02/04/pc21/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="###第21关
+这一关不再是给出一个网址然后解谜，而是用到上一关得到文件——package.pack以及readme.txt， readme有关于这一关的提示：
+
+We used to play this game when we were kidsWhen I had no idea what to do, I looked backwards.
+
+这一关主要过程是对package.pack文件">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 21)">
+<meta name="twitter:description" content="###第21关
+这一关不再是给出一个网址然后解谜，而是用到上一关得到文件——package.pack以及readme.txt， readme有关于这一关的提示：
+
+We used to play this game when we were kidsWhen I had no idea what to do, I looked backwards.
+
+这一关主要过程是对package.pack文件">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc21" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 21)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/02/04/pc21/" class="article-date">
+  <time datetime="2015-02-04T02:20:12.000Z" itemprop="datePublished">2015-02-04</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###第21关</p>
+<p>这一关不再是给出一个网址然后解谜，而是用到上一关得到文件——package.pack以及readme.txt， readme有关于这一关的提示：</p>
+<blockquote>
+<p>We used to play this game when we were kids<br>When I had no idea what to do, I looked backwards.</p>
+</blockquote>
+<p>这一关主要过程是对package.pack文件不断进行解压。根据上一次解压得到的结果，判断下一次解压用zlib还是bz2，以及判断得到的数据是正向的还是要look backwards.</p>
+<p>最后解压出来的结果是<strong>sgol ruoy ta kool</strong>, reverse一下得到<font color="red">look at your logs</font></p>
+<p>也就是说，每次解压的时候，我们要添加一些信息，形成logs. 最后，我们把这个logs打印出来，就可以得到通关信息。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bz2</span><br><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">uncompress</span><span class="params">(data, logs)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> data[ : <span class="number">2</span>] == <span class="string">'x\x9c'</span>:</span><br><span class="line">        logs.append(<span class="string">'*'</span>)</span><br><span class="line">        <span class="keyword">return</span> zlib.decompress(data)</span><br><span class="line">    <span class="keyword">elif</span> data[ : <span class="number">2</span>] == <span class="string">'BZ'</span>:</span><br><span class="line">        logs.append(<span class="string">'#'</span>)</span><br><span class="line">        <span class="keyword">return</span> bz2.BZ2Decompressor().decompress(data)</span><br><span class="line">    <span class="keyword">elif</span> data[-<span class="number">2</span> : ] == <span class="string">'\x9cx'</span>:</span><br><span class="line">        logs.append(<span class="string">'@'</span>)</span><br><span class="line">        <span class="keyword">return</span> zlib.decompress(data[::-<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">elif</span> data[-<span class="number">2</span> : ] == <span class="string">'ZB'</span>:</span><br><span class="line">        logs.append(<span class="string">'$'</span>)</span><br><span class="line">        <span class="keyword">return</span> bz2.BZ2Decompressor().decompress(data[::-<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">()</span>:</span></span><br><span class="line">    data = open(<span class="string">'unreal/package.pack'</span>).read()</span><br><span class="line">    logs = []</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            data = uncompress(data, logs)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"Decompress ends!"</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    logs.pop(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">print</span> data</span><br><span class="line">    pprint(<span class="string">''</span>.join(logs).replace(<span class="string">'*'</span>, <span class="string">' '</span>).split(<span class="string">'@'</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span> : solve()</span><br></pre></td></tr></table></figure>
+<p>最后得到通关信息——copper，<a href="http://www.pythonchallenge.com/pc/hex/copper.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/hex/copper.html</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'     ###          ###      ########    ########    ##########  ########'</span>,</span><br><span class="line"> <span class="string">'   #######      #######    #########   #########   #########   #########'</span>,</span><br><span class="line"> <span class="string">'  ##     ##    ##     ##   ##      ##  ##      ##  ##          ##      ##'</span>,</span><br><span class="line"> <span class="string">' ##           ##       ##  ##      ##  ##      ##  ##          ##      ##'</span>,</span><br><span class="line"> <span class="string">' ##           ##       ##  #########   #########   ########    #########'</span>,</span><br><span class="line"> <span class="string">' ##           ##       ##  ########    ########    ########    ######## '</span>,</span><br><span class="line"> <span class="string">' ##           ##       ##  ##          ##          ##          ##   ## '</span>,</span><br><span class="line"> <span class="string">'  ##     ##    ##     ##   ##          ##          ##          ##    ## '</span>,</span><br><span class="line"> <span class="string">'   #######      #######    ##          ##          #########   ##     ## '</span>,</span><br><span class="line"> <span class="string">'     ###          ###      ##          ##          ##########  ##      ##'</span>]</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/05/pc22/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 22)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/03/pc20/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 20)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

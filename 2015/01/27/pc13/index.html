@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 13) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第13关
+图片下面提示phone that evil, 似乎要找到evil的number. 点击图片上电话的5键，会跳到一个新网页。但好像有些问题。
+
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+
+没什么头绪，网上大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 13)">
+<meta property="og:url" content="http://yoursite.com/2015/01/27/pc13/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第13关
+图片下面提示phone that evil, 似乎要找到evil的number. 点击图片上电话的5键，会跳到一个新网页。但好像有些问题。
+
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+
+没什么头绪，网上大">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.641Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 13)">
+<meta name="twitter:description" content="第13关
+图片下面提示phone that evil, 似乎要找到evil的number. 点击图片上电话的5键，会跳到一个新网页。但好像有些问题。
+
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+
+没什么头绪，网上大">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 13)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/27/pc13/" class="article-date">
+  <time datetime="2015-01-27T07:46:29.000Z" itemprop="datePublished">2015-01-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/disproportional.html" target="_blank" rel="external">第13关</a></p>
+<p>图片下面提示<strong>phone that evil</strong>, 似乎要找到evil的number. 点击图片上电话的5键，会跳到一个新网页。但好像有些问题。</p>
+<blockquote>
+<p>This XML file does not appear to have any style information associated with it. The document tree is shown below.</p>
+</blockquote>
+<p>没什么头绪，网上大神提示说要用到<a href="https://docs.python.org/2/library/xmlrpclib.html" target="_blank" rel="external">xmlrpclib</a>. 根据维基百科上的介绍，XML-RPC是一个远程过程调用的分布式计算协议，通过XML将调用函数封装，并使用HTTP协议作为传送机制。</p>
+<p>没用过这些东西，不太了解，只能慢慢尝试。在xmlrpclib的官方手册页面上，我们可以看到ServerProxy Objects的system属性下面有<strong>listMethods</strong>这个方法</p>
+<blockquote>
+<p>ServerProxy.system.listMethods()<br>    This method returns a list of strings, one for each (non-system) method supported by the XML-RPC server.</p>
+</blockquote>
+<a id="more"></a>
+<p>可以尝试一下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xmlrpclib</span><br><span class="line"></span><br><span class="line">proxy = xmlrpclib.ServerProxy(<span class="string">"http://www.pythonchallenge.com/pc/phonebook.php"</span>)</span><br><span class="line">proxy.system.listMethods()</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出如下</span></span><br><span class="line"><span class="string">'''</span><br><span class="line">['phone',</span><br><span class="line"> 'system.listMethods',</span><br><span class="line"> 'system.methodHelp',</span><br><span class="line"> 'system.methodSignature',</span><br><span class="line"> 'system.multicall',</span><br><span class="line"> 'system.getCapabilities']</span><br><span class="line">'''</span></span><br></pre></td></tr></table></figure></p>
+<p>Bingo, 里面有个<strong>phone</strong>方法。我们在看看它是干什么的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">4</span>]: proxy.system.methodHelp(<span class="string">'phone'</span>)</span><br><span class="line">Out[<span class="number">4</span>]: <span class="string">'Returns the phone of a person'</span></span><br></pre></td></tr></table></figure></p>
+<p>看来，这个<strong>phone</strong>就是我们要调用的方法，但问题在于参数person是谁呢？ 原来，这还要用到上一关的遗留问题。上一个<a href="http://www.pythonchallenge.com/pc/return/evil3.jpg" target="_blank" rel="external">evil3.jpg页面</a>提示no more evils. 但事实上， <a href="http://www.pythonchallenge.com/pc/return/evil4.jpg" target="_blank" rel="external">evil4.jpg</a>里还有一些内容，但是我尝试过用chrome和firefox都显示不出图片。网上有人说用IE可以打开，我没试过。我的解决方法是利用chrome审查元素(Inspect element)的功能，再点击图片连接，会有以下提示信息</p>
+<blockquote>
+<p>Bert is evil! go back!</p>
+</blockquote>
+<p>总算找到你了， Bert<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">5</span>]: proxy.phone(<span class="string">"Bert"</span>)</span><br><span class="line">Out[<span class="number">5</span>]: <span class="string">'555-ITALY'</span></span><br></pre></td></tr></table></figure></p>
+<p>输入555-ITALY，还是不对。其实只用<font color="red">ITALY</font>就可以了，不明白555-作用何在。 <a href="http://www.pythonchallenge.com/pc/return/italy.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/return/italy.html</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/29/pc14/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 14)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/26/pc12/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 12)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

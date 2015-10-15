@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 11) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第11关
+一张模糊的图片, 网页标题是odd even. 图片看起来像是由不同的图片叠加得到的, 要按照odd, even像素把它分开. 仍然是要用到Pillow模块. 为了方便分割, 我还用到了numpy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 11)">
+<meta property="og:url" content="http://yoursite.com/2015/01/25/pc11/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第11关
+一张模糊的图片, 网页标题是odd even. 图片看起来像是由不同的图片叠加得到的, 要按照odd, even像素把它分开. 仍然是要用到Pillow模块. 为了方便分割, 我还用到了numpy">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 11)">
+<meta name="twitter:description" content="第11关
+一张模糊的图片, 网页标题是odd even. 图片看起来像是由不同的图片叠加得到的, 要按照odd, even像素把它分开. 仍然是要用到Pillow模块. 为了方便分割, 我还用到了numpy">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 11)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/25/pc11/" class="article-date">
+  <time datetime="2015-01-25T05:48:19.000Z" itemprop="datePublished">2015-01-25</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/5808.html" target="_blank" rel="external">第11关</a></p>
+<p>一张模糊的图片, 网页标题是<strong>odd even</strong>. 图片看起来像是由不同的图片叠加得到的, 要按照odd, even像素把它分开. 仍然是要用到<a href="https://pillow.readthedocs.org/index.html" target="_blank" rel="external">Pillow</a>模块. 为了方便分割, 我还用到了<a href="http://www.numpy.org/" target="_blank" rel="external">numpy</a></p>
+<a id="more"></a>
+<p>根据水平和垂直方向的奇偶位置, 把原图的像素分成四个部分, 每个部分形成一张小图, 有点像小波分解里的四个部分.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">im = Image.open(<span class="string">'cave.jpg'</span>)</span><br><span class="line">width, height = im.size</span><br><span class="line">imdata = list(im.getdata())</span><br><span class="line">imdata = np.array(imdata)</span><br><span class="line">imdata = imdata.reshape((height, width, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">aa = imdata[<span class="number">0</span>:height:<span class="number">2</span>, <span class="number">0</span>:width:<span class="number">2</span>, :]</span><br><span class="line">hh = imdata[<span class="number">0</span>:height:<span class="number">2</span>, <span class="number">1</span>:width:<span class="number">2</span>, :]</span><br><span class="line">vv = imdata[<span class="number">1</span>:height:<span class="number">2</span>, <span class="number">0</span>:width:<span class="number">2</span>, :]</span><br><span class="line">dd = imdata[<span class="number">1</span>:height:<span class="number">2</span>, <span class="number">1</span>:width:<span class="number">2</span>, :]</span><br><span class="line">sub_imgs = [aa, hh, vv, dd]</span><br><span class="line">im2 = Image.new(im.mode, (width/<span class="number">2</span>, height/<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> img <span class="keyword">in</span> sub_imgs:</span><br><span class="line">    img = img.reshape((-<span class="number">1</span>, <span class="number">3</span>)).tolist()</span><br><span class="line">    img = [tuple(x) <span class="keyword">for</span> x <span class="keyword">in</span> img]</span><br><span class="line">    im2.putdata(img)</span><br><span class="line">    im2.show()</span><br></pre></td></tr></table></figure></p>
+<p>显示出来的四张图片, aa和dd是一样的, hh和vv是一样的. 图片上可以得到通关信息<strong>evil</strong> 下一关: <a href="http://www.pythonchallenge.com/pc/return/evil.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/return/evil.html</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/26/pc12/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 12)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/24/pc10/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 10)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

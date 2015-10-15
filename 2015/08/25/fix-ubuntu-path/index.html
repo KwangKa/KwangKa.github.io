@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ubuntu环境变量(PATH)修复 - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天早上打开电脑，发现Ubuntu图形界面登录不了。在登录界面输入了密码后，画面闪一下又跳回登录界面。于是，切到换到命令行界面（同时按下Ctrl+Alt+F1），看看出了什么问题。
+命令行界面能顺利登录，但是sudo/ls等命令都用不了，提示错误
+
+The command could not be located because ‘/usr/bin:/bin’ is not included in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu环境变量(PATH)修复">
+<meta property="og:url" content="http://yoursite.com/2015/08/25/fix-ubuntu-path/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="今天早上打开电脑，发现Ubuntu图形界面登录不了。在登录界面输入了密码后，画面闪一下又跳回登录界面。于是，切到换到命令行界面（同时按下Ctrl+Alt+F1），看看出了什么问题。
+命令行界面能顺利登录，但是sudo/ls等命令都用不了，提示错误
+
+The command could not be located because ‘/usr/bin:/bin’ is not included in">
+<meta property="og:updated_time" content="2015-10-15T08:38:19.253Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu环境变量(PATH)修复">
+<meta name="twitter:description" content="今天早上打开电脑，发现Ubuntu图形界面登录不了。在登录界面输入了密码后，画面闪一下又跳回登录界面。于是，切到换到命令行界面（同时按下Ctrl+Alt+F1），看看出了什么问题。
+命令行界面能顺利登录，但是sudo/ls等命令都用不了，提示错误
+
+The command could not be located because ‘/usr/bin:/bin’ is not included in">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-fix-ubuntu-path" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu环境变量(PATH)修复
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/08/25/fix-ubuntu-path/" class="article-date">
+  <time datetime="2015-08-25T03:26:56.000Z" itemprop="datePublished">2015-08-25</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天早上打开电脑，发现Ubuntu图形界面登录不了。在登录界面输入了密码后，画面闪一下又跳回登录界面。于是，切到换到命令行界面（同时按下Ctrl+Alt+F1），看看出了什么问题。</p>
+<p>命令行界面能顺利登录，但是sudo/ls等命令都用不了，提示错误</p>
+<blockquote>
+<p>The command could not be located because ‘/usr/bin:/bin’ is not included in the PATH environment variable.</p>
+</blockquote>
+<p>显然，PATH出问题了。回想到昨天晚上安装了scala和spark，应该是配置PATH的时候出问题了。于是，尝试用vim来重新编辑/etc/profile，但是，vim命令也报错….</p>
+<p>纠结，后来在网上找到解决方案，那就是用绝对路径：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/sudo /usr/bin/vim /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p>修复了/etc/profile文件后，再重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/sudo /sbin/reboot</span><br></pre></td></tr></table></figure></p>
+<p>重启后，又能重新登录图形界面了。</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/path/">path</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/02/17/pc33/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 33)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

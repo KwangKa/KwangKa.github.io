@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 12) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第12关
+这一关需要写的代码只有短短几行，前提是你能解开所有的谜题。
+刚看到图片时，以为还是用到图像处理模块，后来发现没有用。 注意Page Source里面是evil1.jpg 而不是evil.jpg, 多了个1，根据一路通关过来的规律，有1我们就看下有没有2. 把链接后面改为evil2.jpg， 会看到一张图片， 上面写着
+
+not jpg –.gfx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 12)">
+<meta property="og:url" content="http://yoursite.com/2015/01/26/pc12/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第12关
+这一关需要写的代码只有短短几行，前提是你能解开所有的谜题。
+刚看到图片时，以为还是用到图像处理模块，后来发现没有用。 注意Page Source里面是evil1.jpg 而不是evil.jpg, 多了个1，根据一路通关过来的规律，有1我们就看下有没有2. 把链接后面改为evil2.jpg， 会看到一张图片， 上面写着
+
+not jpg –.gfx">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 12)">
+<meta name="twitter:description" content="第12关
+这一关需要写的代码只有短短几行，前提是你能解开所有的谜题。
+刚看到图片时，以为还是用到图像处理模块，后来发现没有用。 注意Page Source里面是evil1.jpg 而不是evil.jpg, 多了个1，根据一路通关过来的规律，有1我们就看下有没有2. 把链接后面改为evil2.jpg， 会看到一张图片， 上面写着
+
+not jpg –.gfx">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 12)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/26/pc12/" class="article-date">
+  <time datetime="2015-01-26T06:36:08.000Z" itemprop="datePublished">2015-01-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/evil.html" target="_blank" rel="external">第12关</a></p>
+<p>这一关需要写的代码只有短短几行，前提是你能解开所有的谜题。</p>
+<p>刚看到图片时，以为还是用到图像处理模块，后来发现没有用。 注意Page Source里面是<strong>evil1.jpg</strong> 而不是<strong>evil.jpg</strong>, 多了个1，根据一路通关过来的规律，有<strong>1</strong>我们就看下有没有<strong>2</strong>. 把链接后面改为evil2.jpg， 会看到一张图片， 上面写着</p>
+<blockquote>
+<p>not jpg –.gfx</p>
+</blockquote>
+<a id="more"></a>
+<p>改为evil3.jpg，会看到提示<strong>no more evils</strong>。 好吧，为我们把evil2.jpg改为 evil2.gfx， 下载得到一个文件<a href="http://www.pythonchallenge.com/pc/return/evil2.gfx" target="_blank" rel="external">evil2.gfx</a>.</p>
+<p>从未见过这种格式的文件， 网上介绍似乎是一种3D model/scene format， ASCII format, 详情可以看<a href="https://www.cs.duke.edu/courses/cps124/fall01/code/gfx_reader/docs/gfx_format.html" target="_blank" rel="external">这里</a>.</p>
+<p>回过头看evil1.jpg， 图片上面是一个人在发五分牌， 似乎在提示我们把evil2.gfx文件按字节顺序轮流划分为五份。 比如原来文件是 <font color="red">[b0, b1, b2, b3, b4, b5, b6, b7, b8, b9]</font>, 就分成 <font color="red">[b0, b5], [b1, b6], [b2, b7], [b3, b8], [b4, b9]</font>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'evil2.gfx'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> inFile:</span><br><span class="line">    data = inFile.read()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">with</span> open(str(i), <span class="string">'wb'</span>) <span class="keyword">as</span> outFile:</span><br><span class="line">        outFile.write(data[i::<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+<p>最后会得到五章图片，上面分别有dis， pro， port， ional， ity, 最后一个是被划掉的。所以， 组合起来的通关信息就是<strong>disproportionl</strong>， 得到下一关网址： <a href="http://www.pythonchallenge.com/pc/return/disproportional.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/return/disproportional.html</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/27/pc13/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 13)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/25/pc11/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 11)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

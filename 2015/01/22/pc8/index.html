@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 8) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第8关图片上是蜜蜂采蜜, 网页的标题是”work hard?”。 点击图片会要求输入用户名和密码. 查看Page Source, 下面有两行提示信息, 可以看出应该是username(un)和password(pw), 但看不出内容是什么.
+网上的大神解释说(work hard? ==&amp;gt; busy)，要用bz2模块。解压两个字符串可以得到信息12345import bz2un = &apos;BZh9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 8)">
+<meta property="og:url" content="http://yoursite.com/2015/01/22/pc8/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第8关图片上是蜜蜂采蜜, 网页的标题是”work hard?”。 点击图片会要求输入用户名和密码. 查看Page Source, 下面有两行提示信息, 可以看出应该是username(un)和password(pw), 但看不出内容是什么.
+网上的大神解释说(work hard? ==&amp;gt; busy)，要用bz2模块。解压两个字符串可以得到信息12345import bz2un = &apos;BZh9">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.641Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 8)">
+<meta name="twitter:description" content="第8关图片上是蜜蜂采蜜, 网页的标题是”work hard?”。 点击图片会要求输入用户名和密码. 查看Page Source, 下面有两行提示信息, 可以看出应该是username(un)和password(pw), 但看不出内容是什么.
+网上的大神解释说(work hard? ==&amp;gt; busy)，要用bz2模块。解压两个字符串可以得到信息12345import bz2un = &apos;BZh9">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 8)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/22/pc8/" class="article-date">
+  <time datetime="2015-01-22T15:05:40.000Z" itemprop="datePublished">2015-01-22</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/def/integrity.html" target="_blank" rel="external">第8关</a><br>图片上是蜜蜂采蜜, 网页的标题是”work hard?”。 点击图片会要求输入用户名和密码. 查看Page Source, 下面有两行提示信息, 可以看出应该是username(un)和password(pw), 但看不出内容是什么.</p>
+<p>网上的大神解释说(work hard? ==&gt; busy)，要用<a href="https://docs.python.org/2/library/bz2.html" target="_blank" rel="external">bz2</a>模块。解压两个字符串可以得到信息<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bz2</span><br><span class="line">un = <span class="string">'BZh91AY&amp;SYA\xaf\x82\r\x00\x00\x01\x01\x80\x02\xc0\x02\x00 \x00!\x9ah3M\x07&lt;]\xc9\x14\xe1BA\x06\xbe\x084'</span></span><br><span class="line">pw = <span class="string">'BZh91AY&amp;SY\x94$|\x0e\x00\x00\x00\x81\x00\x03$ \x00!\x9ah3M\x13&lt;]\xc9\x14\xe1BBP\x91\xf08'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> bz2.decompress(un), bz2.decompress(pw)</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>得到用户名 <strong>huge</strong>, 密码 <strong>file</strong> , 输入后跳到<a href="http://www.pythonchallenge.com/pc/return/good.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/return/good.html</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/23/pc9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 9)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/21/pc7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 7)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

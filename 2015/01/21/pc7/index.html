@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 7) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第7关依旧是一张图片， Page Source里没有什么提示信息。图片中间有一块灰度图像，答案应该就在这一块特别的图像里了。网上的答案提到用GIMP可以得到中间灰度图像的位置， 也可以观察出后面会用到的step=7, 也就是水平方向每7个像素点采样一次。可以看到垂直方向上的像素值是一样的，所以y坐标在[y_min, y_max]中取一个好了。 将这一块图像的像素转换为ASCII字符就可以得到通关信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 7)">
+<meta property="og:url" content="http://yoursite.com/2015/01/21/pc7/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第7关依旧是一张图片， Page Source里没有什么提示信息。图片中间有一块灰度图像，答案应该就在这一块特别的图像里了。网上的答案提到用GIMP可以得到中间灰度图像的位置， 也可以观察出后面会用到的step=7, 也就是水平方向每7个像素点采样一次。可以看到垂直方向上的像素值是一样的，所以y坐标在[y_min, y_max]中取一个好了。 将这一块图像的像素转换为ASCII字符就可以得到通关信">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.641Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 7)">
+<meta name="twitter:description" content="第7关依旧是一张图片， Page Source里没有什么提示信息。图片中间有一块灰度图像，答案应该就在这一块特别的图像里了。网上的答案提到用GIMP可以得到中间灰度图像的位置， 也可以观察出后面会用到的step=7, 也就是水平方向每7个像素点采样一次。可以看到垂直方向上的像素值是一样的，所以y坐标在[y_min, y_max]中取一个好了。 将这一块图像的像素转换为ASCII字符就可以得到通关信">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 7)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/21/pc7/" class="article-date">
+  <time datetime="2015-01-21T02:40:51.000Z" itemprop="datePublished">2015-01-21</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/def/oxygen.html" target="_blank" rel="external">第7关</a><br>依旧是一张图片， Page Source里没有什么提示信息。图片中间有一块灰度图像，答案应该就在这一块特别的图像里了。网上的答案提到用GIMP可以得到中间灰度图像的位置， 也可以观察出后面会用到的step=7, 也就是水平方向每7个像素点采样一次。可以看到垂直方向上的像素值是一样的，所以y坐标在[y_min, y_max]中取一个好了。 将这一块图像的像素转换为ASCII字符就可以得到通关信息。灰度图像的RGB三个chanel的值是一样的，所以取一个chanel就可以了，这里取得是R通道，也就是[0] </p>
+<p>获取图像的像素值用到 <a href="http://pillow.readthedocs.org/en/latest/reference/Image.html" target="_blank" rel="external">Pillow</a>模块<br><a id="more"></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># pos of gray part</span></span><br><span class="line">x_min, x_max = <span class="number">0</span>, <span class="number">609</span></span><br><span class="line">y_min, y_max = <span class="number">43</span>, <span class="number">53</span></span><br><span class="line">step = <span class="number">7</span></span><br><span class="line"></span><br><span class="line">im = Image.open(<span class="string">"oxygen.png"</span>)</span><br><span class="line">msg = [chr(im.getpixel((x, y_min))[<span class="number">0</span>]) <span class="keyword">for</span> x <span class="keyword">in</span> range(x_min, x_max, step)]</span><br><span class="line"><span class="keyword">print</span> <span class="string">''</span>.join(msg)</span><br></pre></td></tr></table></figure>
+<p>得到的信息为</p>
+<blockquote>
+<p>smart guy, you made it. the next level is [105, 110, 116, 101, 103, 114, 105, 116, 121]</p>
+</blockquote>
+<p>再将得到的信息转一次<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = [<span class="number">105</span>, <span class="number">110</span>, <span class="number">116</span>, <span class="number">101</span>, <span class="number">103</span>, <span class="number">114</span>, <span class="number">105</span>, <span class="number">116</span>, <span class="number">121</span>]</span><br><span class="line"><span class="keyword">print</span> <span class="string">''</span>.join([chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> msg])</span><br></pre></td></tr></table></figure></p>
+<p>得到<strong>integrity</strong>， <a href="http://www.pythonchallenge.com/pc/def/integrity.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/def/integrity.html</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/22/pc8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 8)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/20/pc6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 6)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

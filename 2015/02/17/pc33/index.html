@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 33) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第33关 用户名kohsamui 密码thailand
+Finally,the last one!
+图片的名称是beer1.jpg，显然要尝试beer2.jpg，得到提示no, png，得到beer2.png
+一张杂乱无章的图片，根据之前页面Page Source里的提示:1234If you are blinded by the light,remove its power, with its">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 33)">
+<meta property="og:url" content="http://yoursite.com/2015/02/17/pc33/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第33关 用户名kohsamui 密码thailand
+Finally,the last one!
+图片的名称是beer1.jpg，显然要尝试beer2.jpg，得到提示no, png，得到beer2.png
+一张杂乱无章的图片，根据之前页面Page Source里的提示:1234If you are blinded by the light,remove its power, with its">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 33)">
+<meta name="twitter:description" content="第33关 用户名kohsamui 密码thailand
+Finally,the last one!
+图片的名称是beer1.jpg，显然要尝试beer2.jpg，得到提示no, png，得到beer2.png
+一张杂乱无章的图片，根据之前页面Page Source里的提示:1234If you are blinded by the light,remove its power, with its">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc33" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 33)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/02/17/pc33/" class="article-date">
+  <time datetime="2015-02-17T14:55:20.000Z" itemprop="datePublished">2015-02-17</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/rock/beer.html" target="_blank" rel="external">第33关</a> 用户名kohsamui 密码thailand</p>
+<p>Finally,the last one!</p>
+<p>图片的名称是beer1.jpg，显然要尝试beer2.jpg，得到提示<strong>no, png</strong>，得到<a href="http://www.pythonchallenge.com/pc/rock/beer2.png" target="_blank" rel="external">beer2.png</a></p>
+<p>一张杂乱无章的图片，根据之前页面Page Source里的提示:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">If you are blinded <span class="keyword">by</span> <span class="keyword">the</span> light,</span><br><span class="line">remove <span class="keyword">its</span> power, <span class="keyword">with</span> <span class="keyword">its</span> might.</span><br><span class="line">Then <span class="keyword">from</span> <span class="keyword">the</span> ashes, fair <span class="keyword">and</span> square,</span><br><span class="line">another truth <span class="keyword">at</span> you will glare.</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>首先，我们要把较亮的像素移除，然后用剩下的像素（from the ashes）重新组成一副图片。那要移除多少像素呢，应该是要使剩下的像素点的个数为平方数(fair and square).</p>
+<p>我们可以统计一下像素频数，再用numpy的cumsum来观察每次要移除那些像素。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">im = Image.open(<span class="string">'data/beer2.png'</span>)</span><br><span class="line">im_data = np.array(list(im.getdata()))</span><br><span class="line">im_data_stat = itemfreq(im_data)</span><br><span class="line">pprint(im_data_stat)</span><br></pre></td></tr></table></figure></p>
+<p>得到的结果为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">array([[   <span class="number">1</span>, <span class="number">1532</span>],</span><br><span class="line">       [   <span class="number">2</span>,  <span class="number">232</span>],</span><br><span class="line">       [   <span class="number">7</span>,  <span class="number">963</span>],</span><br><span class="line">       [   <span class="number">8</span>,  <span class="number">189</span>],</span><br><span class="line">       [  <span class="number">13</span>,  <span class="number">724</span>],</span><br><span class="line">       [  <span class="number">14</span>,  <span class="number">329</span>],</span><br><span class="line">       [  <span class="number">19</span>,  <span class="number">549</span>],</span><br><span class="line">       [  <span class="number">20</span>,  <span class="number">243</span>],</span><br><span class="line">       [  <span class="number">25</span>,  <span class="number">144</span>],</span><br><span class="line">       [  <span class="number">26</span>,  <span class="number">424</span>] ...</span><br></pre></td></tr></table></figure></p>
+<p>其中，第一列为像素值，第二列为相应的个数。cumsum观察要移除多少个较亮的像素<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">pprint([np.sqrt(i) <span class="keyword">for</span> i <span class="keyword">in</span> np.cumsum(im_data_stat[:, <span class="number">1</span>])])</span><br><span class="line"></span><br><span class="line">[<span class="number">39.14077158156185</span>,</span><br><span class="line"> <span class="number">42.0</span>,</span><br><span class="line"> <span class="number">52.220685556587632</span>,</span><br><span class="line"> <span class="number">54.0</span>,</span><br><span class="line"> <span class="number">60.332412515993425</span>,</span><br><span class="line"> <span class="number">63.0</span>,</span><br><span class="line"> <span class="number">67.216069507224233</span>,</span><br><span class="line"> <span class="number">69.0</span>,</span><br><span class="line"> <span class="number">70.035705179572517</span>,</span><br><span class="line"> <span class="number">73.0</span>,</span><br><span class="line"> <span class="number">73.810568348983736</span>,</span><br><span class="line"> <span class="number">76.0</span> ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，每次移除最亮的两个值，剩下的像素个数刚好是平方数。将剩下的像素中，最大值的为亮部，非最大值的为暗部，画二值图像。完整的代码为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> itemfreq</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line">im = Image.open(<span class="string">'data/beer2.png'</span>)</span><br><span class="line">im_data = np.array(list(im.getdata()))</span><br><span class="line">im_data_stat = itemfreq(im_data)</span><br><span class="line">pprint(im_data_stat)</span><br><span class="line">pprint([np.sqrt(i) <span class="keyword">for</span> i <span class="keyword">in</span> np.cumsum(im_data_stat[:, <span class="number">1</span>])])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(im_data_stat.shape[<span class="number">0</span>] - <span class="number">2</span>, <span class="number">0</span>, -<span class="number">2</span>):</span><br><span class="line">    newIm_data = im_data[np.where(im_data &lt; im_data_stat[i, <span class="number">0</span>])]</span><br><span class="line">    idx_0 = np.where(newIm_data == newIm_data.max())</span><br><span class="line">    idx_1 = np.where(newIm_data != newIm_data.max())</span><br><span class="line">    newIm_data[idx_0] = <span class="number">0</span></span><br><span class="line">    newIm_data[idx_1] = <span class="number">1</span></span><br><span class="line">    size = int(np.sqrt(len(newIm_data)))</span><br><span class="line">    newIm = Image.new(<span class="string">'1'</span>, (size, size))</span><br><span class="line">    newIm.putdata(newIm_data)</span><br><span class="line">    newIm.save(<span class="string">'data/level33_%i.png'</span> % i)</span><br></pre></td></tr></table></figure></p>
+<p>最后，得到许多张图片。图片上是一个个字母，其中有一些字母带框框，这些字母组成通关密码<font color="red">gremlins</font></p>
+<p><a href="http://www.pythonchallenge.com/pc/rock/gremlins.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/rock/gremlins.html</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/25/fix-ubuntu-path/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Ubuntu环境变量(PATH)修复
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/17/pc32/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 32)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

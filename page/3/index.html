@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KaKa's Blog">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="KaKa's Blog">
+<meta name="twitter:description">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer">
+      <article id="post-pc14" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/29/pc14/">Python Challenge (Level 14)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/29/pc14/" class="article-date">
+  <time datetime="2015-01-28T16:11:42.000Z" itemprop="datePublished">2015-01-29</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/italy.html">第14关</a><br>一个螺旋状的面包，网页title是<strong>walk around</strong>, 再加上大图的下面有一张100*100的小图。小图看不出是什么东西，只有竖条纹。把小图保存到本地，放大后发现很长的一条线，也就是说它并不是100*100的，而是10000*1的。只是在网页上被reshape成100*100而已。看来我们需要将这10000个像素，按照面包螺旋的形状，把它重新排列成100*100的大小。</p>
+<p>比如[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]排列成</p>
+<pre><code><span class="number">1</span>  <span class="number">12</span>  <span class="number">11</span>  <span class="number">10</span>
+<span class="number">2</span>  <span class="number">13</span>  <span class="number">16</span>   <span class="number">9</span>
+<span class="number">3</span>  <span class="number">14</span>  <span class="number">15</span>   <span class="number">8</span>
+<span class="number">4</span>   <span class="number">5</span>   <span class="number">6</span>   <span class="number">7</span>
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/29/pc14/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-pc13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/27/pc13/">Python Challenge (Level 13)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/27/pc13/" class="article-date">
+  <time datetime="2015-01-27T07:46:29.000Z" itemprop="datePublished">2015-01-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/disproportional.html">第13关</a></p>
+<p>图片下面提示<strong>phone that evil</strong>, 似乎要找到evil的number. 点击图片上电话的5键，会跳到一个新网页。但好像有些问题。</p>
+<blockquote>
+<p>This XML file does not appear to have any style information associated with it. The document tree is shown below.</p>
+</blockquote>
+<p>没什么头绪，网上大神提示说要用到<a href="https://docs.python.org/2/library/xmlrpclib.html">xmlrpclib</a>. 根据维基百科上的介绍，XML-RPC是一个远程过程调用的分布式计算协议，通过XML将调用函数封装，并使用HTTP协议作为传送机制。</p>
+<p>没用过这些东西，不太了解，只能慢慢尝试。在xmlrpclib的官方手册页面上，我们可以看到ServerProxy Objects的system属性下面有<strong>listMethods</strong>这个方法</p>
+<blockquote>
+<p>ServerProxy.system.listMethods()<br>    This method returns a list of strings, one for each (non-system) method supported by the XML-RPC server.</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/27/pc13/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-pc12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/26/pc12/">Python Challenge (Level 12)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/26/pc12/" class="article-date">
+  <time datetime="2015-01-26T06:36:08.000Z" itemprop="datePublished">2015-01-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/evil.html">第12关</a></p>
+<p>这一关需要写的代码只有短短几行，前提是你能解开所有的谜题。</p>
+<p>刚看到图片时，以为还是用到图像处理模块，后来发现没有用。 注意Page Source里面是<strong>evil1.jpg</strong> 而不是<strong>evil.jpg</strong>, 多了个1，根据一路通关过来的规律，有<strong>1</strong>我们就看下有没有<strong>2</strong>. 把链接后面改为evil2.jpg， 会看到一张图片， 上面写着</p>
+<blockquote>
+<p>not jpg –.gfx</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/26/pc12/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-pc11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/25/pc11/">Python Challenge (Level 11)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/25/pc11/" class="article-date">
+  <time datetime="2015-01-25T05:48:19.000Z" itemprop="datePublished">2015-01-25</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/5808.html">第11关</a></p>
+<p>一张模糊的图片, 网页标题是<strong>odd even</strong>. 图片看起来像是由不同的图片叠加得到的, 要按照odd, even像素把它分开. 仍然是要用到<a href="https://pillow.readthedocs.org/index.html">Pillow</a>模块. 为了方便分割, 我还用到了<a href="http://www.numpy.org/">numpy</a></p>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/25/pc11/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-pc10" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/24/pc10/">Python Challenge (Level 10)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/24/pc10/" class="article-date">
+  <time datetime="2015-01-24T14:41:10.000Z" itemprop="datePublished">2015-01-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/bull.html">第10关</a></p>
+<p>图片下面提示算a[30]的长度. 点击图片上的牛, 会看到</p>
+<blockquote>
+<p>a = [1, 11, 21, 1211, 111221, </p>
+</blockquote>
+<p>明显, 这是要找出a的规律, 算出a[30]. 想了很久, 智商不够, 完全看不出有什么规律. 照旧找网上的大神, 得到规律.<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/24/pc10/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-pc9" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/23/pc9/">Python Challenge (Level 9)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/23/pc9/" class="article-date">
+  <time datetime="2015-01-23T02:32:31.000Z" itemprop="datePublished">2015-01-23</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/good.html">第9关</a><br>图片上散落着一些黑点， 网页title提示<strong>connect the dots</strong>. 看来还是要用到图像处理模块——<a href="https://pillow.readthedocs.org/index.html">Pillow</a></p>
+<p>Page Source里有first和second两组数据，看起来似乎是两组坐标[x1, y1, x2, y2, …]. Pillow里面的<strong><a href="https://pillow.readthedocs.org/reference/ImageDraw.html">ImageDraw</a></strong>有Draw.line方法， 参数格式与first, second的格式吻合。<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/23/pc9/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-pc8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/22/pc8/">Python Challenge (Level 8)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/22/pc8/" class="article-date">
+  <time datetime="2015-01-22T15:05:40.000Z" itemprop="datePublished">2015-01-22</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/def/integrity.html">第8关</a><br>图片上是蜜蜂采蜜, 网页的标题是”work hard?”。 点击图片会要求输入用户名和密码. 查看Page Source, 下面有两行提示信息, 可以看出应该是username(un)和password(pw), 但看不出内容是什么.</p>
+<p>网上的大神解释说(work hard? ==&gt; busy)，要用<a href="https://docs.python.org/2/library/bz2.html">bz2</a>模块。解压两个字符串可以得到信息<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bz2</span><br><span class="line">un = <span class="string">'BZh91AY&amp;SYA\xaf\x82\r\x00\x00\x01\x01\x80\x02\xc0\x02\x00 \x00!\x9ah3M\x07&lt;]\xc9\x14\xe1BA\x06\xbe\x084'</span></span><br><span class="line">pw = <span class="string">'BZh91AY&amp;SY\x94$|\x0e\x00\x00\x00\x81\x00\x03$ \x00!\x9ah3M\x13&lt;]\xc9\x14\xe1BBP\x91\xf08'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> bz2.decompress(un), bz2.decompress(pw)</span><br></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/22/pc8/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-pc7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/21/pc7/">Python Challenge (Level 7)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/21/pc7/" class="article-date">
+  <time datetime="2015-01-21T02:40:51.000Z" itemprop="datePublished">2015-01-21</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/def/oxygen.html">第7关</a><br>依旧是一张图片， Page Source里没有什么提示信息。图片中间有一块灰度图像，答案应该就在这一块特别的图像里了。网上的答案提到用GIMP可以得到中间灰度图像的位置， 也可以观察出后面会用到的step=7, 也就是水平方向每7个像素点采样一次。可以看到垂直方向上的像素值是一样的，所以y坐标在[y_min, y_max]中取一个好了。 将这一块图像的像素转换为ASCII字符就可以得到通关信息。灰度图像的RGB三个chanel的值是一样的，所以取一个chanel就可以了，这里取得是R通道，也就是[0] </p>
+<p>获取图像的像素值用到 <a href="http://pillow.readthedocs.org/en/latest/reference/Image.html">Pillow</a>模块<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/21/pc7/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-pc6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/20/pc6/">Python Challenge (Level 6)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/20/pc6/" class="article-date">
+  <time datetime="2015-01-20T03:28:54.000Z" itemprop="datePublished">2015-01-20</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/def/channel.html">第6关</a></p>
+<p>这一关挺有意思的, 绕了好几重。 图片上面是一条拉链, Page Source里面有<em>zip</em>的提示。所以这一关会用到<a href="https://docs.python.org/2/library/zipfile.html">zipfile</a>模块。 </p>
+<p>把URL里的channel换成zip，结果出现这个</p>
+<blockquote>
+<p>yes. find the zip</p>
+</blockquote>
+<p>网上搜一下答案， 原来是要把html改成zip, 再下载<a href="http://www.pythonchallenge.com/pc/def/channel.zip">zip文件</a>。下载得到的zip文件里有个readme.txt</p>
+<blockquote>
+<p>welcome to my zipped list.</p>
+<p>hint1: start from 90052<br>hint2: answer is inside the zip</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/20/pc6/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <article id="post-PC-Part1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/18/PC-Part1/">Python Challenge (Level 0-5)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/18/PC-Part1/" class="article-date">
+  <time datetime="2015-01-18T03:27:25.000Z" itemprop="datePublished">2015-01-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/">Python Challenge</a>是一个解题游戏网站, 每解出一道题就会跳到下一题. 目前为止一共有33关. 虽说是Python Challenge, 其实用其他语言,比如Java, C++都是可以的.</p>
+<p><a href="http://www.pythonchallenge.com/pc/def/0.html">第0关</a><br>提示很明显了, 换一下URL地址. 把地址中的0换成 2^38.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> ** <span class="number">38</span></span><br></pre></td></tr></table></figure></p>
+<p>得到第二关地址<a href="http://www.pythonchallenge.com/pc/def/274877906944.html">http://www.pythonchallenge.com/pc/def/274877906944.html</a><br>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/18/PC-Part1/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
+      <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
+      </nav>
+    </section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

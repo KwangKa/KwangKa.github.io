@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 26) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第26关
+Page Source里提示you’ve got his e-mail，回想一下，我们在第19关里得到了一个email地址leopold.moz@pythonchallenge.com，这一关的网页title提示be a man-apologize!，攻略上说发邮件到上面的email地址会得到通关信息（我试了一下，暂时还没收到信息）。
+
+From: leopold.moz@pythonc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 26)">
+<meta property="og:url" content="http://yoursite.com/2015/02/09/pc26/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第26关
+Page Source里提示you’ve got his e-mail，回想一下，我们在第19关里得到了一个email地址leopold.moz@pythonchallenge.com，这一关的网页title提示be a man-apologize!，攻略上说发邮件到上面的email地址会得到通关信息（我试了一下，暂时还没收到信息）。
+
+From: leopold.moz@pythonc">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 26)">
+<meta name="twitter:description" content="第26关
+Page Source里提示you’ve got his e-mail，回想一下，我们在第19关里得到了一个email地址leopold.moz@pythonchallenge.com，这一关的网页title提示be a man-apologize!，攻略上说发邮件到上面的email地址会得到通关信息（我试了一下，暂时还没收到信息）。
+
+From: leopold.moz@pythonc">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc26" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 26)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/02/09/pc26/" class="article-date">
+  <time datetime="2015-02-09T10:36:42.000Z" itemprop="datePublished">2015-02-09</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/hex/decent.html" target="_blank" rel="external">第26关</a></p>
+<p>Page Source里提示<font color="red">you’ve got his e-mail</font>，回想一下，我们在<a href="http://kwangka.github.io/2015/02/02/pc19/" target="_blank" rel="external">第19关</a>里得到了一个email地址<strong>leopold.moz@pythonchallenge.com</strong>，这一关的网页title提示<strong>be a man-apologize!</strong>，<a href="http://garethrees.org/2007/05/07/python-challenge/" target="_blank" rel="external">攻略</a>上说发邮件到上面的email地址会得到通关信息（我试了一下，暂时还没收到信息）。</p>
+<blockquote>
+<p>From: leopold.moz@pythonchallenge.com<br>Subject: Re: sorry<br>Date: 2007-05-17 15:37:07 BDT</p>
+<p>Never mind that.</p>
+<p>Have you found my broken zip?</p>
+<p>md5: bbb8b499a0eef99b52c7f13f4e78c24b</p>
+<p>Can you believe what one mistake can lead to?</p>
+</blockquote>
+<a id="more"></a>
+<p>根据这个回信提示，有一个字节漏掉了。<a href="http://kwangka.github.io/2015/02/08/pc25/" target="_blank" rel="external">第25关</a>得到mybroken.zip，解压不了，我们要补回这一个字节。穷举所有位置以及字节（0~255），检验一下MD5。MD5正确即表示得到完整zip文件。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line">md5code = <span class="string">'bbb8b499a0eef99b52c7f13f4e78c24b'</span></span><br><span class="line">data = open(<span class="string">'maze/mybroken.zip'</span>).read()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(data)):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">        newData = data[ : i] + chr(j) + data[i+<span class="number">1</span> :]</span><br><span class="line">        <span class="keyword">if</span> hashlib.md5(newData).hexdigest() == md5code:</span><br><span class="line">            open(<span class="string">'repaired.zip'</span>, <span class="string">'w'</span>).write(newData)</span><br><span class="line">            <span class="keyword">print</span> i, j</span><br><span class="line">            <span class="keyword">raise</span> StopIteration</span><br></pre></td></tr></table></figure></p>
+<p>解压修复好的zip文件，得到一张图片，上面有<strong>speed</strong>。再根据本关的图片提示<strong>Hurry, up, I’m missing the boat</strong>，最终得到<font color="red">speedboat</font>. <a href="http://www.pythonchallenge.com/pc/hex/speedboat.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/hex/speedboat.html</a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/11/pc27/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 27)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/08/pc25/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 25)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

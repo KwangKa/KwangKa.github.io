@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 28) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第28关RING-RING-RING，读着读着就变成了GREEN. green.html里提示yes, green.
+仔细观察一下图片，发现里面有一条条的绿色竖纹。将图片的Green通道提取出来，相邻的两列像素作差，得到的差值的绝对值几乎都为42，只有少数例外。将绝对值不是42的提取出来，转成ASCII，得到通关信息——Python作者的姓名Guido van Rossum中的guido">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 28)">
+<meta property="og:url" content="http://yoursite.com/2015/02/11/pc28/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第28关RING-RING-RING，读着读着就变成了GREEN. green.html里提示yes, green.
+仔细观察一下图片，发现里面有一条条的绿色竖纹。将图片的Green通道提取出来，相邻的两列像素作差，得到的差值的绝对值几乎都为42，只有少数例外。将绝对值不是42的提取出来，转成ASCII，得到通关信息——Python作者的姓名Guido van Rossum中的guido">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.629Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 28)">
+<meta name="twitter:description" content="第28关RING-RING-RING，读着读着就变成了GREEN. green.html里提示yes, green.
+仔细观察一下图片，发现里面有一条条的绿色竖纹。将图片的Green通道提取出来，相邻的两列像素作差，得到的差值的绝对值几乎都为42，只有少数例外。将绝对值不是42的提取出来，转成ASCII，得到通关信息——Python作者的姓名Guido van Rossum中的guido">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc28" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 28)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/02/11/pc28/" class="article-date">
+  <time datetime="2015-02-11T12:12:27.000Z" itemprop="datePublished">2015-02-11</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/ring/bell.html" target="_blank" rel="external">第28关</a><br>RING-RING-RING，读着读着就变成了GREEN. green.html里提示<strong>yes, green</strong>.</p>
+<p>仔细观察一下图片，发现里面有一条条的绿色竖纹。将图片的Green通道提取出来，相邻的两列像素作差，得到的差值的绝对值几乎都为42，只有少数例外。将绝对值不是42的提取出来，转成ASCII，得到通关信息——Python作者的姓名<em>Guido van Rossum</em>中的<font color="red">guido</font></p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">im = Image.open(<span class="string">'bell.png'</span>)</span><br><span class="line">imdata = list(im.getdata())</span><br><span class="line">imdata = np.array(imdata)</span><br><span class="line">size = im.size</span><br><span class="line">imdata = imdata.reshape((size[<span class="number">1</span>], size[<span class="number">0</span>], -<span class="number">1</span>))</span><br><span class="line">imdata_g = imdata[:, :, <span class="number">1</span>] <span class="comment"># Green channel</span></span><br><span class="line">diff = np.abs(imdata_g[:, <span class="number">0</span>::<span class="number">2</span>] - imdata_g[:, <span class="number">1</span>::<span class="number">2</span>])</span><br><span class="line">idx = np.where(diff != <span class="number">42</span>)</span><br><span class="line">msg = diff[idx]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">''</span>.join(chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> msg)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Guido van Rossum'</span>.split()[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>下一关 <a href="http://www.pythonchallenge.com/pc/ring/guido.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/ring/guido.html</a></p>
+<p><em>参考</em></p>
+<ul>
+<li><a href="http://blog.sina.com.cn/s/blog_4513dde60101f3mk.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_4513dde60101f3mk.html</a></li>
+</ul>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/12/pc29/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 29)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/11/pc27/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 27)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

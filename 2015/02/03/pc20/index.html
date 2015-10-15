@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 20) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第20关
+这一关要用到httplib.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的解题过程非常详细。
+看了解题过程后，总结一下主要有三个步骤：
+
+从小到大修改请求的headers中的content-range,得到提示：invader
+从大到小修改请求的headers中的content-range,得到密码redavni(即invader的rever">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 20)">
+<meta property="og:url" content="http://yoursite.com/2015/02/03/pc20/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第20关
+这一关要用到httplib.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的解题过程非常详细。
+看了解题过程后，总结一下主要有三个步骤：
+
+从小到大修改请求的headers中的content-range,得到提示：invader
+从大到小修改请求的headers中的content-range,得到密码redavni(即invader的rever">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 20)">
+<meta name="twitter:description" content="第20关
+这一关要用到httplib.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的解题过程非常详细。
+看了解题过程后，总结一下主要有三个步骤：
+
+从小到大修改请求的headers中的content-range,得到提示：invader
+从大到小修改请求的headers中的content-range,得到密码redavni(即invader的rever">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc20" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 20)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/02/03/pc20/" class="article-date">
+  <time datetime="2015-02-03T09:17:36.000Z" itemprop="datePublished">2015-02-03</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/hex/idiot2.html" target="_blank" rel="external">第20关</a></p>
+<p>这一关要用到<a href="https://docs.python.org/2/library/httplib.html" target="_blank" rel="external">httplib</a>.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的<a href="http://garethrees.org/2007/05/07/python-challenge/" target="_blank" rel="external">解题过程</a>非常详细。</p>
+<p>看了解题过程后，总结一下主要有三个步骤：</p>
+<ul>
+<li>从小到大修改请求的headers中的content-range,得到提示：<strong>invader</strong></li>
+<li>从大到小修改请求的headers中的content-range,得到密码<font color="red">redavni</font>(即invader的reverse)。同时，还得到一个zip文件</li>
+<li>用密码将zip文件解压，即可通关</li>
+</ul>
+<p>好吧，也许看完上面三个步骤你还是不知所云。下面一步一步详细解释一下。</p>
+<a id="more"></a>
+<p>用到的库<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> httplib</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">import</span> re</span><br></pre></td></tr></table></figure></p>
+<h3 id="第一步">第一步</h3><p>首先，定义一个get_range方法。给定range，返回相应的response.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_range</span><span class="params">(page, base, limit)</span>:</span></span><br><span class="line">    conn = httplib.HTTPConnection(<span class="string">'www.pythonchallenge.com'</span>)</span><br><span class="line">    headers = &#123;<span class="string">'Authorization'</span>: <span class="string">'Basic '</span> + base64.b64encode(<span class="string">'butter:fly'</span>),</span><br><span class="line">               <span class="string">'Range'</span>: <span class="string">'bytes=%s-%s'</span> % (base, limit)&#125;</span><br><span class="line">    conn.request(<span class="string">'GET'</span>, page, <span class="string">''</span>, headers)</span><br><span class="line">    <span class="keyword">return</span> conn.getresponse()</span><br></pre></td></tr></table></figure></p>
+<p>利用这个方法，我们可以看看headers.注意看content-range.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">81</span>]: r.getheaders()</span><br><span class="line">Out[<span class="number">81</span>]: </span><br><span class="line">[(<span class="string">'x-powered-by'</span>, <span class="string">'PHP/5.3.3-7+squeeze17'</span>),</span><br><span class="line"> (<span class="string">'transfer-encoding'</span>, <span class="string">'chunked'</span>),</span><br><span class="line"> (<span class="string">'server'</span>, <span class="string">'lighttpd/1.4.28'</span>),</span><br><span class="line"> (<span class="string">'content-range'</span>, <span class="string">'bytes 0-30202/2123456789'</span>),</span><br><span class="line"> (<span class="string">'date'</span>, <span class="string">'Tue, 03 Feb 2015 09:37:11 GMT'</span>),</span><br><span class="line"> (<span class="string">'content-type'</span>, <span class="string">'image/jpeg'</span>)]</span><br><span class="line"></span><br><span class="line">In [<span class="number">82</span>]: r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">30203</span>, <span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">83</span>]: r.getheaders()</span><br><span class="line">Out[<span class="number">83</span>]: </span><br><span class="line">[(<span class="string">'x-powered-by'</span>, <span class="string">'PHP/5.3.3-7+squeeze17'</span>),</span><br><span class="line"> (<span class="string">'content-transfer-encoding'</span>, <span class="string">'binary'</span>),</span><br><span class="line"> (<span class="string">'server'</span>, <span class="string">'lighttpd/1.4.28'</span>),</span><br><span class="line"> (<span class="string">'transfer-encoding'</span>, <span class="string">'chunked'</span>),</span><br><span class="line"> (<span class="string">'content-range'</span>, <span class="string">'bytes 30203-30236/2123456789'</span>),</span><br><span class="line"> (<span class="string">'date'</span>, <span class="string">'Tue, 03 Feb 2015 09:37:33 GMT'</span>),</span><br><span class="line"> (<span class="string">'content-type'</span>, <span class="string">'application/octet-stream'</span>)]</span><br><span class="line"></span><br><span class="line">In [<span class="number">84</span>]: r.read()</span><br><span class="line">Out[<span class="number">84</span>]: <span class="string">"Why don't you respect my privacy?\n"</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看到，用不同的range,得到的response的内容不一样，同时headers里面有下一个range. 这有点像<a href="http://kwangka.github.io/2015/01/18/PC-Part1/" target="_blank" rel="external">第4关</a>，不断获取下一个网址。不断获取下一个range，再不断moveForward.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">next_range</span><span class="params">(base, bases, results)</span>:</span></span><br><span class="line">    r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, base, <span class="number">2123456789</span>)</span><br><span class="line">    bases.append(base)</span><br><span class="line">    results.append(r.read())</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        m = re.match(<span class="string">'bytes %d-([0-9]+)/2123456789'</span> % base, r.getheader(<span class="string">'content-range'</span>))</span><br><span class="line">        <span class="keyword">return</span> int(m.group(<span class="number">1</span>)) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"ERR"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">moveForward</span><span class="params">()</span>:</span></span><br><span class="line">    bases = []</span><br><span class="line">    results = []</span><br><span class="line">    b = <span class="number">30203</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = next_range(b, bases, results)</span><br><span class="line">        <span class="keyword">if</span> b == <span class="string">"ERR"</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    pprint(results)</span><br><span class="line">    pprint(bases)</span><br></pre></td></tr></table></figure></p>
+<p>我们会得到这些信息：</p>
+<blockquote>
+<p>[“Why don’t you respect my privacy?\n”,<br> ‘we can go on in this way for really long time.\n’,<br> ‘stop this!\n’,<br> ‘invader! invader!\n’,<br> ‘ok, invader. you are inside now. \n’,<br> ‘’]</p>
+</blockquote>
+<p>好了，这里<strong>invader</strong>出现了好几次，我们要留意一下。</p>
+<h3 id="第二步">第二步</h3><p>range超过30347后，再增大也没有信息了。我们改成2123456789<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">85</span>]: r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">2123456789</span>, <span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">86</span>]: r.read()</span><br><span class="line">Out[<span class="number">86</span>]: <span class="string">'esrever ni emankcin wen ruoy si drowssap eht\n'</span></span><br></pre></td></tr></table></figure></p>
+<p>这串信息reverse就得到: <font color="red">the password is your new nickname in reverse</font></p>
+<p>到这里就得到了一个密码，redavni（”invader” reverse)</p>
+<h3 id="第三步">第三步</h3><p>range为2123456789时，返回的请求里面content-range也有变化。与第一步类似，我们往小改，看看结果是什么。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">87</span>]: r.getheaders() </span><br><span class="line">Out[<span class="number">87</span>]:</span><br><span class="line">[(<span class="string">'x-powered-by'</span>, <span class="string">'PHP/5.3.3-7+squeeze17'</span>),</span><br><span class="line"> (<span class="string">'content-transfer-encoding'</span>, <span class="string">'binary'</span>),</span><br><span class="line"> (<span class="string">'server'</span>, <span class="string">'lighttpd/1.4.28'</span>),</span><br><span class="line"> (<span class="string">'transfer-encoding'</span>, <span class="string">'chunked'</span>),</span><br><span class="line"> (<span class="string">'content-range'</span>, <span class="string">'bytes 2123456744-2123456788/2123456789'</span>),</span><br><span class="line"> (<span class="string">'date'</span>, <span class="string">'Tue, 03 Feb 2015 09:46:02 GMT'</span>),</span><br><span class="line"> (<span class="string">'content-type'</span>, <span class="string">'application/octet-stream'</span>)]</span><br><span class="line"></span><br><span class="line">In [<span class="number">88</span>]: r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">2123456743</span>, <span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">89</span>]: r.getheaders()</span><br><span class="line">Out[<span class="number">89</span>]: </span><br><span class="line">[(<span class="string">'x-powered-by'</span>, <span class="string">'PHP/5.3.3-7+squeeze17'</span>),</span><br><span class="line"> (<span class="string">'content-transfer-encoding'</span>, <span class="string">'binary'</span>),</span><br><span class="line"> (<span class="string">'server'</span>, <span class="string">'lighttpd/1.4.28'</span>),</span><br><span class="line"> (<span class="string">'transfer-encoding'</span>, <span class="string">'chunked'</span>),</span><br><span class="line"> (<span class="string">'content-range'</span>, <span class="string">'bytes 2123456712-2123456743/2123456789'</span>),</span><br><span class="line"> (<span class="string">'date'</span>, <span class="string">'Tue, 03 Feb 2015 09:52:03 GMT'</span>),</span><br><span class="line"> (<span class="string">'content-type'</span>, <span class="string">'application/octet-stream'</span>)]</span><br><span class="line"></span><br><span class="line">In [<span class="number">90</span>]: r.read()</span><br><span class="line">Out[<span class="number">90</span>]: <span class="string">'and it is hiding at 1152983631.\n'</span></span><br></pre></td></tr></table></figure></p>
+<p>这里提示1152983631里面有东西，我们print出来看看是什么<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">91</span>]: r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">1152983631</span>, <span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">92</span>]: data = r.read()</span><br><span class="line"></span><br><span class="line">In [<span class="number">93</span>]: len(data)</span><br><span class="line">Out[<span class="number">93</span>]: <span class="number">239733</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">94</span>]: data[:<span class="number">10</span>]</span><br><span class="line">Out[<span class="number">94</span>]: <span class="string">'PK\x03\x04\x14\x00\t\x00\x08\x00'</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">95</span>]:</span><br></pre></td></tr></table></figure></p>
+<p>网上的大神表示根据前面四个bytes就看出它是一个zip file. 后续工作就是data写到zip文件，然后用前面的密码解压文件。这就进入第21关了。21关就是要搞zip文件里的东西，并不是一个网址。</p>
+<p>Putting it All Together</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -×- coding:utf-8 -*-</span></span><br><span class="line">__author__ = <span class="string">'chen'</span></span><br><span class="line"><span class="keyword">import</span> httplib</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_range</span><span class="params">(page, base, limit)</span>:</span></span><br><span class="line">    conn = httplib.HTTPConnection(<span class="string">'www.pythonchallenge.com'</span>)</span><br><span class="line">    headers = &#123;<span class="string">'Authorization'</span>: <span class="string">'Basic '</span> + base64.b64encode(<span class="string">'butter:fly'</span>),</span><br><span class="line">               <span class="string">'Range'</span>: <span class="string">'bytes=%s-%s'</span> % (base, limit)&#125;</span><br><span class="line">    conn.request(<span class="string">'GET'</span>, page, <span class="string">''</span>, headers)</span><br><span class="line">    <span class="keyword">return</span> conn.getresponse()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">next_range</span><span class="params">(base, bases, results)</span>:</span></span><br><span class="line">    r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, base, <span class="number">2123456789</span>)</span><br><span class="line">    bases.append(base)</span><br><span class="line">    results.append(r.read())</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        m = re.match(<span class="string">'bytes %d-([0-9]+)/2123456789'</span> % base, r.getheader(<span class="string">'content-range'</span>))</span><br><span class="line">        <span class="keyword">return</span> int(m.group(<span class="number">1</span>)) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"ERR"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">moveForward</span><span class="params">()</span>:</span></span><br><span class="line">    bases = []</span><br><span class="line">    results = []</span><br><span class="line">    b = <span class="number">30203</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = next_range(b, bases, results)</span><br><span class="line">        <span class="keyword">if</span> b == <span class="string">"ERR"</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    pprint(results)</span><br><span class="line">    pprint(bases)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">()</span>:</span></span><br><span class="line">    moveForward()</span><br><span class="line">    <span class="comment"># 得到重要信息:invader,记住,you're invader</span></span><br><span class="line"></span><br><span class="line">    r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">2123456789</span>, <span class="string">''</span>)</span><br><span class="line">    msg = r.read()</span><br><span class="line">    <span class="keyword">print</span> msg</span><br><span class="line">    <span class="keyword">print</span> msg[::-<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'invader'</span>[::-<span class="number">1</span>]</span><br><span class="line">    pprint(r.getheaders())</span><br><span class="line">    <span class="comment"># 提示密码是你的new nickname反转过来,所以就是invader ---&gt; redavni</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">print</span> get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">2123456743</span>, <span class="string">''</span>).read()</span><br><span class="line">    data = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">1152983631</span>, <span class="string">''</span>).read()</span><br><span class="line">    open(<span class="string">'unreal.zip'</span>, <span class="string">'wb'</span>).write(data)</span><br><span class="line">    <span class="comment"># 类似第一步,但是这次从后向前找,GET两次就得到一些数据.</span></span><br><span class="line">    <span class="comment"># 将其保存为zip文件,用上一步得到的密码解压</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span> : solve()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/04/pc21/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 21)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/02/pc19/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 19)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 18) - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第18关
+看到两张很相似的图片，再根据提示can you tell the difference，很容易就会想到两张图相减，看看结果是什么。很遗憾，得到的结果还是一张类似的图片，没有通关信息。
+Page Source里面有提示
+
+it is more obvious that what you might think
+
+这里that应该是than!?，也就是说，我们似乎想得太复杂了。左右两张图图像">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 18)">
+<meta property="og:url" content="http://yoursite.com/2015/02/01/pc18/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="第18关
+看到两张很相似的图片，再根据提示can you tell the difference，很容易就会想到两张图相减，看看结果是什么。很遗憾，得到的结果还是一张类似的图片，没有通关信息。
+Page Source里面有提示
+
+it is more obvious that what you might think
+
+这里that应该是than!?，也就是说，我们似乎想得太复杂了。左右两张图图像">
+<meta property="og:updated_time" content="2015-10-15T08:49:44.629Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 18)">
+<meta name="twitter:description" content="第18关
+看到两张很相似的图片，再根据提示can you tell the difference，很容易就会想到两张图相减，看看结果是什么。很遗憾，得到的结果还是一张类似的图片，没有通关信息。
+Page Source里面有提示
+
+it is more obvious that what you might think
+
+这里that应该是than!?，也就是说，我们似乎想得太复杂了。左右两张图图像">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-pc18" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 18)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/02/01/pc18/" class="article-date">
+  <time datetime="2015-02-01T10:12:43.000Z" itemprop="datePublished">2015-02-01</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/balloons.html" target="_blank" rel="external">第18关</a></p>
+<p>看到两张很相似的图片，再根据提示<strong>can you tell the difference</strong>，很容易就会想到两张图相减，看看结果是什么。很遗憾，得到的结果还是一张类似的图片，没有通关信息。</p>
+<p>Page Source里面有提示</p>
+<blockquote>
+<p>it is more obvious that what you might think</p>
+</blockquote>
+<p>这里that应该是than!?，也就是说，我们似乎想得太复杂了。左右两张图图像内容是一样的，只是亮度不同。亮度-&gt;brightness。URl换为brightness，但是好像没什么变化。View Page Source你就会发现提示信息变了</p>
+<blockquote>
+<p>maybe consider deltas.gz</p>
+</blockquote>
+<a id="more"></a>
+<p>把deltas.gz下载下来，解压后发现里面是一些16进制的信息，分为左右两栏。记得前面提到这一关是要<font color="red">tell the difference</font>，对于这两栏的信息，我们要用到<a href="https://docs.python.org/2/library/difflib.html?highlight=difflib#differ-objects" target="_blank" rel="external">difflib</a>来比较它们。然后，把得到的信息进行decode，输出到文件。最后发现，得到的文件是三张图片，里面包含通关信息。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> gzip</span><br><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"><span class="keyword">import</span> difflib</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">f = gzip.open(<span class="string">'deltas.gz'</span>, <span class="string">'rb'</span>)</span><br><span class="line">contents = f.read()</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">lines = contents.strip().split(<span class="string">'\n'</span>)</span><br><span class="line">str1 = []</span><br><span class="line">str2 = []</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">    <span class="comment"># 左右两列分开</span></span><br><span class="line">    str1.append(line[<span class="number">0</span> : <span class="number">53</span>])</span><br><span class="line">    str2.append(line[<span class="number">56</span> : <span class="number">109</span>])</span><br><span class="line"></span><br><span class="line">str_diff = list(difflib.Differ().compare(str1, str2))</span><br><span class="line"><span class="comment"># 得到的结果有三种，分别以'-','+', ' '开头，具体含义可以看difflib官方手册</span></span><br><span class="line">png_datas = [<span class="string">''</span>.join(filter(<span class="keyword">lambda</span> l : l[<span class="number">0</span>] == c, str_diff)) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="string">' -+'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(png_datas)):</span><br><span class="line">    png_data = re.sub(<span class="string">r'[^0-9a-fA-F]'</span>, <span class="string">''</span>, png_datas[i])</span><br><span class="line">    png_data = codecs.getdecoder(<span class="string">'hex'</span>)(png_data)[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">with</span> open((<span class="string">'png%d'</span> % i), <span class="string">'wb'</span>) <span class="keyword">as</span> handle:</span><br><span class="line">        handle.write(png_data)</span><br></pre></td></tr></table></figure></p>
+<p>得到的三张图片里包含的信息为<font color="purple">../hex/bin.html</font>、<font color="red">butter</font>、<font color="green">fly</font>.<br>下一关地址 <a href="http://www.pythonchallenge.com/pc/hex/bin.html" target="_blank" rel="external">http://www.pythonchallenge.com/pc/hex/bin.html</a>  用户名：butter，密码：fly</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/02/pc19/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Python Challenge (Level 19)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/31/pc17/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Challenge (Level 17)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
