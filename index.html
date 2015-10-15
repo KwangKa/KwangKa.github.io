@@ -52,6 +52,55 @@
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-installUbuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/installUbuntu/">关于安装Ubuntu的一些事</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/10/15/installUbuntu/" class="article-date">
+  <time datetime="2015-10-15T11:09:59.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近给笔记本加了个固态硬盘，无法避免地我又重装了一次系统，然后想着要学下Spark，又得装个Ubuntu.每次在这个笔记本上装Ubuntu都有点费劲，装好之后还要调各种设置。因此，就在这里记录下每次装系统几乎都要重复的工作，方便以后重装。</p>
+<h3 id="1-_UUI版本问题">1. UUI版本问题</h3><p>Ubuntu官网上提供的<a href="http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows">windows下制作USB启动盘</a>的教程中，使用的工具是<a href="http://www.pendrivelinux.com/">Universal USB Installer(UUI)</a>.制作过程很简单，以前我也用UUI成功制作过启动盘。但是这次比较奇怪，制作的U盘没办法启动，一直是”<strong><font color="red">-</strong></font>“提示符在闪烁。刚开始我还以为是因为笔记本有两个硬盘（SSD+HDD）的原因，但是把SSD拔下来之后，还是一样的状况。试了几次之后，想到有可能是UUI新版本（1.9.6.1）的问题，于是用了个旧版本的UUI（1.9.5.8）来制作启动盘。然后就能正常地启动和装Ubuntu系统了。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/10/15/installUbuntu/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Install-Ubuntu/">Install Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-fix-ubuntu-path" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -84,11 +133,11 @@
 <blockquote>
 <p>The command could not be located because ‘/usr/bin:/bin’ is not included in the PATH environment variable.</p>
 </blockquote>
-<p>显然，PATH出问题了。回想到昨天晚上安装了scala和spark，应该是配置PATH的时候出问题了。于是，尝试用vim来重新编辑/etc/profile，但是，vim命令也报错….</p>
-<p>纠结，后来在网上找到解决方案，那就是用绝对路径：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/sudo /usr/bin/vim /etc/profile</span><br></pre></td></tr></table></figure></p>
-<p>修复了/etc/profile文件后，再重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/sudo /sbin/reboot</span><br></pre></td></tr></table></figure></p>
-<p>重启后，又能重新登录图形界面了。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2015/08/25/fix-ubuntu-path/#more">Read More</a>
+          </p>
+        
       
     </div>
   
@@ -500,57 +549,6 @@
         
           <p class="article-more-link">
             <a href="/2015/02/09/pc26/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-pc25" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/08/pc25/">Python Challenge (Level 25)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2015/02/08/pc25/" class="article-date">
-  <time datetime="2015-02-08T09:27:18.000Z" itemprop="datePublished">2015-02-08</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.pythonchallenge.com/pc/hex/lake.html">第25关</a></p>
-<p>完成这一关后，不得不佩服弄出这道题的Nadav Samet，同时更加佩服解决了它的大神。</p>
-<p>这是一幅拼图模样的图片，根据Page Source里的提示<font color="red">can you see the waves?</font>，这一关还要用到wave模块。</p>
-<p>把URL后缀改为lake1.wav，lake2.wav，…，lake25会得到25个wav文件。这25个wav文件对应着刚才的25块拼图。把这25个wav文件的内容依次平起来，会得到一张300*300大小的图片。</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/02/08/pc25/#more">Read More</a>
           </p>
         
       

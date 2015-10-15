@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于安装Ubuntu的一些事 - KaKa&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近给笔记本加了个固态硬盘，无法避免地我又重装了一次系统，然后想着要学下Spark，又得装个Ubuntu.每次在这个笔记本上装Ubuntu都有点费劲，装好之后还要调各种设置。因此，就在这里记录下每次装系统几乎都要重复的工作，方便以后重装。
+1. UUI版本问题Ubuntu官网上提供的windows下制作USB启动盘的教程中，使用的工具是Universal USB Installer(UUI).制作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于安装Ubuntu的一些事">
+<meta property="og:url" content="http://yoursite.com/2015/10/15/installUbuntu/index.html">
+<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:description" content="最近给笔记本加了个固态硬盘，无法避免地我又重装了一次系统，然后想着要学下Spark，又得装个Ubuntu.每次在这个笔记本上装Ubuntu都有点费劲，装好之后还要调各种设置。因此，就在这里记录下每次装系统几乎都要重复的工作，方便以后重装。
+1. UUI版本问题Ubuntu官网上提供的windows下制作USB启动盘的教程中，使用的工具是Universal USB Installer(UUI).制作">
+<meta property="og:updated_time" content="2015-10-15T11:17:11.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于安装Ubuntu的一些事">
+<meta name="twitter:description" content="最近给笔记本加了个固态硬盘，无法避免地我又重装了一次系统，然后想着要学下Spark，又得装个Ubuntu.每次在这个笔记本上装Ubuntu都有点费劲，装好之后还要调各种设置。因此，就在这里记录下每次装系统几乎都要重复的工作，方便以后重装。
+1. UUI版本问题Ubuntu官网上提供的windows下制作USB启动盘的教程中，使用的工具是Universal USB Installer(UUI).制作">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-installUbuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于安装Ubuntu的一些事
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/10/15/installUbuntu/" class="article-date">
+  <time datetime="2015-10-15T11:09:59.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近给笔记本加了个固态硬盘，无法避免地我又重装了一次系统，然后想着要学下Spark，又得装个Ubuntu.每次在这个笔记本上装Ubuntu都有点费劲，装好之后还要调各种设置。因此，就在这里记录下每次装系统几乎都要重复的工作，方便以后重装。</p>
+<h3 id="1-_UUI版本问题">1. UUI版本问题</h3><p>Ubuntu官网上提供的<a href="http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows" target="_blank" rel="external">windows下制作USB启动盘</a>的教程中，使用的工具是<a href="http://www.pendrivelinux.com/" target="_blank" rel="external">Universal USB Installer(UUI)</a>.制作过程很简单，以前我也用UUI成功制作过启动盘。但是这次比较奇怪，制作的U盘没办法启动，一直是”<strong><font color="red">-</font></strong>“提示符在闪烁。刚开始我还以为是因为笔记本有两个硬盘（SSD+HDD）的原因，但是把SSD拔下来之后，还是一样的状况。试了几次之后，想到有可能是UUI新版本（1.9.6.1）的问题，于是用了个旧版本的UUI（1.9.5.8）来制作启动盘。然后就能正常地启动和装Ubuntu系统了。</p>
+<a id="more"></a>
+<h3 id="2-_鼠标闪烁问题">2. 鼠标闪烁问题</h3><p>Ubuntu 14.04安装好后，发现有个奇怪的问题，那就是鼠标会不停的闪烁。Google后发现是intel核显和nvidia独显热切换的问题，系统识别出两个显示器（内置显示器和未知显示器），详情参考<a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-drivers-common/+bug/1296020" target="_blank" rel="external">Non-existent display detected in both intel driver and nvidia driver</a>。解决方法也比较简单，参考<a href="http://www.ubuntukylin.com/ukylin/forum.php?mod=viewthread&amp;tid=8536" target="_blank" rel="external">这里</a>.打开<strong>系统设置</strong>-&gt;<strong>显示</strong>，点击未知显示器，然后把它关闭就可以了。</p>
+<h3 id="3-_亮度调节问题">3. 亮度调节问题</h3><p>亮度无法调节，这个是每次新装Ubuntu都会遇到的问题。无论是在系统设置里还是用Fn快捷键，都无法调节屏幕背光亮度。以前几次还找到方法解决了，能顺利用Fn快捷键调节。但这次一直没搞定，只能用比较丑陋的方法解决了。</p>
+<p>首先，切换为root用户后，可以直接手动调节亮度：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line"><span class="built_in">echo</span> <span class="number">350</span> &gt; /sys/class/backlight/intel_backlight/brightness</span><br><span class="line"><span class="comment"># 不同的数值就可以调节亮度</span></span><br></pre></td></tr></table></figure></p>
+<p>把这个命令加入到/etc/rc.local文件，就可以自动设置一个亮度，修改之后的/etc/rc.local文件如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/sh -e</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># rc.local</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This script is executed at the end of each multiuser runlevel.</span></span><br><span class="line"><span class="comment"># Make sure that the script will "exit 0" on success or any other</span></span><br><span class="line"><span class="comment"># value on error.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># In order to enable or disable this script just change the execution</span></span><br><span class="line"><span class="comment"># bits.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># By default this script does nothing.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="number">450</span> &gt; /sys/class/backlight/intel_backlight/brightness</span><br><span class="line"><span class="built_in">exit</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-_安装chrome">4. 安装chrome</h3><p>Ubuntu下安装chrome其实很简单，就是可能会有依赖问题。首先到官网下载chrome浏览器，得到deb文件，类似google-chrome-stable_current_amd64.deb，然后就安装啦。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i google-chrome-stable_current_amd64.deb</span><br><span class="line"><span class="comment">#出现依赖问题，加下面一个指令</span></span><br><span class="line">sudo apt-get <span class="operator">-f</span> install</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Install-Ubuntu/">Install Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/25/fix-ubuntu-path/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ubuntu环境变量(PATH)修复&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 CHAN KwangNgai&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

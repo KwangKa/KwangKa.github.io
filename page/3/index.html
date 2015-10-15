@@ -52,6 +52,61 @@
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-pc15" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/29/pc15/">Python Challenge (Level 15)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/01/29/pc15/" class="article-date">
+  <time datetime="2015-01-29T11:40:41.000Z" itemprop="datePublished">2015-01-29</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/uzi.html">第15关</a></p>
+<p>图片是一月份的日历，Page Source里提示</p>
+<blockquote>
+<p>he ain’t the youngest, he is the second<br>todo: buy flowers for tomorrow</p>
+</blockquote>
+<p>首先， todo是要为明天买花，所以明天（01-27）应该是某个纪念日。然后，他不是最年轻的，只是第二。怎么判断这个他是第二年轻呢，我们需要找到哪一年。可惜，年份中间两个字没有了，只能看出是1xx6. 显然，我们要根据这一页日历推算出年份。</p>
+<p>看图片的右下角，有两个小的月份日历，应该是对应着前一个和后一个月。所以，右边的应该是二月的。放大后，我们会发现，这个二月比较特殊，<font color="red">有29天</font>，所以这应该是闰年。</p>
+<p>但是，这样筛选出来的依然不对。我们还有信息没用到，那就是日期(date)和星期几(weekday)的对应关系。也就是说，<font color="red">1月27是星期二</font>这个信息我们可以用。至此，可以得到这个日期了。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/29/pc15/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-pc14" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -506,56 +561,6 @@
         
           <p class="article-more-link">
             <a href="/2015/01/20/pc6/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-PC-Part1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/18/PC-Part1/">Python Challenge (Level 0-5)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2015/01/18/PC-Part1/" class="article-date">
-  <time datetime="2015-01-18T03:27:25.000Z" itemprop="datePublished">2015-01-18</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.pythonchallenge.com/">Python Challenge</a>是一个解题游戏网站, 每解出一道题就会跳到下一题. 目前为止一共有33关. 虽说是Python Challenge, 其实用其他语言,比如Java, C++都是可以的.</p>
-<p><a href="http://www.pythonchallenge.com/pc/def/0.html">第0关</a><br>提示很明显了, 换一下URL地址. 把地址中的0换成 2^38.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> ** <span class="number">38</span></span><br></pre></td></tr></table></figure></p>
-<p>得到第二关地址<a href="http://www.pythonchallenge.com/pc/def/274877906944.html">http://www.pythonchallenge.com/pc/def/274877906944.html</a><br>
-        
-          <p class="article-more-link">
-            <a href="/2015/01/18/PC-Part1/#more">Read More</a>
           </p>
         
       

@@ -52,6 +52,57 @@
   </div>
 </header>
     <section id="main" class="outer">
+      <article id="post-pc25" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/08/pc25/">Python Challenge (Level 25)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2015/02/08/pc25/" class="article-date">
+  <time datetime="2015-02-08T09:27:18.000Z" itemprop="datePublished">2015-02-08</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/hex/lake.html">第25关</a></p>
+<p>完成这一关后，不得不佩服弄出这道题的Nadav Samet，同时更加佩服解决了它的大神。</p>
+<p>这是一幅拼图模样的图片，根据Page Source里的提示<font color="red">can you see the waves?</font>，这一关还要用到wave模块。</p>
+<p>把URL后缀改为lake1.wav，lake2.wav，…，lake25会得到25个wav文件。这25个wav文件对应着刚才的25块拼图。把这25个wav文件的内容依次平起来，会得到一张300*300大小的图片。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/08/pc25/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+</article>
+
+
+    
       <article id="post-pc24" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -510,61 +561,6 @@
         
           <p class="article-more-link">
             <a href="/2015/01/31/pc16/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  
-  </div>
-  
-</article>
-
-
-    
-      <article id="post-pc15" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/29/pc15/">Python Challenge (Level 15)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2015/01/29/pc15/" class="article-date">
-  <time datetime="2015-01-29T11:40:41.000Z" itemprop="datePublished">2015-01-29</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.pythonchallenge.com/pc/return/uzi.html">第15关</a></p>
-<p>图片是一月份的日历，Page Source里提示</p>
-<blockquote>
-<p>he ain’t the youngest, he is the second<br>todo: buy flowers for tomorrow</p>
-</blockquote>
-<p>首先， todo是要为明天买花，所以明天（01-27）应该是某个纪念日。然后，他不是最年轻的，只是第二。怎么判断这个他是第二年轻呢，我们需要找到哪一年。可惜，年份中间两个字没有了，只能看出是1xx6. 显然，我们要根据这一页日历推算出年份。</p>
-<p>看图片的右下角，有两个小的月份日历，应该是对应着前一个和后一个月。所以，右边的应该是二月的。放大后，我们会发现，这个二月比较特殊，<font color="red">有29天</font>，所以这应该是闰年。</p>
-<p>但是，这样筛选出来的依然不对。我们还有信息没用到，那就是日期(date)和星期几(weekday)的对应关系。也就是说，<font color="red">1月27是星期二</font>这个信息我们可以用。至此，可以得到这个日期了。</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/01/29/pc15/#more">Read More</a>
           </p>
         
       
