@@ -1,11 +1,49 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
 <head>
-  <meta charset="utf-8">
   
-  <title>Python Challenge (Level 20) - KaKa&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第20关
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
+
+
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+<meta name="description" content="第20关
 这一关要用到httplib.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的解题过程非常详细。
 看了解题过程后，总结一下主要有三个步骤：
 
@@ -13,7 +51,7 @@
 从大到小修改请求的headers中的content-range,得到密码redavni(即invader的rever">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Challenge (Level 20)">
-<meta property="og:url" content="http://yoursite.com/2015/02/03/pc20/index.html">
+<meta property="og:url" content="http://kwangka.github.io/2015/02/03/pc20/index.html">
 <meta property="og:site_name" content="KaKa's Blog">
 <meta property="og:description" content="第20关
 这一关要用到httplib.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的解题过程非常详细。
@@ -30,71 +68,208 @@
 
 从小到大修改请求的headers中的content-range,得到提示：invader
 从大到小修改请求的headers中的content-range,得到密码redavni(即invader的rever">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  
 
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'always'
+  };
+</script>
+
+
+
+  <title> Python Challenge (Level 20) | KaKa's Blog </title>
 </head>
 
-<body>
-  <div id="container">
-    <header id="header">
-  <div id="header-outer" class="outer">
-    <div id="header-inner" class="inner">
-      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-      <a id="logo" class="logo logo-text" href="/">CHAN KWANG NGAI</a>
-      <nav id="main-nav">
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-          <a class="main-nav-link" href="/categories">Categories</a>
-        
-          <a class="main-nav-link" href="/tags">Tags</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        <div id="search-form-wrap">
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-        </div>
-      </nav>
-    </div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
   </div>
-</header>
-    <section id="main" class="outer"><article id="post-pc20" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Python Challenge (Level 20)
-    </h1>
+<![endif]-->
   
 
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">KaKa's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">曾梦想仗剑走天涯</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python Challenge (Level 20)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-02-03T17:17:36+08:00" content="2015-02-03">
+              2015-02-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/02/03/pc20/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/03/pc20/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-meta">
-      <a href="/2015/02/03/pc20/" class="article-date">
-  <time datetime="2015-02-03T09:17:36.000Z" itemprop="datePublished">2015-02-03</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Python/">Python</a>
-  </div>
+
+
+    <div class="post-body">
 
       
-    </div>
-    <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://www.pythonchallenge.com/pc/hex/idiot2.html" target="_blank" rel="external">第20关</a></p>
+
+      
+        <span itemprop="articleBody"><p><a href="http://www.pythonchallenge.com/pc/hex/idiot2.html" target="_blank" rel="external">第20关</a></p>
 <p>这一关要用到<a href="https://docs.python.org/2/library/httplib.html" target="_blank" rel="external">httplib</a>.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的<a href="http://garethrees.org/2007/05/07/python-challenge/" target="_blank" rel="external">解题过程</a>非常详细。</p>
 <p>看了解题过程后，总结一下主要有三个步骤：</p>
 <ul>
@@ -107,7 +282,7 @@
 <p>用到的库<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> httplib</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">import</span> re</span><br></pre></td></tr></table></figure></p>
 <h3 id="第一步">第一步</h3><p>首先，定义一个get_range方法。给定range，返回相应的response.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_range</span><span class="params">(page, base, limit)</span>:</span></span><br><span class="line">    conn = httplib.HTTPConnection(<span class="string">'www.pythonchallenge.com'</span>)</span><br><span class="line">    headers = &#123;<span class="string">'Authorization'</span>: <span class="string">'Basic '</span> + base64.b64encode(<span class="string">'butter:fly'</span>),</span><br><span class="line">               <span class="string">'Range'</span>: <span class="string">'bytes=%s-%s'</span> % (base, limit)&#125;</span><br><span class="line">    conn.request(<span class="string">'GET'</span>, page, <span class="string">''</span>, headers)</span><br><span class="line">    <span class="keyword">return</span> conn.getresponse()</span><br></pre></td></tr></table></figure></p>
 <p>利用这个方法，我们可以看看headers.注意看content-range.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">81</span>]: r.getheaders()</span><br><span class="line">Out[<span class="number">81</span>]: </span><br><span class="line">[(<span class="string">'x-powered-by'</span>, <span class="string">'PHP/5.3.3-7+squeeze17'</span>),</span><br><span class="line"> (<span class="string">'transfer-encoding'</span>, <span class="string">'chunked'</span>),</span><br><span class="line"> (<span class="string">'server'</span>, <span class="string">'lighttpd/1.4.28'</span>),</span><br><span class="line"> (<span class="string">'content-range'</span>, <span class="string">'bytes 0-30202/2123456789'</span>),</span><br><span class="line"> (<span class="string">'date'</span>, <span class="string">'Tue, 03 Feb 2015 09:37:11 GMT'</span>),</span><br><span class="line"> (<span class="string">'content-type'</span>, <span class="string">'image/jpeg'</span>)]</span><br><span class="line"></span><br><span class="line">In [<span class="number">82</span>]: r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">30203</span>, <span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">83</span>]: r.getheaders()</span><br><span class="line">Out[<span class="number">83</span>]: </span><br><span class="line">[(<span class="string">'x-powered-by'</span>, <span class="string">'PHP/5.3.3-7+squeeze17'</span>),</span><br><span class="line"> (<span class="string">'content-transfer-encoding'</span>, <span class="string">'binary'</span>),</span><br><span class="line"> (<span class="string">'server'</span>, <span class="string">'lighttpd/1.4.28'</span>),</span><br><span class="line"> (<span class="string">'transfer-encoding'</span>, <span class="string">'chunked'</span>),</span><br><span class="line"> (<span class="string">'content-range'</span>, <span class="string">'bytes 30203-30236/2123456789'</span>),</span><br><span class="line"> (<span class="string">'date'</span>, <span class="string">'Tue, 03 Feb 2015 09:37:33 GMT'</span>),</span><br><span class="line"> (<span class="string">'content-type'</span>, <span class="string">'application/octet-stream'</span>)]</span><br><span class="line"></span><br><span class="line">In [<span class="number">84</span>]: r.read()</span><br><span class="line">Out[<span class="number">84</span>]: <span class="string">"Why don't you respect my privacy?\n"</span></span><br></pre></td></tr></table></figure></p>
-<p>可以看到，用不同的range,得到的response的内容不一样，同时headers里面有下一个range. 这有点像<a href="http://kwangka.github.io/2015/01/18/PC-Part1/" target="_blank" rel="external">第4关</a>，不断获取下一个网址。不断获取下一个range，再不断moveForward.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">next_range</span><span class="params">(base, bases, results)</span>:</span></span><br><span class="line">    r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, base, <span class="number">2123456789</span>)</span><br><span class="line">    bases.append(base)</span><br><span class="line">    results.append(r.read())</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        m = re.match(<span class="string">'bytes %d-([0-9]+)/2123456789'</span> % base, r.getheader(<span class="string">'content-range'</span>))</span><br><span class="line">        <span class="keyword">return</span> int(m.group(<span class="number">1</span>)) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"ERR"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">moveForward</span><span class="params">()</span>:</span></span><br><span class="line">    bases = []</span><br><span class="line">    results = []</span><br><span class="line">    b = <span class="number">30203</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = next_range(b, bases, results)</span><br><span class="line">        <span class="keyword">if</span> b == <span class="string">"ERR"</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    pprint(results)</span><br><span class="line">    pprint(bases)</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，用不同的range,得到的response的内容不一样，同时headers里面有下一个range. 这有点像<a href="http://kwangka.github.io/2015/01/18/PC-Part1/">第4关</a>，不断获取下一个网址。不断获取下一个range，再不断moveForward.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">next_range</span><span class="params">(base, bases, results)</span>:</span></span><br><span class="line">    r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, base, <span class="number">2123456789</span>)</span><br><span class="line">    bases.append(base)</span><br><span class="line">    results.append(r.read())</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        m = re.match(<span class="string">'bytes %d-([0-9]+)/2123456789'</span> % base, r.getheader(<span class="string">'content-range'</span>))</span><br><span class="line">        <span class="keyword">return</span> int(m.group(<span class="number">1</span>)) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"ERR"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">moveForward</span><span class="params">()</span>:</span></span><br><span class="line">    bases = []</span><br><span class="line">    results = []</span><br><span class="line">    b = <span class="number">30203</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = next_range(b, bases, results)</span><br><span class="line">        <span class="keyword">if</span> b == <span class="string">"ERR"</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    pprint(results)</span><br><span class="line">    pprint(bases)</span><br></pre></td></tr></table></figure></p>
 <p>我们会得到这些信息：</p>
 <blockquote>
 <p>[“Why don’t you respect my privacy?\n”,<br> ‘we can go on in this way for really long time.\n’,<br> ‘stop this!\n’,<br> ‘invader! invader!\n’,<br> ‘ok, invader. you are inside now. \n’,<br> ‘’]</p>
@@ -121,59 +296,440 @@
 <p>网上的大神表示根据前面四个bytes就看出它是一个zip file. 后续工作就是data写到zip文件，然后用前面的密码解压文件。这就进入第21关了。21关就是要搞zip文件里的东西，并不是一个网址。</p>
 <p>Putting it All Together</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -×- coding:utf-8 -*-</span></span><br><span class="line">__author__ = <span class="string">'chen'</span></span><br><span class="line"><span class="keyword">import</span> httplib</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_range</span><span class="params">(page, base, limit)</span>:</span></span><br><span class="line">    conn = httplib.HTTPConnection(<span class="string">'www.pythonchallenge.com'</span>)</span><br><span class="line">    headers = &#123;<span class="string">'Authorization'</span>: <span class="string">'Basic '</span> + base64.b64encode(<span class="string">'butter:fly'</span>),</span><br><span class="line">               <span class="string">'Range'</span>: <span class="string">'bytes=%s-%s'</span> % (base, limit)&#125;</span><br><span class="line">    conn.request(<span class="string">'GET'</span>, page, <span class="string">''</span>, headers)</span><br><span class="line">    <span class="keyword">return</span> conn.getresponse()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">next_range</span><span class="params">(base, bases, results)</span>:</span></span><br><span class="line">    r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, base, <span class="number">2123456789</span>)</span><br><span class="line">    bases.append(base)</span><br><span class="line">    results.append(r.read())</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        m = re.match(<span class="string">'bytes %d-([0-9]+)/2123456789'</span> % base, r.getheader(<span class="string">'content-range'</span>))</span><br><span class="line">        <span class="keyword">return</span> int(m.group(<span class="number">1</span>)) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"ERR"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">moveForward</span><span class="params">()</span>:</span></span><br><span class="line">    bases = []</span><br><span class="line">    results = []</span><br><span class="line">    b = <span class="number">30203</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        b = next_range(b, bases, results)</span><br><span class="line">        <span class="keyword">if</span> b == <span class="string">"ERR"</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    pprint(results)</span><br><span class="line">    pprint(bases)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">()</span>:</span></span><br><span class="line">    moveForward()</span><br><span class="line">    <span class="comment"># 得到重要信息:invader,记住,you're invader</span></span><br><span class="line"></span><br><span class="line">    r = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">2123456789</span>, <span class="string">''</span>)</span><br><span class="line">    msg = r.read()</span><br><span class="line">    <span class="keyword">print</span> msg</span><br><span class="line">    <span class="keyword">print</span> msg[::-<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'invader'</span>[::-<span class="number">1</span>]</span><br><span class="line">    pprint(r.getheaders())</span><br><span class="line">    <span class="comment"># 提示密码是你的new nickname反转过来,所以就是invader ---&gt; redavni</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">print</span> get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">2123456743</span>, <span class="string">''</span>).read()</span><br><span class="line">    data = get_range(<span class="string">'/pc/hex/unreal.jpg'</span>, <span class="number">1152983631</span>, <span class="string">''</span>).read()</span><br><span class="line">    open(<span class="string">'unreal.zip'</span>, <span class="string">'wb'</span>).write(data)</span><br><span class="line">    <span class="comment"># 类似第一步,但是这次从后向前找,GET两次就得到一些数据.</span></span><br><span class="line">    <span class="comment"># 将其保存为zip文件,用上一步得到的密码解压</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span> : solve()</span><br></pre></td></tr></table></figure>
-
+</span>
       
     </div>
-  
-    <footer class="article-footer">
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/02/04/pc21/" rel="prev">
+                <i class="fa fa-chevron-left"></i> Python Challenge (Level 21)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/02/02/pc19/" rel="next">
+                Python Challenge (Level 19) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
-  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/02/04/pc21/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+
+ </div>
+
         
-          Python Challenge (Level 21)
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/02/03/pc20/"
+                   data-title="Python Challenge (Level 20)" data-url="http://kwangka.github.io/2015/02/03/pc20/">
+              </div>
+            
+          </div>
         
       </div>
-    </a>
-  
-  
-    <a href="/2015/02/02/pc19/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Python Challenge (Level 19)&nbsp;<span>&gt;</span></div>
-    </a>
-  
-</nav>
 
+      
+        
   
-</article>
-
-</section>
-    <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2015 CHAN KwangNgai&nbsp;
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://img3.douban.com/view/photo/photo/public/p1478169563.jpg" alt="CHAN KwangNgai" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">CHAN KwangNgai</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/KwangKa" target="_blank">
+                  <i class="fa fa-github"></i> github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.douban.com/people/49590226/" target="_blank">
+                  <i class="fa fa-douban"></i> douban
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/1776176465/" target="_blank">
+                  <i class="fa fa-weibo"></i> weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步"><span class="nav-number">1.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步"><span class="nav-number">2.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步"><span class="nav-number">3.</span> <span class="nav-text">第三步</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHAN KwangNgai</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
     
 
-<script src="/js/jquery.min.js"></script>
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"garrick"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
-  </div>
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+
+      motionIntegrator.bootstrap();
+    });
+  </script>
+
+  
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
 </body>
 </html>
