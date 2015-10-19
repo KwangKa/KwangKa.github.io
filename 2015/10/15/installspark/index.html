@@ -32,6 +32,8 @@
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
 
 
+    <meta name="description" content="船到桥头自然直" />
+
 
 
   <meta name="keywords" content="Big Data,Spark," />
@@ -52,14 +54,14 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 14.04 Spark单机环境搭建">
 <meta property="og:url" content="http://kwangka.github.io/2015/10/15/installspark/index.html">
-<meta property="og:site_name" content="KaKa's Blog">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
 <meta property="og:description" content="大数据这个领域是热火朝天，而Apache Spark则是一个炙手可热大数据神器。趁着现在还比较有空，赶紧学习Spark方面的东西。这篇文章主要是记录下在Ubuntu 14.04下搭建Spark单机环境的过程。这个过程主要有四个部分：
 
 安装Java
 安装Scala
 安装Spark
 安装sbt">
-<meta property="og:updated_time" content="2015-10-15T12:20:47.401Z">
+<meta property="og:updated_time" content="2015-10-19T14:52:14.640Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 14.04 Spark单机环境搭建">
 <meta name="twitter:description" content="大数据这个领域是热火朝天，而Apache Spark则是一个炙手可热大数据神器。趁着现在还比较有空，赶紧学习Spark方面的东西。这篇文章主要是记录下在Ubuntu 14.04下搭建Spark单机环境的过程。这个过程主要有四个部分：
@@ -79,7 +81,7 @@
 
 
 
-  <title> Ubuntu 14.04 Spark单机环境搭建 | KaKa's Blog </title>
+  <title> Ubuntu 14.04 Spark单机环境搭建 | 曾梦想仗剑走天涯 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -110,11 +112,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">KaKa's Blog</span>
+      <span class="site-title">曾梦想仗剑走天涯</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">曾梦想仗剑走天涯</p>
+  <p class="site-subtitle"></p>
 </div>
 
 <div class="site-nav-toggle">
@@ -284,8 +286,10 @@
 <li><p>配置环境变量<br>Ubuntu的环境变量又好几个地方可以配置，我这里配置的是/etc/profile文件。（关于Java环境变量的配置，网上的教程有各种各样的配法，我也看的挺乱的。比如下面的配置中，JRE_HOME这些不配好像也是可以的……）</p>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export <span class="constant">JAVA_HOME</span>=<span class="regexp">/opt/jdk</span>1.<span class="number">8.0_60</span></span><br><span class="line">export <span class="constant">JRE_HOME</span>=<span class="variable">$&#123;</span><span class="constant">JAVA_HOME</span>&#125;/jre</span><br><span class="line">export <span class="constant">CLASSPATH</span>=.<span class="symbol">:</span><span class="variable">$&#123;</span><span class="constant">JAVA_HOME</span>&#125;/<span class="class"><span class="keyword">lib</span>:$&#123;<span class="title">JRE_HOME</span>&#125;/<span class="title">lib</span></span></span><br><span class="line">export <span class="constant">PATH</span>=<span class="variable">$&#123;</span><span class="constant">JAVA_HOME</span>&#125;/<span class="symbol">bin:</span><span class="variable">$&#123;</span><span class="constant">JRE_HOME</span>&#125;/<span class="symbol">bin:</span><span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p>检验Java有没配置成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br><span class="line">java version <span class="string">"1.8.0_60"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_60-b27)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span>-Bit Server VM (build <span class="number">25.60</span>-b23, mixed mode)</span><br><span class="line">$ javac -version</span><br><span class="line">javac <span class="number">1.8</span>.<span class="number">0</span>_60</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>检验Java有没配置成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ java -version</span><br><span class="line">java version <span class="string">"1.8.0_60"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_60-b27)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span>-Bit Server VM (build <span class="number">25.60</span>-b23, mixed mode)</span><br><span class="line">$ javac -version</span><br><span class="line">javac <span class="number">1.8</span>.<span class="number">0</span>_60</span><br></pre></td></tr></table></figure></p>
 <h2 id="安装Scala">安装Scala</h2><p>Scala安装过程和Java的类似，比较简单</p>
 <ul>
 <li><p><a href="http://www.scala-lang.org/download/" target="_blank" rel="external">官网</a>下载压缩包，然后解压</p>
@@ -411,10 +415,10 @@
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="https://s.gravatar.com/avatar/843218f0bc532cfaad30cc86ed671e64?s=80" alt="CHAN KwangNgai" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">CHAN KwangNgai</p>
+          <img class="site-author-image" src="https://s.gravatar.com/avatar/843218f0bc532cfaad30cc86ed671e64?s=80" alt="Chan KwangNgai" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Chan KwangNgai</p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
+        <p class="site-description motion-element" itemprop="description">船到桥头自然直</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -432,7 +436,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -442,26 +446,6 @@
         
 
         <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/KwangKa" target="_blank">
-                  <i class="fa fa-github"></i> github
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.douban.com/people/49590226/" target="_blank">
-                  <i class="fa fa-douban"></i> douban
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.weibo.com/1776176465/" target="_blank">
-                  <i class="fa fa-weibo"></i> weibo
-                </a>
-              </span>
-            
           
         </div>
 
@@ -502,7 +486,7 @@
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">CHAN KwangNgai</span>
+  <span class="author" itemprop="copyrightHolder">Chan KwangNgai</span>
 </div>
 
 <div class="powered-by">
