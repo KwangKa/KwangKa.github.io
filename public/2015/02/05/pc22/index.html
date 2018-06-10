@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 22) | 曾梦想仗剑走天涯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第22关 根据Page Source里的提示，得到一张图片white.gif 这是一张动态图，基本上都是黑的像素，但标题却是white.gif. 查看一下每一帧的像素，会发现每一帧有一个值为8的像素点。动态图中，就是这个白的像素点在动，记下每一点的坐标，得到12345678910array([[100, 100],       [100, 102],       [100, 102],">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 22)">
+<meta property="og:url" content="http://yoursite.com/2015/02/05/pc22/index.html">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
+<meta property="og:description" content="第22关 根据Page Source里的提示，得到一张图片white.gif 这是一张动态图，基本上都是黑的像素，但标题却是white.gif. 查看一下每一帧的像素，会发现每一帧有一个值为8的像素点。动态图中，就是这个白的像素点在动，记下每一点的坐标，得到12345678910array([[100, 100],       [100, 102],       [100, 102],">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-10T17:05:07.764Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 22)">
+<meta name="twitter:description" content="第22关 根据Page Source里的提示，得到一张图片white.gif 这是一张动态图，基本上都是黑的像素，但标题却是white.gif. 查看一下每一帧的像素，会发现每一帧有一个值为8的像素点。动态图中，就是这个白的像素点在动，记下每一点的坐标，得到12345678910array([[100, 100],       [100, 102],       [100, 102],">
+  
+    <link rel="alternate" href="/atom.xml" title="曾梦想仗剑走天涯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曾梦想仗剑走天涯</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pc22" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/05/pc22/" class="article-date">
+  <time datetime="2015-02-05T04:29:28.000Z" itemprop="datePublished">2015-02-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 22)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/hex/copper.html" target="_blank" rel="noopener">第22关</a></p>
+<p>根据Page Source里的提示，得到一张图片white.gif</p>
+<p>这是一张动态图，基本上都是黑的像素，但标题却是white.gif. 查看一下每一帧的像素，会发现每一帧有一个值为8的像素点。动态图中，就是这个白的像素点在动，记下每一点的坐标，得到<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">array([[<span class="number">100</span>, <span class="number">100</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       ...</span><br></pre></td></tr></table></figure></p>
+<p>这些坐标都在(100,100)附近。结合这一关的图片上的摇杆，可以判断出这些坐标表示的是摇杆的方向，(100,100)就是原点。<br>得到的坐标中(100,100)出现了五次，我们可以据此将坐标分为五组，每一组画出一个图案。每画出一个图案，就要更改一下坐标位置，否则，五个图案就会重叠在一起。<br><a id="more"></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageSequence</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw</span><span class="params">(im, origin, offsetCoords, value)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> offsetCoords:</span><br><span class="line">        im.putpixel(origin, value)</span><br><span class="line">        dx = (c[<span class="number">0</span>] - <span class="number">100</span>) // <span class="number">2</span></span><br><span class="line">        dy = (c[<span class="number">1</span>] - <span class="number">100</span>) // <span class="number">2</span></span><br><span class="line">        origin[<span class="number">0</span>] += dx</span><br><span class="line">        origin[<span class="number">1</span>] += dy</span><br><span class="line"></span><br><span class="line">im = Image.open(<span class="string">'white.gif'</span>)</span><br><span class="line">coords = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ImageSequence.Iterator(im):</span><br><span class="line">    idata = list(i.getdata())</span><br><span class="line">    idx = idata.index(<span class="number">8</span>)</span><br><span class="line">    x = idx % <span class="number">200</span></span><br><span class="line">    y = idx // <span class="number">200</span></span><br><span class="line">    coords.append((x, y))</span><br><span class="line"></span><br><span class="line">coords = np.array(coords)</span><br><span class="line">interval = np.where(np.all(coords == [<span class="number">100</span>, <span class="number">100</span>], axis=<span class="number">1</span>) == <span class="keyword">True</span>)</span><br><span class="line">interval = interval[<span class="number">0</span>].tolist()</span><br><span class="line">interval.append(coords.shape[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">imOut = Image.new(im.mode, im.size)</span><br><span class="line">x, y = <span class="number">30</span>, <span class="number">50</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(interval) - <span class="number">1</span>):</span><br><span class="line">    draw(imOut, [x, y], coords[interval[i] + <span class="number">1</span> : interval[i+<span class="number">1</span>]], <span class="number">200</span>)</span><br><span class="line">    x += <span class="number">30</span></span><br><span class="line">imOut.show()</span><br></pre></td></tr></table></figure>
+<p>得到的图片显示为bonus，<a href="http://www.pythonchallenge.com/pc/hex/bonus.html" target="_blank" rel="noopener">http://www.pythonchallenge.com/pc/hex/bonus.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/05/pc22/" data-id="cji92xs8n000wytk0a8kxkyfv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/06/pc23/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Challenge (Level 23)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/04/pc21/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Challenge (Level 21)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KaKa Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

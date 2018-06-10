@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 13) | 曾梦想仗剑走天涯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第13关 图片下面提示phone that evil, 似乎要找到evil的number. 点击图片上电话的5键，会跳到一个新网页。但好像有些问题。  This XML file does not appear to have any style information associated with it. The document tree is shown below.  没什么头绪，网上大">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 13)">
+<meta property="og:url" content="http://yoursite.com/2015/01/27/pc13/index.html">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
+<meta property="og:description" content="第13关 图片下面提示phone that evil, 似乎要找到evil的number. 点击图片上电话的5键，会跳到一个新网页。但好像有些问题。  This XML file does not appear to have any style information associated with it. The document tree is shown below.  没什么头绪，网上大">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-10T17:05:07.760Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 13)">
+<meta name="twitter:description" content="第13关 图片下面提示phone that evil, 似乎要找到evil的number. 点击图片上电话的5键，会跳到一个新网页。但好像有些问题。  This XML file does not appear to have any style information associated with it. The document tree is shown below.  没什么头绪，网上大">
+  
+    <link rel="alternate" href="/atom.xml" title="曾梦想仗剑走天涯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曾梦想仗剑走天涯</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pc13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/27/pc13/" class="article-date">
+  <time datetime="2015-01-27T07:46:29.000Z" itemprop="datePublished">2015-01-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 13)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/disproportional.html" target="_blank" rel="noopener">第13关</a></p>
+<p>图片下面提示<strong>phone that evil</strong>, 似乎要找到evil的number. 点击图片上电话的5键，会跳到一个新网页。但好像有些问题。</p>
+<blockquote>
+<p>This XML file does not appear to have any style information associated with it. The document tree is shown below.</p>
+</blockquote>
+<p>没什么头绪，网上大神提示说要用到<a href="https://docs.python.org/2/library/xmlrpclib.html" target="_blank" rel="noopener">xmlrpclib</a>. 根据维基百科上的介绍，XML-RPC是一个远程过程调用的分布式计算协议，通过XML将调用函数封装，并使用HTTP协议作为传送机制。</p>
+<p>没用过这些东西，不太了解，只能慢慢尝试。在xmlrpclib的官方手册页面上，我们可以看到ServerProxy Objects的system属性下面有<strong>listMethods</strong>这个方法</p>
+<blockquote>
+<p>ServerProxy.system.listMethods()<br>    This method returns a list of strings, one for each (non-system) method supported by the XML-RPC server.</p>
+</blockquote>
+<a id="more"></a>
+<p>可以尝试一下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xmlrpclib</span><br><span class="line"></span><br><span class="line">proxy = xmlrpclib.ServerProxy(<span class="string">"http://www.pythonchallenge.com/pc/phonebook.php"</span>)</span><br><span class="line">proxy.system.listMethods()</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出如下</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">['phone',</span></span><br><span class="line"><span class="string"> 'system.listMethods',</span></span><br><span class="line"><span class="string"> 'system.methodHelp',</span></span><br><span class="line"><span class="string"> 'system.methodSignature',</span></span><br><span class="line"><span class="string"> 'system.multicall',</span></span><br><span class="line"><span class="string"> 'system.getCapabilities']</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure></p>
+<p>Bingo, 里面有个<strong>phone</strong>方法。我们在看看它是干什么的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">4</span>]: proxy.system.methodHelp(<span class="string">'phone'</span>)</span><br><span class="line">Out[<span class="number">4</span>]: <span class="string">'Returns the phone of a person'</span></span><br></pre></td></tr></table></figure></p>
+<p>看来，这个<strong>phone</strong>就是我们要调用的方法，但问题在于参数person是谁呢？ 原来，这还要用到上一关的遗留问题。上一个<a href="http://www.pythonchallenge.com/pc/return/evil3.jpg" target="_blank" rel="noopener">evil3.jpg页面</a>提示no more evils. 但事实上， <a href="http://www.pythonchallenge.com/pc/return/evil4.jpg" target="_blank" rel="noopener">evil4.jpg</a>里还有一些内容，但是我尝试过用chrome和firefox都显示不出图片。网上有人说用IE可以打开，我没试过。我的解决方法是利用chrome审查元素(Inspect element)的功能，再点击图片连接，会有以下提示信息</p>
+<blockquote>
+<p>Bert is evil! go back!</p>
+</blockquote>
+<p>总算找到你了， Bert<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [5]: proxy.phone(<span class="string">"Bert"</span>)</span><br><span class="line">Out[5]: <span class="string">'555-ITALY'</span></span><br></pre></td></tr></table></figure></p>
+<p>输入555-ITALY，还是不对。其实只用<font color="red">ITALY</font>就可以了，不明白555-作用何在。 <a href="http://www.pythonchallenge.com/pc/return/italy.html" target="_blank" rel="noopener">http://www.pythonchallenge.com/pc/return/italy.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/27/pc13/" data-id="cji92xs82000iytk09vcd0erm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/29/pc14/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Challenge (Level 14)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/26/pc12/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Challenge (Level 12)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KaKa Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

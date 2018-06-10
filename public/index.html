@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>曾梦想仗剑走天涯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="曾梦想仗剑走天涯">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="曾梦想仗剑走天涯">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="曾梦想仗剑走天涯" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -34,7 +34,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">曾梦想仗剑走天涯</a>
       </h1>
       
     </div>
@@ -62,10 +62,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-again" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fix-ubuntu-path" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/11/hello-again/" class="article-date">
-  <time datetime="2018-06-10T16:51:03.000Z" itemprop="datePublished">2018-06-11</time>
+    <a href="/2015/08/25/fix-ubuntu-path/" class="article-date">
+  <time datetime="2015-08-25T03:26:56.000Z" itemprop="datePublished">2015-08-25</time>
 </a>
     
   </div>
@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/hello-again/">hello again</a>
+      <a class="article-title" href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
     </h1>
   
 
@@ -84,15 +84,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>reopen this blog</p>
+        <p>今天早上打开电脑，发现Ubuntu图形界面登录不了。在登录界面输入了密码后，画面闪一下又跳回登录界面。于是，切到换到命令行界面（同时按下Ctrl+Alt+F1），看看出了什么问题。</p>
+<p>命令行界面能顺利登录，但是sudo/ls等命令都用不了，提示错误</p>
+<blockquote>
+<p>The command could not be located because ‘/usr/bin:/bin’ is not included in the PATH environment variable.</p>
+</blockquote>
+<p>显然，PATH出问题了。回想到昨天晚上安装了scala和spark，应该是配置PATH的时候出问题了。于是，尝试用vim来重新编辑/etc/profile，但是，vim命令也报错….</p>
+<p>纠结，后来在网上找到解决方案，那就是用绝对路径：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/sudo /usr/bin/vim /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p>修复了/etc/profile文件后，再重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/sudo /sbin/reboot</span><br></pre></td></tr></table></figure></p>
+<p>重启后，又能重新登录图形界面了。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/11/hello-again/" data-id="cji92h2tz0000e2k0z69eyqwu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/25/fix-ubuntu-path/" data-id="cji92xs7f0003ytk0no7mw9gd" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 
     </footer>
   </div>
@@ -101,10 +109,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-pc33" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/11/hello-world/" class="article-date">
-  <time datetime="2018-06-10T16:31:22.807Z" itemprop="datePublished">2018-06-11</time>
+    <a href="/2015/02/17/pc33/" class="article-date">
+  <time datetime="2015-02-17T14:55:20.000Z" itemprop="datePublished">2015-02-17</time>
 </a>
     
   </div>
@@ -115,7 +123,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/hello-world/">Hello World</a>
+      <a class="article-title" href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
     </h1>
   
 
@@ -123,22 +131,404 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <p><a href="http://www.pythonchallenge.com/pc/rock/beer.html" target="_blank" rel="noopener">第33关</a> 用户名kohsamui 密码thailand</p>
+<p>Finally,the last one!</p>
+<p>图片的名称是beer1.jpg，显然要尝试beer2.jpg，得到提示<strong>no, png</strong>，得到<a href="http://www.pythonchallenge.com/pc/rock/beer2.png" target="_blank" rel="noopener">beer2.png</a></p>
+<p>一张杂乱无章的图片，根据之前页面Page Source里的提示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">If you are blinded by the light,</span><br><span class="line">remove its power, with its might.</span><br><span class="line">Then from the ashes, fair and square,</span><br><span class="line">another truth at you will glare.</span><br></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/17/pc33/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/11/hello-world/" data-id="cji92h2u50001e2k043rsx5dq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/02/17/pc33/" data-id="cji92xs9a001iytk0f3cqf3ib" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pc32" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/17/pc32/" class="article-date">
+  <time datetime="2015-02-17T13:25:54.000Z" itemprop="datePublished">2015-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/rock/arecibo.html" target="_blank" rel="noopener">第32关</a></p>
+<p>这一关卡了好几天，现在还没解决好。为了能在过年前写完所有的关卡，打算先把解题思路弄下来，春节后再完善。</p>
+<p>这一关是关于一个叫<a href="http://en.wikipedia.org/wiki/Nonogram" target="_blank" rel="noopener">Nonogram</a>的游戏。大概就是根据每一行每一列的数字来填格子，行列都符合的图案就是要求的答案。改变格子图案，再看看相应的行列的数字变换，大概就能知道这种游戏的玩法了。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/17/pc32/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/17/pc32/" data-id="cji92xs95001eytk0osxykhzf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pc31" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/14/pc31/" class="article-date">
+  <time datetime="2015-02-14T15:09:39.000Z" itemprop="datePublished">2015-02-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/ring/grandpa.html" target="_blank" rel="noopener">第31关</a></p>
+<p>先查出这个石头是什么地方。攻略上给出的是用户名kohsamui，密码thailand，跳到下一个页面。<br><a href="http://www.pythonchallenge.com/pc/rock/grandpa.html" target="_blank" rel="noopener">http://www.pythonchallenge.com/pc/rock/grandpa.html</a></p>
+<p>图片是曼德布罗特集合，具体可以看<a href="https://msdn.microsoft.com/zh-cn/library/ie/jj635753%28v=vs.85%29" target="_blank" rel="noopener">这里</a>，解释得挺清楚的。</p>
+<p>过关的主要步骤是按照Page Source里面的参数，画出一张曼德布罗特集合的图。比较自己画出的图和网页上的那张图的不同之处。将会看到，大体上是一样的，有少许像素点差值为16，-16.把这些点收集起来，会组成另一张图片，该图片详情参考<a href="http://en.wikipedia.org/wiki/Arecibo_message" target="_blank" rel="noopener">Arecibo message 维基百科</a>，上面有很详细的解释。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/14/pc31/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/14/pc31/" data-id="cji92xs96001gytk05azi4827" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pc30" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/13/pc30/" class="article-date">
+  <time datetime="2015-02-13T15:08:49.000Z" itemprop="datePublished">2015-02-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/ring/yankeedoodle.html" target="_blank" rel="noopener">第30关</a></p>
+<p>Page Source里提示找csv文件，很容易就得到<a href="http://www.pythonchallenge.com/pc/ring/yankeedoodle.csv" target="_blank" rel="noopener">yankeedoodle.csv</a>文件。</p>
+<p>csv文件即comma separated values，直接用文本编辑器即可看到里面的内容。</p>
+<p>yankeedoodle.csv里面有7367个浮点数，我们把些值当成是图片像素值，把它们放到大小为53*139的图片中，会得到下面的公式。</p>
+<blockquote>
+<p>n = str(x[i])[5] + str(x[i+1])[5] + str(x[i+2])[6]</p>
+</blockquote>
+<p>接着，按照上面的公式，每三个浮点数一组，分别取第6/6/7位数字，组合得到一个新的数值，再就爱那个数值转为ASCII打印出来。<br>例如，三个浮点数分别为0.82207， 0.91181， 0.88563.则分别取一位，得到’0’， ‘8’， ‘3’，组合起来就是083，相应的ASCII码为’S’.</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/13/pc30/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/13/pc30/" data-id="cji92xs93001cytk0rzkg4mi2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pc29" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/12/pc29/" class="article-date">
+  <time datetime="2015-02-12T13:27:55.000Z" itemprop="datePublished">2015-02-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/12/pc29/">Python Challenge (Level 29)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/ring/guido.html" target="_blank" rel="noopener">第29关</a></p>
+<p>这一关要写的代码只有寥寥几行，但是很难想到。</p>
+<p>Page Source里面好像什么特别的提示都没有。但仔细看下，会发现后面有一大段空白，原来玄机就在这些空白中。把每一行的空格个数转成ASCII码，会发现是以BZ开头的一串字符，照例用bz2解压即可得到通关信息。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/12/pc29/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/12/pc29/" data-id="cji92xs91001aytk0nif0mqxp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pc28" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/11/pc28/" class="article-date">
+  <time datetime="2015-02-11T12:12:27.000Z" itemprop="datePublished">2015-02-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/11/pc28/">Python Challenge (Level 28)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/ring/bell.html" target="_blank" rel="noopener">第28关</a><br>RING-RING-RING，读着读着就变成了GREEN. green.html里提示<strong>yes, green</strong>.</p>
+<p>仔细观察一下图片，发现里面有一条条的绿色竖纹。将图片的Green通道提取出来，相邻的两列像素作差，得到的差值的绝对值几乎都为42，只有少数例外。将绝对值不是42的提取出来，转成ASCII，得到通关信息——Python作者的姓名<em>Guido van Rossum</em>中的<font color="red">guido</font></p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/11/pc28/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/11/pc28/" data-id="cji92xs8z0018ytk01bdvn68h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pc27" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/11/pc27/" class="article-date">
+  <time datetime="2015-02-11T11:00:37.000Z" itemprop="datePublished">2015-02-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/11/pc27/">Python Challenge (Level 27)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/hex/speedboat.html" target="_blank" rel="noopener">第27关</a></p>
+<p>点击图片，提示输入用户名和密码，看来这一关就是要找到用户名和密码。</p>
+<p>根据Page Source的提示，很容易得到<a href="http://www.pythonchallenge.com/pc/hex/zigzag.gif" target="_blank" rel="noopener">zigzag.gif</a></p>
+<p>这张图片上每个像素值是调色板的索引，将每一个像素替换为调色板中相应的颜色。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">im = Image.open(<span class="string">'zigzag.gif'</span>)</span><br><span class="line">imdata = im.tostring()</span><br><span class="line">p = im.palette.getdata()[<span class="number">1</span>][::<span class="number">3</span>] <span class="comment">#RGB相等，因此每三个取一个</span></span><br><span class="line">frm = <span class="string">''</span>.join([chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>)])</span><br><span class="line">table = string.maketrans(frm, p)</span><br><span class="line">imdata_trans = imdata.translate(table)</span><br></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/11/pc27/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/11/pc27/" data-id="cji92xs8x0016ytk085rzqkwd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pc26" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/09/pc26/" class="article-date">
+  <time datetime="2015-02-09T10:36:42.000Z" itemprop="datePublished">2015-02-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/09/pc26/">Python Challenge (Level 26)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/hex/decent.html" target="_blank" rel="noopener">第26关</a></p>
+<p>Page Source里提示<font color="red">you’ve got his e-mail</font>，回想一下，我们在<a href="http://kwangka.github.io/2015/02/02/pc19/" target="_blank" rel="noopener">第19关</a>里得到了一个email地址<a href="mailto:**leopold.moz@pythonchallenge.com" target="_blank" rel="noopener">**leopold.moz@pythonchallenge.com</a><strong>，这一关的网页title提示</strong>be a man-apologize!**，<a href="http://garethrees.org/2007/05/07/python-challenge/" target="_blank" rel="noopener">攻略</a>上说发邮件到上面的email地址会得到通关信息（我试了一下，暂时还没收到信息）。</p>
+<blockquote>
+<p>From: <a href="mailto:leopold.moz@pythonchallenge.com" target="_blank" rel="noopener">leopold.moz@pythonchallenge.com</a><br>Subject: Re: sorry<br>Date: 2007-05-17 15:37:07 BDT</p>
+</blockquote>
+<blockquote>
+<p>Never mind that.</p>
+</blockquote>
+<blockquote>
+<p>Have you found my broken zip?</p>
+</blockquote>
+<blockquote>
+<p>md5: bbb8b499a0eef99b52c7f13f4e78c24b</p>
+</blockquote>
+<blockquote>
+<p>Can you believe what one mistake can lead to?</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/09/pc26/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/09/pc26/" data-id="cji92xs8v0014ytk0uxf92adn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pc25" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/08/pc25/" class="article-date">
+  <time datetime="2015-02-08T09:27:18.000Z" itemprop="datePublished">2015-02-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/08/pc25/">Python Challenge (Level 25)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/hex/lake.html" target="_blank" rel="noopener">第25关</a></p>
+<p>完成这一关后，不得不佩服弄出这道题的Nadav Samet，同时更加佩服解决了它的大神。</p>
+<p>这是一幅拼图模样的图片，根据Page Source里的提示<font color="red">can you see the waves?</font>，这一关还要用到wave模块。</p>
+<p>把URL后缀改为lake1.wav，lake2.wav，…，lake25会得到25个wav文件。这25个wav文件对应着刚才的25块拼图。把这25个wav文件的内容依次平起来，会得到一张300*300大小的图片。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/08/pc25/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/08/pc25/" data-id="cji92xs8t0012ytk0oyk3zdnv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
     </footer>
   </div>
   
@@ -147,6 +537,10 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -158,7 +552,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
   </div>
 
@@ -168,7 +562,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+      <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     </div>
   </div>
 
@@ -177,7 +571,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
     </div>
   </div>
 
@@ -190,11 +584,23 @@
       <ul>
         
           <li>
-            <a href="/2018/06/11/hello-again/">hello again</a>
+            <a href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
           </li>
         
           <li>
-            <a href="/2018/06/11/hello-world/">Hello World</a>
+            <a href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
           </li>
         
       </ul>
@@ -209,7 +615,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
+      &copy; 2018 KaKa Chen<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

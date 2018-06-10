@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 15) | 曾梦想仗剑走天涯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第15关 图片是一月份的日历，Page Source里提示  he ain’t the youngest, he is the secondtodo: buy flowers for tomorrow  首先， todo是要为明天买花，所以明天（01-27）应该是某个纪念日。然后，他不是最年轻的，只是第二。怎么判断这个他是第二年轻呢，我们需要找到哪一年。可惜，年份中间两个字没有了，只能看出是1xx">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 15)">
+<meta property="og:url" content="http://yoursite.com/2015/01/29/pc15/index.html">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
+<meta property="og:description" content="第15关 图片是一月份的日历，Page Source里提示  he ain’t the youngest, he is the secondtodo: buy flowers for tomorrow  首先， todo是要为明天买花，所以明天（01-27）应该是某个纪念日。然后，他不是最年轻的，只是第二。怎么判断这个他是第二年轻呢，我们需要找到哪一年。可惜，年份中间两个字没有了，只能看出是1xx">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-10T17:05:07.761Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 15)">
+<meta name="twitter:description" content="第15关 图片是一月份的日历，Page Source里提示  he ain’t the youngest, he is the secondtodo: buy flowers for tomorrow  首先， todo是要为明天买花，所以明天（01-27）应该是某个纪念日。然后，他不是最年轻的，只是第二。怎么判断这个他是第二年轻呢，我们需要找到哪一年。可惜，年份中间两个字没有了，只能看出是1xx">
+  
+    <link rel="alternate" href="/atom.xml" title="曾梦想仗剑走天涯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曾梦想仗剑走天涯</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pc15" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/29/pc15/" class="article-date">
+  <time datetime="2015-01-29T11:40:41.000Z" itemprop="datePublished">2015-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 15)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/uzi.html" target="_blank" rel="noopener">第15关</a></p>
+<p>图片是一月份的日历，Page Source里提示</p>
+<blockquote>
+<p>he ain’t the youngest, he is the second<br>todo: buy flowers for tomorrow</p>
+</blockquote>
+<p>首先， todo是要为明天买花，所以明天（01-27）应该是某个纪念日。然后，他不是最年轻的，只是第二。怎么判断这个他是第二年轻呢，我们需要找到哪一年。可惜，年份中间两个字没有了，只能看出是1xx6. 显然，我们要根据这一页日历推算出年份。</p>
+<p>看图片的右下角，有两个小的月份日历，应该是对应着前一个和后一个月。所以，右边的应该是二月的。放大后，我们会发现，这个二月比较特殊，<font color="red">有29天</font>，所以这应该是闰年。</p>
+<p>但是，这样筛选出来的依然不对。我们还有信息没用到，那就是日期(date)和星期几(weekday)的对应关系。也就是说，<font color="red">1月27是星期二</font>这个信息我们可以用。至此，可以得到这个日期了。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 闰年</span></span><br><span class="line">years = [y <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">1006</span>, <span class="number">1997</span>) <span class="keyword">if</span> str(y)[<span class="number">-1</span>] == <span class="string">'6'</span> <span class="keyword">and</span> y % <span class="number">4</span> == <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># date和weekday对应</span></span><br><span class="line">year_c = []</span><br><span class="line"><span class="keyword">for</span> y <span class="keyword">in</span> years:</span><br><span class="line">    d = datetime.date(y, <span class="number">1</span>, <span class="number">27</span>)</span><br><span class="line">    <span class="keyword">if</span> d.weekday() == <span class="number">1</span>:</span><br><span class="line">        year_c.append(y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># second youngest</span></span><br><span class="line"><span class="keyword">print</span> year_c[<span class="number">-2</span>]</span><br></pre></td></tr></table></figure>
+<p>现在，我们得到1756年01月27日这个日子，这一天发生了什么事呢？Google “1756 01 27”，发现搜索结果指向同一个人——Mozart.<br><a href="http://www.pythonchallenge.com/pc/return/mozart.html" target="_blank" rel="noopener">http://www.pythonchallenge.com/pc/return/mozart.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/29/pc15/" data-id="cji92xs7z000fytk0on8u0sxb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/31/pc16/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Challenge (Level 16)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/29/pc14/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Challenge (Level 14)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KaKa Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

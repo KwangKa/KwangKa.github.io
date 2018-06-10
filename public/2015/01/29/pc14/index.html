@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 14) | 曾梦想仗剑走天涯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第14关一个螺旋状的面包，网页title是walk around, 再加上大图的下面有一张100*100的小图。小图看不出是什么东西，只有竖条纹。把小图保存到本地，放大后发现很长的一条线，也就是说它并不是100*100的，而是10000*1的。只是在网页上被reshape成100*100而已。看来我们需要将这10000个像素，按照面包螺旋的形状，把它重新排列成100*100的大小。 比如[1, 2">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 14)">
+<meta property="og:url" content="http://yoursite.com/2015/01/29/pc14/index.html">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
+<meta property="og:description" content="第14关一个螺旋状的面包，网页title是walk around, 再加上大图的下面有一张100*100的小图。小图看不出是什么东西，只有竖条纹。把小图保存到本地，放大后发现很长的一条线，也就是说它并不是100*100的，而是10000*1的。只是在网页上被reshape成100*100而已。看来我们需要将这10000个像素，按照面包螺旋的形状，把它重新排列成100*100的大小。 比如[1, 2">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-10T17:05:07.760Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 14)">
+<meta name="twitter:description" content="第14关一个螺旋状的面包，网页title是walk around, 再加上大图的下面有一张100*100的小图。小图看不出是什么东西，只有竖条纹。把小图保存到本地，放大后发现很长的一条线，也就是说它并不是100*100的，而是10000*1的。只是在网页上被reshape成100*100而已。看来我们需要将这10000个像素，按照面包螺旋的形状，把它重新排列成100*100的大小。 比如[1, 2">
+  
+    <link rel="alternate" href="/atom.xml" title="曾梦想仗剑走天涯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曾梦想仗剑走天涯</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pc14" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/29/pc14/" class="article-date">
+  <time datetime="2015-01-28T16:11:42.000Z" itemprop="datePublished">2015-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 14)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/return/italy.html" target="_blank" rel="noopener">第14关</a><br>一个螺旋状的面包，网页title是<strong>walk around</strong>, 再加上大图的下面有一张100*100的小图。小图看不出是什么东西，只有竖条纹。把小图保存到本地，放大后发现很长的一条线，也就是说它并不是100*100的，而是10000*1的。只是在网页上被reshape成100*100而已。看来我们需要将这10000个像素，按照面包螺旋的形状，把它重新排列成100*100的大小。</p>
+<p>比如[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]排列成</p>
+<pre><code>1  12  11  10
+2  13  16   9
+3  14  15   8
+4   5   6   7
+</code></pre><a id="more"></a>
+<p>现在的问题就是怎么把得到的一列pixel，按螺旋形式reshape成100*100大小的图片。</p>
+<p>Page Source里有这么一行提示</p>
+<blockquote>
+<p>remember: 100*100 = (100+99+99+98) + (…</p>
+</blockquote>
+<p>100*100自然就是图片大小了，那后面的一串数是什么?为什么四个一组？原来。四个数正好是转一圈的步数。(100, 99, 99, 98)就是向下100, 再向右99, 再向上99, 再向左98. 这就绕了100*100大小的最外面一圈. 接着就是(98, 97, 97, 96)，以此类推，直到填满整个100*100的大小。很容易可以得到所有的步数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">allSteps = [[i, i<span class="number">-1</span>, i<span class="number">-1</span>, i<span class="number">-2</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>, <span class="number">0</span>, <span class="number">-2</span>)]</span><br></pre></td></tr></table></figure>
+<p>有了步数后，再定义一个前进N步，获取坐标的方法，就基本可以实现把一行pixel变成方形图片了。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*- </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">moveForward</span><span class="params">(startPos, direction, nStep)</span>:</span></span><br><span class="line">    <span class="string">""" 返回从startPos开始, 按照drection前进nStep依次得到的坐标,</span></span><br><span class="line"><span class="string">        包含startPos.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :type startPos: (int, int)</span></span><br><span class="line"><span class="string">    :param startPos: 开始坐标, (x, y)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :type direction: (int, int)</span></span><br><span class="line"><span class="string">    :param direction: 前进方向, 每个方向的取值只能为-1, 0, 1, </span></span><br><span class="line"><span class="string">                      分别表示坐标减小、不变、增加。</span></span><br><span class="line"><span class="string">                      不同的组合可以得到上下左右四个方向， 例如(0, 1)表示向右。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :type nStep: int</span></span><br><span class="line"><span class="string">    :param nStep: 前进步数， &gt;=0</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    pos = [<span class="keyword">None</span>, <span class="keyword">None</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(startPos)):</span><br><span class="line">        <span class="keyword">if</span> direction[i] == <span class="number">0</span>:</span><br><span class="line">            pos[i] = [startPos[i]] * nStep</span><br><span class="line">        <span class="keyword">elif</span> direction[i] &lt; <span class="number">0</span>:</span><br><span class="line">            pos[i] = range(startPos[i], startPos[i] - nStep, direction[i])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pos[i] = range(startPos[i], startPos[i] + nStep, direction[i])</span><br><span class="line">    <span class="keyword">return</span> zip(pos[<span class="number">0</span>], pos[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getPos</span><span class="params">(allSteps)</span>:</span></span><br><span class="line">    <span class="string">""" 给定以4个整数为一组的多组步数, 返回从(0, 0)开始,</span></span><br><span class="line"><span class="string">        以此按下、右、上、左前进所得到的所有坐标</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :type allSteps: 2D int array, the second dimension is 4</span></span><br><span class="line"><span class="string">                    [[int, int, int, int], ..., [int, int, int, int]]</span></span><br><span class="line"><span class="string">    :param allSteps: 多组步数, 每一组都包含上下左右四个方向的步数.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    start_pos = (<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    pos = []</span><br><span class="line">    <span class="keyword">for</span> steps <span class="keyword">in</span> allSteps:</span><br><span class="line">        <span class="comment"># down</span></span><br><span class="line">        <span class="keyword">if</span> pos:</span><br><span class="line">            start_pos = (pos[<span class="number">-1</span>][<span class="number">0</span>] + <span class="number">1</span>, pos[<span class="number">-1</span>][<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            start_pos = (<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        pos += moveForward(start_pos, (<span class="number">1</span>, <span class="number">0</span>), steps[<span class="number">0</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># right</span></span><br><span class="line">        start_pos = (pos[<span class="number">-1</span>][<span class="number">0</span>], pos[<span class="number">-1</span>][<span class="number">1</span>] + <span class="number">1</span>)</span><br><span class="line">        pos += moveForward(start_pos, (<span class="number">0</span>, <span class="number">1</span>), steps[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># up</span></span><br><span class="line">        start_pos = (pos[<span class="number">-1</span>][<span class="number">0</span>] - <span class="number">1</span>, pos[<span class="number">-1</span>][<span class="number">1</span>])</span><br><span class="line">        pos += moveForward(start_pos, (<span class="number">-1</span>, <span class="number">0</span>), steps[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># left</span></span><br><span class="line">        <span class="keyword">if</span> steps[<span class="number">3</span>] &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            start_pos = (pos[<span class="number">-1</span>][<span class="number">0</span>], pos[<span class="number">-1</span>][<span class="number">1</span>] - <span class="number">1</span>)</span><br><span class="line">            pos += moveForward(start_pos, (<span class="number">0</span>, <span class="number">-1</span>), steps[<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> pos</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    im = Image.open(<span class="string">'wire.png'</span>)</span><br><span class="line">    imdata = list(im.getdata())</span><br><span class="line">    allSteps = [[i, i<span class="number">-1</span>, i<span class="number">-1</span>, i<span class="number">-2</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>, <span class="number">0</span>, <span class="number">-2</span>)]</span><br><span class="line">    pos = getPos(allSteps)</span><br><span class="line">    newIm = Image.new(im.mode, (<span class="number">100</span>, <span class="number">100</span>))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(pos)):</span><br><span class="line">        newIm.putpixel(pos[i], imdata[i])</span><br><span class="line">    newIm.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span> : main()</span><br></pre></td></tr></table></figure></p>
+<p>最后，会得到一张猫的图片，输入cat会跳到一个网页，告诉你这只猫叫做uzi,并且， you will hear from him later. <a href="http://www.pythonchallenge.com/pc/return/uzi.html" target="_blank" rel="noopener">http://www.pythonchallenge.com/pc/return/uzi.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/29/pc14/" data-id="cji92xs7w000dytk0b7pfzo4a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/29/pc15/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Challenge (Level 15)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/27/pc13/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Challenge (Level 13)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KaKa Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

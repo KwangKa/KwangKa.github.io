@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 32) | 曾梦想仗剑走天涯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第32关 这一关卡了好几天，现在还没解决好。为了能在过年前写完所有的关卡，打算先把解题思路弄下来，春节后再完善。 这一关是关于一个叫Nonogram的游戏。大概就是根据每一行每一列的数字来填格子，行列都符合的图案就是要求的答案。改变格子图案，再看看相应的行列的数字变换，大概就能知道这种游戏的玩法了。">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 32)">
+<meta property="og:url" content="http://yoursite.com/2015/02/17/pc32/index.html">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
+<meta property="og:description" content="第32关 这一关卡了好几天，现在还没解决好。为了能在过年前写完所有的关卡，打算先把解题思路弄下来，春节后再完善。 这一关是关于一个叫Nonogram的游戏。大概就是根据每一行每一列的数字来填格子，行列都符合的图案就是要求的答案。改变格子图案，再看看相应的行列的数字变换，大概就能知道这种游戏的玩法了。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-10T17:05:07.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 32)">
+<meta name="twitter:description" content="第32关 这一关卡了好几天，现在还没解决好。为了能在过年前写完所有的关卡，打算先把解题思路弄下来，春节后再完善。 这一关是关于一个叫Nonogram的游戏。大概就是根据每一行每一列的数字来填格子，行列都符合的图案就是要求的答案。改变格子图案，再看看相应的行列的数字变换，大概就能知道这种游戏的玩法了。">
+  
+    <link rel="alternate" href="/atom.xml" title="曾梦想仗剑走天涯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曾梦想仗剑走天涯</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pc32" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/17/pc32/" class="article-date">
+  <time datetime="2015-02-17T13:25:54.000Z" itemprop="datePublished">2015-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 32)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/rock/arecibo.html" target="_blank" rel="noopener">第32关</a></p>
+<p>这一关卡了好几天，现在还没解决好。为了能在过年前写完所有的关卡，打算先把解题思路弄下来，春节后再完善。</p>
+<p>这一关是关于一个叫<a href="http://en.wikipedia.org/wiki/Nonogram" target="_blank" rel="noopener">Nonogram</a>的游戏。大概就是根据每一行每一列的数字来填格子，行列都符合的图案就是要求的答案。改变格子图案，再看看相应的行列的数字变换，大概就能知道这种游戏的玩法了。</p>
+<a id="more"></a>
+<p>根据Page Source里的提示，得到一个<a href="http://www.pythonchallenge.com/pc/rock/warmup.txt" target="_blank" rel="noopener">warmup.txt</a>.根据这个warmup.txt解出来的的图案是一个向上的箭头。因此我们找到<a href="http://www.pythonchallenge.com/pc/rock/up.html" target="_blank" rel="noopener">这个页面</a>。</p>
+<p>接着，我们得到一个更复杂的<a href="http://www.pythonchallenge.com/pc/rock/up.txt" target="_blank" rel="noopener">up.txt</a>.根据这个<a href="http://blog.sina.com.cn/s/blog_4513dde60101fb2y.html" target="_blank" rel="noopener">攻略</a>，up.txt解得的图像是一条蛇，python.html.</p>
+<p>新页面上有以下内容</p>
+<blockquote>
+<p>Congrats! You made it through to the smiling python.<br>“Free” as in “Free speech”, not as in “free…</p>
+</blockquote>
+<p>Bing搜一下，找到<a href="http://article.yeeyan.org/view/129288/143966" target="_blank" rel="noopener">这个页面</a>，通关密码是beer. <a href="http://www.pythonchallenge.com/pc/rock/beer.html" target="_blank" rel="noopener">http://www.pythonchallenge.com/pc/rock/beer.html</a></p>
+<p>下面是我用backtracking做的一个解。可以解出较小的图案，比如warmup.txt(LEN=8)。对于较大的，比如up.txt(LEN=32)，就无能为力了。我看了下，主要问题应该是产生candidates并把它们入栈是一次性完成的，会比较慢，占的内存又多。解决方法是入栈一个迭代器而不是所有candidates，每次next得到一个candidate.这个过完年再做。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line">__author__ = <span class="string">'chen'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">readClue</span><span class="params">(loc_file)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(loc_file, <span class="string">'rb'</span>) <span class="keyword">as</span> handle:</span><br><span class="line">        data = list(handle)</span><br><span class="line">    data = filter(<span class="keyword">lambda</span> l: l[<span class="number">0</span>] != <span class="string">'#'</span> <span class="keyword">and</span> l.strip(), data)</span><br><span class="line">    data.pop(<span class="number">0</span>)</span><br><span class="line">    data = [i.strip().split() <span class="keyword">for</span> i <span class="keyword">in</span> data]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(data)):</span><br><span class="line">        data[i] = [int(item) <span class="keyword">for</span> item <span class="keyword">in</span> data[i]]</span><br><span class="line">    clues = &#123;&#125;</span><br><span class="line">    clues[<span class="string">'row'</span>] = data[ : len(data) / <span class="number">2</span> ]</span><br><span class="line">    clues[<span class="string">'col'</span>] = data[len(data) / <span class="number">2</span> :]</span><br><span class="line">    <span class="keyword">return</span> clues</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getClue</span><span class="params">(clues, idx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> idx % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> clues[<span class="string">'col'</span>][idx // <span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> clues[<span class="string">'row'</span>][(idx - <span class="number">1</span>) // <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getMask</span><span class="params">(picMat, idx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> idx % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        ret = picMat[:, idx // <span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        ret = picMat[(idx - <span class="number">1</span>) //<span class="number">2</span>, :]</span><br><span class="line">    ret = [str(i) <span class="keyword">for</span> i <span class="keyword">in</span> ret]</span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(ret)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">candidate</span><span class="params">(picMat, clue, idx, LEN)</span>:</span></span><br><span class="line">    freeNum = LEN - (sum(clue) + len(clue) - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span> freeNum &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    p = freeNum * [<span class="string">'0'</span>] + len(clue) * [<span class="string">'#'</span>]</span><br><span class="line">    options = set(list(itertools.permutations(p, len(p))))</span><br><span class="line">    options = [<span class="string">''</span>.join(i).split(<span class="string">'#'</span>) <span class="keyword">for</span> i <span class="keyword">in</span> options]</span><br><span class="line">    patterns = []</span><br><span class="line">    <span class="keyword">for</span> op <span class="keyword">in</span> options:</span><br><span class="line">        patt = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(clue)):</span><br><span class="line">            patt += op[i] + <span class="string">'1'</span>*clue[i] + <span class="string">'0'</span></span><br><span class="line">        patt = patt[:<span class="number">-1</span>]  <span class="comment">#除去最后一个0</span></span><br><span class="line">        patt += op[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">if</span> check(idx, patt, picMat):</span><br><span class="line">            patterns.append(patt)</span><br><span class="line">    <span class="keyword">return</span> patterns</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(idx, patt, picMat)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> idx % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        idx = idx // <span class="number">2</span></span><br><span class="line">        restrict = picMat[:idx, idx]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        idx = (idx - <span class="number">1</span>) // <span class="number">2</span></span><br><span class="line">        restrict = picMat[idx, :idx+<span class="number">1</span>]</span><br><span class="line">    restrict = [str(i) <span class="keyword">for</span> i <span class="keyword">in</span> restrict]</span><br><span class="line">    restrict = <span class="string">''</span>.join(restrict)</span><br><span class="line">    <span class="keyword">return</span> patt[:len(restrict)] == restrict</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resetMat</span><span class="params">(picMat, idx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> idx % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        picMat[:, idx // <span class="number">2</span>] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        picMat[(idx - <span class="number">1</span>) // <span class="number">2</span>, :] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fillMat</span><span class="params">(picMat, idx, patt)</span>:</span></span><br><span class="line">    patt = [int(i) <span class="keyword">for</span> i <span class="keyword">in</span> patt]</span><br><span class="line">    <span class="keyword">if</span> idx % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        picMat[:, idx // <span class="number">2</span>] = patt</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        picMat[(idx - <span class="number">1</span>) // <span class="number">2</span>, :] = patt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">()</span>:</span></span><br><span class="line">    LEN = <span class="number">9</span></span><br><span class="line">    clues = readClue(<span class="string">'data/warmup.txt'</span>)</span><br><span class="line">    picMat = np.zeros((LEN, LEN), dtype=np.int8)</span><br><span class="line">    patt_l = []</span><br><span class="line">    patt_l.append(candidate(picMat, getClue(clues, <span class="number">0</span>), <span class="number">0</span>, LEN))</span><br><span class="line">    <span class="keyword">while</span> patt_l <span class="keyword">and</span> len(patt_l) != <span class="number">2</span>*LEN:</span><br><span class="line">        curIdx = len(patt_l) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">print</span> curIdx</span><br><span class="line">        <span class="keyword">if</span> len(patt_l[curIdx]) &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># resetMat(picMat, curIdx)</span></span><br><span class="line">            <span class="comment"># print picMat</span></span><br><span class="line">            patt_l.pop(curIdx)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            patt = patt_l[curIdx].pop(<span class="number">0</span>)</span><br><span class="line">            fillMat(picMat, curIdx, patt)</span><br><span class="line">            <span class="comment"># print picMat</span></span><br><span class="line">            nextCandidates = candidate(picMat, getClue(clues, curIdx+<span class="number">1</span>), curIdx+<span class="number">1</span>, LEN)</span><br><span class="line">            <span class="keyword">if</span> nextCandidates != <span class="number">-1</span> <span class="keyword">and</span> nextCandidates:</span><br><span class="line">                patt_l.append(nextCandidates)</span><br><span class="line">    <span class="keyword">return</span> picMat</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span> : print(solve())</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/17/pc32/" data-id="cji92xs95001eytk0osxykhzf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/17/pc33/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Challenge (Level 33)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/14/pc31/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Challenge (Level 31)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KaKa Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

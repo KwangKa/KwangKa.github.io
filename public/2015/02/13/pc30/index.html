@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 30) | 曾梦想仗剑走天涯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第30关 Page Source里提示找csv文件，很容易就得到yankeedoodle.csv文件。 csv文件即comma separated values，直接用文本编辑器即可看到里面的内容。 yankeedoodle.csv里面有7367个浮点数，我们把些值当成是图片像素值，把它们放到大小为53*139的图片中，会得到下面的公式。  n = str(x[i])[5] + str(x[i+1">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 30)">
+<meta property="og:url" content="http://yoursite.com/2015/02/13/pc30/index.html">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
+<meta property="og:description" content="第30关 Page Source里提示找csv文件，很容易就得到yankeedoodle.csv文件。 csv文件即comma separated values，直接用文本编辑器即可看到里面的内容。 yankeedoodle.csv里面有7367个浮点数，我们把些值当成是图片像素值，把它们放到大小为53*139的图片中，会得到下面的公式。  n = str(x[i])[5] + str(x[i+1">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-10T17:05:07.768Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 30)">
+<meta name="twitter:description" content="第30关 Page Source里提示找csv文件，很容易就得到yankeedoodle.csv文件。 csv文件即comma separated values，直接用文本编辑器即可看到里面的内容。 yankeedoodle.csv里面有7367个浮点数，我们把些值当成是图片像素值，把它们放到大小为53*139的图片中，会得到下面的公式。  n = str(x[i])[5] + str(x[i+1">
+  
+    <link rel="alternate" href="/atom.xml" title="曾梦想仗剑走天涯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曾梦想仗剑走天涯</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pc30" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/13/pc30/" class="article-date">
+  <time datetime="2015-02-13T15:08:49.000Z" itemprop="datePublished">2015-02-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 30)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/ring/yankeedoodle.html" target="_blank" rel="noopener">第30关</a></p>
+<p>Page Source里提示找csv文件，很容易就得到<a href="http://www.pythonchallenge.com/pc/ring/yankeedoodle.csv" target="_blank" rel="noopener">yankeedoodle.csv</a>文件。</p>
+<p>csv文件即comma separated values，直接用文本编辑器即可看到里面的内容。</p>
+<p>yankeedoodle.csv里面有7367个浮点数，我们把些值当成是图片像素值，把它们放到大小为53*139的图片中，会得到下面的公式。</p>
+<blockquote>
+<p>n = str(x[i])[5] + str(x[i+1])[5] + str(x[i+2])[6]</p>
+</blockquote>
+<p>接着，按照上面的公式，每三个浮点数一组，分别取第6/6/7位数字，组合得到一个新的数值，再就爱那个数值转为ASCII打印出来。<br>例如，三个浮点数分别为0.82207， 0.91181， 0.88563.则分别取一位，得到’0’， ‘8’， ‘3’，组合起来就是083，相应的ASCII码为’S’.</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> genfromtxt</span><br><span class="line"></span><br><span class="line">data = genfromtxt(<span class="string">'data/yankeedoodle.csv'</span>, delimiter=<span class="string">','</span>)</span><br><span class="line">data = data[:, :<span class="number">-1</span>]</span><br><span class="line">data = data.reshape((<span class="number">-1</span>,))</span><br><span class="line">data = data[:<span class="number">-1</span>]</span><br><span class="line">data = data.reshape((<span class="number">139</span>, <span class="number">53</span>)).transpose().reshape((<span class="number">-1</span>,))</span><br><span class="line"></span><br><span class="line">im = Image.new(<span class="string">'L'</span>, (<span class="number">139</span>, <span class="number">53</span>))</span><br><span class="line">im.putdata(data*<span class="number">255</span>)</span><br><span class="line">im.show()</span><br><span class="line"></span><br><span class="line">data = data.reshape((<span class="number">53</span>, <span class="number">139</span>)).transpose().reshape((<span class="number">-1</span>,))</span><br><span class="line">data_str = [<span class="string">"%.5f"</span> % i <span class="keyword">for</span> i <span class="keyword">in</span> data]</span><br><span class="line">msg = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">7365</span>, <span class="number">3</span>):</span><br><span class="line">    msg.append(chr(int(data_str[i][<span class="number">5</span>] + data_str[i+<span class="number">1</span>][<span class="number">5</span>] + data_str[i+<span class="number">2</span>][<span class="number">6</span>])))</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">''</span>.join(msg)</span><br></pre></td></tr></table></figure>
+<p>得到的信息为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">So, you found the hidden message.</span><br><span class="line">There is lots of room here for a long message, but we only need very little space to say &quot;look at grandpa&quot;, so the rest is just garbage. </span><br><span class="line">VTZ.l&apos;tf*Om@I&quot;p]#R`cWEBZ40ofSC&gt;OZFkRP0\)</span><br></pre></td></tr></table></figure></p>
+<p>下一关：<a href="http://www.pythonchallenge.com/pc/ring/grandpa.html" target="_blank" rel="noopener">http://www.pythonchallenge.com/pc/ring/grandpa.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/13/pc30/" data-id="cji92xs93001cytk0rzkg4mi2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/14/pc31/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Challenge (Level 31)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/12/pc29/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Challenge (Level 29)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KaKa Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

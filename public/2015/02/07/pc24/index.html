@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 24) | 曾梦想仗剑走天涯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第24关 这一关是一张迷宫图片，看来是要解这个迷宫。 根据网页标题，迷宫是from top to bottom，黑色像素是路径，白色像素是墙。这张图片大小为641×641，入口在右上角(0, 639)， 出口是左下角(640, 1)。 解迷宫可以用BFS，也可以用DFS，但DFS不能保证是最短的路径。我用的是BFS. 查了下网上其他人的攻略，发现DFS也能得到同样结果，看来应该是只有一条路径吧。">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 24)">
+<meta property="og:url" content="http://yoursite.com/2015/02/07/pc24/index.html">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
+<meta property="og:description" content="第24关 这一关是一张迷宫图片，看来是要解这个迷宫。 根据网页标题，迷宫是from top to bottom，黑色像素是路径，白色像素是墙。这张图片大小为641×641，入口在右上角(0, 639)， 出口是左下角(640, 1)。 解迷宫可以用BFS，也可以用DFS，但DFS不能保证是最短的路径。我用的是BFS. 查了下网上其他人的攻略，发现DFS也能得到同样结果，看来应该是只有一条路径吧。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-10T17:05:07.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 24)">
+<meta name="twitter:description" content="第24关 这一关是一张迷宫图片，看来是要解这个迷宫。 根据网页标题，迷宫是from top to bottom，黑色像素是路径，白色像素是墙。这张图片大小为641×641，入口在右上角(0, 639)， 出口是左下角(640, 1)。 解迷宫可以用BFS，也可以用DFS，但DFS不能保证是最短的路径。我用的是BFS. 查了下网上其他人的攻略，发现DFS也能得到同样结果，看来应该是只有一条路径吧。">
+  
+    <link rel="alternate" href="/atom.xml" title="曾梦想仗剑走天涯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曾梦想仗剑走天涯</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pc24" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/07/pc24/" class="article-date">
+  <time datetime="2015-02-07T13:05:53.000Z" itemprop="datePublished">2015-02-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 24)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/hex/ambiguity.html" target="_blank" rel="noopener">第24关</a></p>
+<p>这一关是一张迷宫图片，看来是要解这个迷宫。</p>
+<p>根据网页标题，迷宫是<strong>from top to bottom</strong>，黑色像素是路径，白色像素是墙。这张图片大小为641×641，入口在右上角(0, 639)， 出口是左下角(640, 1)。</p>
+<p>解迷宫可以用BFS，也可以用DFS，但DFS不能保证是最短的路径。我用的是BFS. 查了下网上其他人的攻略，发现DFS也能得到同样结果，看来应该是只有一条路径吧。</p>
+<p>迷宫的路径的Green、Blue通道都是0，而Red通道会0和非0交替。把非0值收集起来，写到文件，就可以得到zip文件。解压后，得到一张图片，包含通关信息——lake。里面还有mybroken.zip，暂时不知道有何用。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span><span class="params">(imdata, startPos, endPos)</span>:</span></span><br><span class="line">    <span class="string">''' 广度优先搜索迷宫路径</span></span><br><span class="line"><span class="string">    :param imdata:  迷宫图片像素值, (height, width, channel)</span></span><br><span class="line"><span class="string">    :param startPos:  起始坐标, [x, y]</span></span><br><span class="line"><span class="string">    :param endPos:  终止坐标, [x, y]</span></span><br><span class="line"><span class="string">    :return: 返回记录父坐标的矩阵，上右下左分别用0, 1, 2, 3表示。</span></span><br><span class="line"><span class="string">             根据这个矩阵，可回溯得到最短路径。</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    visited = np.zeros(imdata.shape[<span class="number">0</span> : <span class="number">2</span>], dtype=np.False_)</span><br><span class="line">    visited[<span class="number">0</span>, <span class="number">639</span>] = <span class="keyword">True</span></span><br><span class="line">    visited[<span class="number">640</span>, <span class="number">1</span>] = <span class="keyword">True</span></span><br><span class="line">    father = -np.ones(imdata.shape[<span class="number">0</span> : <span class="number">2</span>], dtype=np.int8)</span><br><span class="line">    dx = [<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>] <span class="comment">#上右下左</span></span><br><span class="line">    dy = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>]</span><br><span class="line">    bfs_queue = []</span><br><span class="line">    bfs_queue.append(startPos)</span><br><span class="line">    <span class="keyword">while</span> bfs_queue:</span><br><span class="line">        cur_pos = bfs_queue.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> cur_pos == endPos:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">            x = cur_pos[<span class="number">0</span>] + dx[i]</span><br><span class="line">            y = cur_pos[<span class="number">1</span>] + dy[i]</span><br><span class="line">            <span class="keyword">if</span> imdata[x, y, <span class="number">1</span>] == imdata[x, y, <span class="number">2</span>] == <span class="number">0</span> <span class="keyword">and</span> <span class="keyword">not</span> visited[x, y]:</span><br><span class="line">                father[x, y] = i</span><br><span class="line">                bfs_queue.append([x, y])</span><br><span class="line">        visited[cur_pos[<span class="number">0</span>], cur_pos[<span class="number">1</span>]] = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">return</span> father</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mapXY</span><span class="params">(pre, pos)</span>:</span></span><br><span class="line">    <span class="string">''' 根据父坐标类型和当前坐标，得到父坐标</span></span><br><span class="line"><span class="string">    :param pre: 0,1,2,3分别表示当前坐标位于父坐标的上右下左</span></span><br><span class="line"><span class="string">    :param pos: 当前坐标[x, y]</span></span><br><span class="line"><span class="string">    :return: 父坐标[x, y]</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="keyword">if</span> pre == <span class="number">0</span>:</span><br><span class="line">        pos[<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> pre == <span class="number">1</span>:</span><br><span class="line">        pos[<span class="number">1</span>] -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> pre == <span class="number">2</span>:</span><br><span class="line">        pos[<span class="number">0</span>] -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> pre == <span class="number">3</span>:</span><br><span class="line">        pos[<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> Exception(<span class="string">"Invalid Father Pos!"</span>)</span><br><span class="line">    <span class="keyword">return</span> pos</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getData</span><span class="params">(imdata, father, startPos, endPos)</span>:</span></span><br><span class="line">    <span class="string">''' 回溯得到最短路径以及路径上每个像素点r通道的像素值</span></span><br><span class="line"><span class="string">    :param imdata: 迷宫图片像素值</span></span><br><span class="line"><span class="string">    :param father: 每个点的父坐标</span></span><br><span class="line"><span class="string">    :param startPos: 开始坐标 [x, y]</span></span><br><span class="line"><span class="string">    :param endPos: 结束坐标 [x, y]</span></span><br><span class="line"><span class="string">    :return: Red通道像素值, 用绿色像素标记的迷宫路径</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    data = []</span><br><span class="line">    curPos = endPos[:]</span><br><span class="line">    <span class="keyword">while</span> curPos != startPos:</span><br><span class="line">        <span class="comment">#取Red通道像素值</span></span><br><span class="line">        data.append(chr(imdata[curPos[<span class="number">0</span>], curPos[<span class="number">1</span>], <span class="number">0</span>]))</span><br><span class="line">        <span class="comment">#路径用绿色像素标记</span></span><br><span class="line">        imdata[curPos[<span class="number">0</span>], curPos[<span class="number">1</span>]] = [<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>]</span><br><span class="line">        curPos = mapXY(father[curPos[<span class="number">0</span>], curPos[<span class="number">1</span>]], curPos)</span><br><span class="line">    data.append(chr(imdata[startPos[<span class="number">0</span>], startPos[<span class="number">1</span>], <span class="number">0</span>]))</span><br><span class="line">    <span class="keyword">return</span> data, imdata</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">()</span>:</span></span><br><span class="line">    im = Image.open(<span class="string">'maze.png'</span>)</span><br><span class="line">    w, h = im.size</span><br><span class="line">    imdata = list(im.getdata())</span><br><span class="line">    imdata = np.array(imdata)</span><br><span class="line">    imdata = imdata.reshape((h, w, <span class="number">-1</span>))</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"BFS"</span></span><br><span class="line">    fatherMat = BFS(imdata, [<span class="number">1</span>, <span class="number">639</span>], [<span class="number">639</span>, <span class="number">1</span>])</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Get Path and data"</span></span><br><span class="line">    data, nimdata = getData(imdata, fatherMat, [<span class="number">1</span>, <span class="number">639</span>], [<span class="number">639</span>, <span class="number">1</span>])</span><br><span class="line">    open(<span class="string">'maze.zip'</span>, <span class="string">'w'</span>).write(<span class="string">''</span>.join(data[::<span class="number">-2</span>]))</span><br><span class="line"></span><br><span class="line">    nimdata = nimdata.reshape((<span class="number">-1</span>, <span class="number">4</span>)).tolist()</span><br><span class="line">    nimdata = [tuple(x) <span class="keyword">for</span> x <span class="keyword">in</span> nimdata]</span><br><span class="line">    im.putdata(nimdata)</span><br><span class="line">    im.save(<span class="string">'mazeSolve.jpg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span> : solve()</span><br></pre></td></tr></table></figure>
+<p>下一关 <a href="http://www.pythonchallenge.com/pc/hex/lake.html" target="_blank" rel="noopener">http://www.pythonchallenge.com/pc/hex/lake.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/02/07/pc24/" data-id="cji92xs8p000yytk0vrhtjzet" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/08/pc25/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Challenge (Level 25)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/02/06/pc23/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Challenge (Level 23)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KaKa Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python Challenge (Level 7) | 曾梦想仗剑走天涯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第7关依旧是一张图片， Page Source里没有什么提示信息。图片中间有一块灰度图像，答案应该就在这一块特别的图像里了。网上的答案提到用GIMP可以得到中间灰度图像的位置， 也可以观察出后面会用到的step=7, 也就是水平方向每7个像素点采样一次。可以看到垂直方向上的像素值是一样的，所以y坐标在[y_min, y_max]中取一个好了。 将这一块图像的像素转换为ASCII字符就可以得到通关信">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 7)">
+<meta property="og:url" content="http://yoursite.com/2015/01/21/pc7/index.html">
+<meta property="og:site_name" content="曾梦想仗剑走天涯">
+<meta property="og:description" content="第7关依旧是一张图片， Page Source里没有什么提示信息。图片中间有一块灰度图像，答案应该就在这一块特别的图像里了。网上的答案提到用GIMP可以得到中间灰度图像的位置， 也可以观察出后面会用到的step=7, 也就是水平方向每7个像素点采样一次。可以看到垂直方向上的像素值是一样的，所以y坐标在[y_min, y_max]中取一个好了。 将这一块图像的像素转换为ASCII字符就可以得到通关信">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-10T17:05:07.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Challenge (Level 7)">
+<meta name="twitter:description" content="第7关依旧是一张图片， Page Source里没有什么提示信息。图片中间有一块灰度图像，答案应该就在这一块特别的图像里了。网上的答案提到用GIMP可以得到中间灰度图像的位置， 也可以观察出后面会用到的step=7, 也就是水平方向每7个像素点采样一次。可以看到垂直方向上的像素值是一样的，所以y坐标在[y_min, y_max]中取一个好了。 将这一块图像的像素转换为ASCII字符就可以得到通关信">
+  
+    <link rel="alternate" href="/atom.xml" title="曾梦想仗剑走天涯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曾梦想仗剑走天涯</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pc7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/21/pc7/" class="article-date">
+  <time datetime="2015-01-21T02:40:51.000Z" itemprop="datePublished">2015-01-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Challenge (Level 7)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.pythonchallenge.com/pc/def/oxygen.html" target="_blank" rel="noopener">第7关</a><br>依旧是一张图片， Page Source里没有什么提示信息。图片中间有一块灰度图像，答案应该就在这一块特别的图像里了。网上的答案提到用GIMP可以得到中间灰度图像的位置， 也可以观察出后面会用到的step=7, 也就是水平方向每7个像素点采样一次。可以看到垂直方向上的像素值是一样的，所以y坐标在[y_min, y_max]中取一个好了。 将这一块图像的像素转换为ASCII字符就可以得到通关信息。灰度图像的RGB三个chanel的值是一样的，所以取一个chanel就可以了，这里取得是R通道，也就是[0] </p>
+<p>获取图像的像素值用到 <a href="http://pillow.readthedocs.org/en/latest/reference/Image.html" target="_blank" rel="noopener">Pillow</a>模块<br><a id="more"></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># pos of gray part</span></span><br><span class="line">x_min, x_max = <span class="number">0</span>, <span class="number">609</span></span><br><span class="line">y_min, y_max = <span class="number">43</span>, <span class="number">53</span></span><br><span class="line">step = <span class="number">7</span></span><br><span class="line"></span><br><span class="line">im = Image.open(<span class="string">"oxygen.png"</span>)</span><br><span class="line">msg = [chr(im.getpixel((x, y_min))[<span class="number">0</span>]) <span class="keyword">for</span> x <span class="keyword">in</span> range(x_min, x_max, step)]</span><br><span class="line"><span class="keyword">print</span> <span class="string">''</span>.join(msg)</span><br></pre></td></tr></table></figure>
+<p>得到的信息为</p>
+<blockquote>
+<p>smart guy, you made it. the next level is [105, 110, 116, 101, 103, 114, 105, 116, 121]</p>
+</blockquote>
+<p>再将得到的信息转一次<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = [<span class="number">105</span>, <span class="number">110</span>, <span class="number">116</span>, <span class="number">101</span>, <span class="number">103</span>, <span class="number">114</span>, <span class="number">105</span>, <span class="number">116</span>, <span class="number">121</span>]</span><br><span class="line"><span class="keyword">print</span> <span class="string">''</span>.join([chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> msg])</span><br></pre></td></tr></table></figure></p>
+<p>得到<strong>integrity</strong>， <a href="http://www.pythonchallenge.com/pc/def/integrity.html" target="_blank" rel="noopener">http://www.pythonchallenge.com/pc/def/integrity.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/21/pc7/" data-id="cji92xs9h001oytk0fnicdw4r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/22/pc8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Challenge (Level 8)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/20/pc6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Challenge (Level 6)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/25/fix-ubuntu-path/">Ubuntu环境变量(PATH)修复</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc33/">Python Challenge (Level 33)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/17/pc32/">Python Challenge (Level 32)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/14/pc31/">Python Challenge (Level 31)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/13/pc30/">Python Challenge (Level 30)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KaKa Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
