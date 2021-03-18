@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第33关 用户名kohsamui 密码thailand Finally,the last one! 图片的名称是beer1.jpg，显然要尝试beer2.jpg，得到提示no, png，得到beer2.png 一张杂乱无章的图片，根据之前页面Page Source里的提示: 1234If you are blinded by the light,remove its power, with its">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 33)">
+<meta property="og:url" content="http://example.com/2015/02/17/pc33/index.html">
+<meta property="og:site_name" content="苦海">
+<meta property="og:description" content="第33关 用户名kohsamui 密码thailand Finally,the last one! 图片的名称是beer1.jpg，显然要尝试beer2.jpg，得到提示no, png，得到beer2.png 一张杂乱无章的图片，根据之前页面Page Source里的提示: 1234If you are blinded by the light,remove its power, with its">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-02-17T14:55:20.000Z">
+<meta property="article:modified_time" content="2020-01-14T00:29:58.000Z">
+<meta property="article:author" content="KaKa">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2015/02/17/pc33/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python Challenge (Level 33) | 苦海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">苦海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学海无涯苦做舟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">0</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/17/pc33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python Challenge (Level 33)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-17 22:55:20" itemprop="dateCreated datePublished" datetime="2015-02-17T22:55:20+08:00">2015-02-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/rock/beer.html">第33关</a> 用户名kohsamui 密码thailand</p>
+<p>Finally,the last one!</p>
+<p>图片的名称是beer1.jpg，显然要尝试beer2.jpg，得到提示<strong>no, png</strong>，得到<a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/rock/beer2.png">beer2.png</a></p>
+<p>一张杂乱无章的图片，根据之前页面Page Source里的提示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">If you are blinded by the light,</span><br><span class="line">remove its power, with its might.</span><br><span class="line">Then from the ashes, fair and square,</span><br><span class="line">another truth at you will glare.</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>首先，我们要把较亮的像素移除，然后用剩下的像素（from the ashes）重新组成一副图片。那要移除多少像素呢，应该是要使剩下的像素点的个数为平方数(fair and square).</p>
+<p>我们可以统计一下像素频数，再用numpy的cumsum来观察每次要移除那些像素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&#x27;data/beer2.png&#x27;</span>)</span><br><span class="line">im_data = np.array(<span class="built_in">list</span>(im.getdata()))</span><br><span class="line">im_data_stat = itemfreq(im_data)</span><br><span class="line">pprint(im_data_stat)</span><br></pre></td></tr></table></figure>
+<p>得到的结果为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">array([[   <span class="number">1</span>, <span class="number">1532</span>],</span><br><span class="line">       [   <span class="number">2</span>,  <span class="number">232</span>],</span><br><span class="line">       [   <span class="number">7</span>,  <span class="number">963</span>],</span><br><span class="line">       [   <span class="number">8</span>,  <span class="number">189</span>],</span><br><span class="line">       [  <span class="number">13</span>,  <span class="number">724</span>],</span><br><span class="line">       [  <span class="number">14</span>,  <span class="number">329</span>],</span><br><span class="line">       [  <span class="number">19</span>,  <span class="number">549</span>],</span><br><span class="line">       [  <span class="number">20</span>,  <span class="number">243</span>],</span><br><span class="line">       [  <span class="number">25</span>,  <span class="number">144</span>],</span><br><span class="line">       [  <span class="number">26</span>,  <span class="number">424</span>] ...</span><br></pre></td></tr></table></figure>
+<p>其中，第一列为像素值，第二列为相应的个数。cumsum观察要移除多少个较亮的像素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">pprint([np.sqrt(i) <span class="keyword">for</span> i <span class="keyword">in</span> np.cumsum(im_data_stat[:, <span class="number">1</span>])])</span><br><span class="line"></span><br><span class="line">[<span class="number">39.14077158156185</span>,</span><br><span class="line"> <span class="number">42.0</span>,</span><br><span class="line"> <span class="number">52.220685556587632</span>,</span><br><span class="line"> <span class="number">54.0</span>,</span><br><span class="line"> <span class="number">60.332412515993425</span>,</span><br><span class="line"> <span class="number">63.0</span>,</span><br><span class="line"> <span class="number">67.216069507224233</span>,</span><br><span class="line"> <span class="number">69.0</span>,</span><br><span class="line"> <span class="number">70.035705179572517</span>,</span><br><span class="line"> <span class="number">73.0</span>,</span><br><span class="line"> <span class="number">73.810568348983736</span>,</span><br><span class="line"> <span class="number">76.0</span> ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>可以看到，每次移除最亮的两个值，剩下的像素个数刚好是平方数。将剩下的像素中，最大值的为亮部，非最大值的为暗部，画二值图像。完整的代码为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> itemfreq</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&#x27;data/beer2.png&#x27;</span>)</span><br><span class="line">im_data = np.array(<span class="built_in">list</span>(im.getdata()))</span><br><span class="line">im_data_stat = itemfreq(im_data)</span><br><span class="line">pprint(im_data_stat)</span><br><span class="line">pprint([np.sqrt(i) <span class="keyword">for</span> i <span class="keyword">in</span> np.cumsum(im_data_stat[:, <span class="number">1</span>])])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(im_data_stat.shape[<span class="number">0</span>] - <span class="number">2</span>, <span class="number">0</span>, -<span class="number">2</span>):</span><br><span class="line">    newIm_data = im_data[np.where(im_data &lt; im_data_stat[i, <span class="number">0</span>])]</span><br><span class="line">    idx_0 = np.where(newIm_data == newIm_data.<span class="built_in">max</span>())</span><br><span class="line">    idx_1 = np.where(newIm_data != newIm_data.<span class="built_in">max</span>())</span><br><span class="line">    newIm_data[idx_0] = <span class="number">0</span></span><br><span class="line">    newIm_data[idx_1] = <span class="number">1</span></span><br><span class="line">    size = <span class="built_in">int</span>(np.sqrt(<span class="built_in">len</span>(newIm_data)))</span><br><span class="line">    newIm = Image.new(<span class="string">&#x27;1&#x27;</span>, (size, size))</span><br><span class="line">    newIm.putdata(newIm_data)</span><br><span class="line">    newIm.save(<span class="string">&#x27;data/level33_%i.png&#x27;</span> % i)</span><br></pre></td></tr></table></figure>
+
+<p>最后，得到许多张图片。图片上是一个个字母，其中有一些字母带框框，这些字母组成通关密码<font color="red">gremlins</font></p>
+<p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/rock/gremlins.html">http://www.pythonchallenge.com/pc/rock/gremlins.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/02/17/pc32/" rel="prev" title="Python Challenge (Level 32)">
+      <i class="fa fa-chevron-left"></i> Python Challenge (Level 32)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/08/25/fix-ubuntu-path/" rel="next" title="Ubuntu环境变量(PATH)修复">
+      Ubuntu环境变量(PATH)修复 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KaKa</p>
+  <div class="site-description" itemprop="description">记录一些技术相关的东西</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KaKa</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

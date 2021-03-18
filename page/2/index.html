@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="记录一些技术相关的东西">
+<meta property="og:type" content="website">
+<meta property="og:title" content="苦海">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="苦海">
+<meta property="og:description" content="记录一些技术相关的东西">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="KaKa">
+<meta property="article:tag" content="NLP;Machine Learning;Deep Learning">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>苦海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">苦海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学海无涯苦做舟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">0</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/07/pc24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/02/07/pc24/" class="post-title-link" itemprop="url">Python Challenge (Level 24)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-07 21:05:53" itemprop="dateCreated datePublished" datetime="2015-02-07T21:05:53+08:00">2015-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/hex/ambiguity.html">第24关</a></p>
+<p>这一关是一张迷宫图片，看来是要解这个迷宫。</p>
+<p>根据网页标题，迷宫是<strong>from top to bottom</strong>，黑色像素是路径，白色像素是墙。这张图片大小为641×641，入口在右上角(0, 639)， 出口是左下角(640, 1)。</p>
+<p>解迷宫可以用BFS，也可以用DFS，但DFS不能保证是最短的路径。我用的是BFS. 查了下网上其他人的攻略，发现DFS也能得到同样结果，看来应该是只有一条路径吧。</p>
+<p>迷宫的路径的Green、Blue通道都是0，而Red通道会0和非0交替。把非0值收集起来，写到文件，就可以得到zip文件。解压后，得到一张图片，包含通关信息——lake。里面还有mybroken.zip，暂时不知道有何用。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/02/07/pc24/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/06/pc23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/02/06/pc23/" class="post-title-link" itemprop="url">Python Challenge (Level 23)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-06 08:56:48" itemprop="dateCreated datePublished" datetime="2015-02-06T08:56:48+08:00">2015-02-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/hex/bonus.html">第23关</a></p>
+<p>网页title是<strong>what is this module?<strong>，Page Source里面有这么一句:<font color="red">‘va gur snpr bs jung?’</font>，看起来有点像string.translate那一关。搜索一下这句话，就会看到得到通关信息。要用到</strong>this</strong>模块，<strong>this</strong>就是一个模块名。根据<a target="_blank" rel="noopener" href="http://svn.python.org/projects/python/trunk/Lib/this.py">this.py</a>的内容，得到translate的规则是平移13位。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> this</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line">msg = <span class="string">&#x27;va gur snpr bs jung&#x27;</span></span><br><span class="line">frm = string.ascii_lowercase</span><br><span class="line">to = string.ascii_lowercase[<span class="number">13</span>:] + string.ascii_lowercase[<span class="number">0</span>:<span class="number">13</span>]</span><br><span class="line">table = string.maketrans(frm, to)</span><br><span class="line"><span class="built_in">print</span> msg.translate(table)</span><br></pre></td></tr></table></figure>
+<p>得到<strong>in the face of what</strong>，对应import this时打印出来的一串信息，<strong>what</strong>就是<font color="red">ambiguity</font>. <a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/hex/ambiguity.html">http://www.pythonchallenge.com/pc/hex/ambiguity.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/05/pc22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/02/05/pc22/" class="post-title-link" itemprop="url">Python Challenge (Level 22)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-05 12:29:28" itemprop="dateCreated datePublished" datetime="2015-02-05T12:29:28+08:00">2015-02-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/hex/copper.html">第22关</a></p>
+<p>根据Page Source里的提示，得到一张图片white.gif</p>
+<p>这是一张动态图，基本上都是黑的像素，但标题却是white.gif. 查看一下每一帧的像素，会发现每一帧有一个值为8的像素点。动态图中，就是这个白的像素点在动，记下每一点的坐标，得到</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">array([[<span class="number">100</span>, <span class="number">100</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       [<span class="number">100</span>, <span class="number">102</span>],</span><br><span class="line">       ...</span><br></pre></td></tr></table></figure>
+<p>这些坐标都在(100,100)附近。结合这一关的图片上的摇杆，可以判断出这些坐标表示的是摇杆的方向，(100,100)就是原点。<br>得到的坐标中(100,100)出现了五次，我们可以据此将坐标分为五组，每一组画出一个图案。每画出一个图案，就要更改一下坐标位置，否则，五个图案就会重叠在一起。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/02/05/pc22/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/04/pc21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/02/04/pc21/" class="post-title-link" itemprop="url">Python Challenge (Level 21)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-04 10:20:12" itemprop="dateCreated datePublished" datetime="2015-02-04T10:20:12+08:00">2015-02-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>###第21关</p>
+<p>这一关不再是给出一个网址然后解谜，而是用到上一关得到文件——package.pack以及readme.txt， readme有关于这一关的提示：</p>
+<blockquote>
+<p>We used to play this game when we were kids<br>When I had no idea what to do, I looked backwards.</p>
+</blockquote>
+<p>这一关主要过程是对package.pack文件不断进行解压。根据上一次解压得到的结果，判断下一次解压用zlib还是bz2，以及判断得到的数据是正向的还是要look backwards.</p>
+<p>最后解压出来的结果是<strong>sgol ruoy ta kool</strong>, reverse一下得到<font color="red">look at your logs</font></p>
+<p>也就是说，每次解压的时候，我们要添加一些信息，形成logs. 最后，我们把这个logs打印出来，就可以得到通关信息。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/02/04/pc21/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/03/pc20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/02/03/pc20/" class="post-title-link" itemprop="url">Python Challenge (Level 20)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-03 17:17:36" itemprop="dateCreated datePublished" datetime="2015-02-03T17:17:36+08:00">2015-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/hex/idiot2.html">第20关</a></p>
+<p>这一关要用到<a target="_blank" rel="noopener" href="https://docs.python.org/2/library/httplib.html">httplib</a>.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的<a target="_blank" rel="noopener" href="http://garethrees.org/2007/05/07/python-challenge/">解题过程</a>非常详细。</p>
+<p>看了解题过程后，总结一下主要有三个步骤：</p>
+<ul>
+<li>从小到大修改请求的headers中的content-range,得到提示：<strong>invader</strong></li>
+<li>从大到小修改请求的headers中的content-range,得到密码<font color="red">redavni</font>(即invader的reverse)。同时，还得到一个zip文件</li>
+<li>用密码将zip文件解压，即可通关</li>
+</ul>
+<p>好吧，也许看完上面三个步骤你还是不知所云。下面一步一步详细解释一下。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/02/03/pc20/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/02/pc19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/02/02/pc19/" class="post-title-link" itemprop="url">Python Challenge (Level 19)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-02 13:51:08" itemprop="dateCreated datePublished" datetime="2015-02-02T13:51:08+08:00">2015-02-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/hex/bin.html">第19关</a></p>
+<p>一张印度的地图，好像没什么有用的信息。Page Source里面有一大段字符串。再根据里面的提示</p>
+<blockquote>
+<p>Content-type: audio/x-wav; name=”indian.wav”<br>Content-transfer-encoding: base64</p>
+</blockquote>
+<p>不难想出是要把这一段字符串decode，得到wav音频，然后听听里面有什么信息。这里用到<a target="_blank" rel="noopener" href="https://docs.python.org/2/library/base64.html?highlight=base64">base64</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = <span class="string">&quot;&quot;</span>  <span class="comment">#这里补上Page Source里的字符串</span></span><br><span class="line"><span class="built_in">open</span>(<span class="string">&#x27;indian.wav&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>).write(base64.decodestring(msg))</span><br></pre></td></tr></table></figure>
+
+<p>得到<a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/hex/sorry.html"><strong>sorry</strong></a> 但是不对，只看到这个</p>
+<blockquote>
+<p>- “what are you apologizing for?”</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/02/02/pc19/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/01/pc18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/02/01/pc18/" class="post-title-link" itemprop="url">Python Challenge (Level 18)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-01 18:12:43" itemprop="dateCreated datePublished" datetime="2015-02-01T18:12:43+08:00">2015-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/return/balloons.html">第18关</a></p>
+<p>看到两张很相似的图片，再根据提示<strong>can you tell the difference</strong>，很容易就会想到两张图相减，看看结果是什么。很遗憾，得到的结果还是一张类似的图片，没有通关信息。</p>
+<p>Page Source里面有提示</p>
+<blockquote>
+<p>it is more obvious that what you might think</p>
+</blockquote>
+<p>这里that应该是than!?，也就是说，我们似乎想得太复杂了。左右两张图图像内容是一样的，只是亮度不同。亮度-&gt;brightness。URl换为brightness，但是好像没什么变化。View Page Source你就会发现提示信息变了</p>
+<blockquote>
+<p>maybe consider deltas.gz</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/02/01/pc18/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/01/31/pc17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/01/31/pc17/" class="post-title-link" itemprop="url">Python Challenge (Level 17)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-01-31 22:41:44" itemprop="dateCreated datePublished" datetime="2015-01-31T22:41:44+08:00">2015-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/return/romance.html">第17关</a></p>
+<p>这一关颇为复杂，所以我不打算写太多探索的过程（其实也没怎么探索，基本是看网上答案的），简略解释一下过程。</p>
+<p>先把可能用到的库给出来，后面的代码就不再重复了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib2 <span class="keyword">import</span> Request, build_opener, HTTPCookieProcessor, HTTPHandler</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> cookielib</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> bz2</span><br><span class="line"><span class="keyword">import</span> xmlrpclib</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/01/31/pc17/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/01/31/pc16/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/01/31/pc16/" class="post-title-link" itemprop="url">Python Challenge (Level 16)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-01-31 00:09:47" itemprop="dateCreated datePublished" datetime="2015-01-31T00:09:47+08:00">2015-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/return/mozart.html">第16关</a></p>
+<p>一张杂乱无章的图片，我们把它放大后会发现它的每一行都有一小段紫色的像素。然后网页的title是<strong>let me get this straight</strong>. 那我们就把每一行的紫色像素都对齐，然后该行的其余像素根据与紫色像素的相对位置进行平移。其实就是循环移位，把紫色像素对齐。这里我把紫色像素移到行首。</p>
+<p>代码用到了<a target="_blank" rel="noopener" href="http://www.numpy.org/">Numpy</a>，这是一个很有用的科学计算库，作为Pythoner，很有必要看一下。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/01/31/pc16/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/01/29/pc15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/01/29/pc15/" class="post-title-link" itemprop="url">Python Challenge (Level 15)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-01-29 19:40:41" itemprop="dateCreated datePublished" datetime="2015-01-29T19:40:41+08:00">2015-01-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/return/uzi.html">第15关</a></p>
+<p>图片是一月份的日历，Page Source里提示</p>
+<blockquote>
+<p>he ain’t the youngest, he is the second<br>todo: buy flowers for tomorrow</p>
+</blockquote>
+<p>首先， todo是要为明天买花，所以明天（01-27）应该是某个纪念日。然后，他不是最年轻的，只是第二。怎么判断这个他是第二年轻呢，我们需要找到哪一年。可惜，年份中间两个字没有了，只能看出是1xx6. 显然，我们要根据这一页日历推算出年份。</p>
+<p>看图片的右下角，有两个小的月份日历，应该是对应着前一个和后一个月。所以，右边的应该是二月的。放大后，我们会发现，这个二月比较特殊，<font color="red">有29天</font>，所以这应该是闰年。</p>
+<p>但是，这样筛选出来的依然不对。我们还有信息没用到，那就是日期(date)和星期几(weekday)的对应关系。也就是说，<font color="red">1月27是星期二</font>这个信息我们可以用。至此，可以得到这个日期了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/01/29/pc15/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KaKa</p>
+  <div class="site-description" itemprop="description">记录一些技术相关的东西</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KaKa</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

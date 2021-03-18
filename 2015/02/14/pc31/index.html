@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第31关 先查出这个石头是什么地方。攻略上给出的是用户名kohsamui，密码thailand，跳到下一个页面。http:&#x2F;&#x2F;www.pythonchallenge.com&#x2F;pc&#x2F;rock&#x2F;grandpa.html 图片是曼德布罗特集合，具体可以看这里，解释得挺清楚的。 过关的主要步骤是按照Page Source里面的参数，画出一张曼德布罗特集合的图。比较自己画出的图和网页上的那张图的不同之处。将">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 31)">
+<meta property="og:url" content="http://example.com/2015/02/14/pc31/index.html">
+<meta property="og:site_name" content="苦海">
+<meta property="og:description" content="第31关 先查出这个石头是什么地方。攻略上给出的是用户名kohsamui，密码thailand，跳到下一个页面。http:&#x2F;&#x2F;www.pythonchallenge.com&#x2F;pc&#x2F;rock&#x2F;grandpa.html 图片是曼德布罗特集合，具体可以看这里，解释得挺清楚的。 过关的主要步骤是按照Page Source里面的参数，画出一张曼德布罗特集合的图。比较自己画出的图和网页上的那张图的不同之处。将">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-02-14T15:09:39.000Z">
+<meta property="article:modified_time" content="2020-01-14T00:29:58.000Z">
+<meta property="article:author" content="KaKa">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2015/02/14/pc31/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python Challenge (Level 31) | 苦海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">苦海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学海无涯苦做舟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">0</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/14/pc31/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python Challenge (Level 31)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-14 23:09:39" itemprop="dateCreated datePublished" datetime="2015-02-14T23:09:39+08:00">2015-02-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/ring/grandpa.html">第31关</a></p>
+<p>先查出这个石头是什么地方。攻略上给出的是用户名kohsamui，密码thailand，跳到下一个页面。<br><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/rock/grandpa.html">http://www.pythonchallenge.com/pc/rock/grandpa.html</a></p>
+<p>图片是曼德布罗特集合，具体可以看<a target="_blank" rel="noopener" href="https://msdn.microsoft.com/zh-cn/library/ie/jj635753%28v=vs.85%29">这里</a>，解释得挺清楚的。</p>
+<p>过关的主要步骤是按照Page Source里面的参数，画出一张曼德布罗特集合的图。比较自己画出的图和网页上的那张图的不同之处。将会看到，大体上是一样的，有少许像素点差值为16，-16.把这些点收集起来，会组成另一张图片，该图片详情参考<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Arecibo_message">Arecibo message 维基百科</a>，上面有很详细的解释。</p>
+<span id="more"></span>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mapIdx</span>(<span class="params">c, maxIter=<span class="number">128</span></span>):</span></span><br><span class="line">    z = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(maxIter):</span><br><span class="line">        z = z * z + c</span><br><span class="line">        <span class="keyword">if</span> np.<span class="built_in">abs</span>(z) &gt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> k</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span>():</span></span><br><span class="line">    left = <span class="number">0.34</span></span><br><span class="line">    bottom = <span class="number">0.57</span></span><br><span class="line">    width = <span class="number">0.036</span></span><br><span class="line">    height = <span class="number">0.027</span></span><br><span class="line"></span><br><span class="line">    im = Image.<span class="built_in">open</span>(<span class="string">&#x27;data/mandelbrot.gif&#x27;</span>)</span><br><span class="line">    imdata = np.array(<span class="built_in">list</span>(im.getdata()))</span><br><span class="line">    im_w, im_h = im.size</span><br><span class="line">    dw = width / im_w</span><br><span class="line">    dh = height / im_h</span><br><span class="line">    xx = np.linspace(left, left+width-dw, im_w)</span><br><span class="line">    yy = np.linspace(bottom, bottom+height-dh, im_h)</span><br><span class="line">    yy = yy[::-<span class="number">1</span>]</span><br><span class="line">    xx.shape = (<span class="number">1</span>, im_w)</span><br><span class="line">    yy.shape = (im_h, <span class="number">1</span>)</span><br><span class="line">    grids = xx + <span class="number">1j</span> * yy</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(im_h):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(im_w):</span><br><span class="line">            grids[i, j] = mapIdx(grids[i, j])</span><br><span class="line"></span><br><span class="line">    im.putdata(grids.reshape((-<span class="number">1</span>,)))</span><br><span class="line">    im.show()</span><br><span class="line"></span><br><span class="line">    imdata.shape = (<span class="number">480</span>, <span class="number">640</span>)</span><br><span class="line">    diffs = imdata - grids</span><br><span class="line">    msg = diffs[np.where(np.<span class="built_in">abs</span>(diffs) == <span class="number">16</span>)]</span><br><span class="line">    newIm = Image.new(<span class="string">&#x27;1&#x27;</span>, [<span class="number">23</span>, <span class="number">73</span>])</span><br><span class="line">    newIm.putdata([i &lt; <span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> msg])</span><br><span class="line">    newIm.save(<span class="string">&#x27;level31_Out.png&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span> : solve()</span><br></pre></td></tr></table></figure>
+<p>代码要跑一阵子，主要是把每个复数映射为相应的idx耗时较长。</p>
+<p>下一关：arecibo <a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/rock/arecibo.html">http://www.pythonchallenge.com/pc/rock/arecibo.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/02/13/pc30/" rel="prev" title="Python Challenge (Level 30)">
+      <i class="fa fa-chevron-left"></i> Python Challenge (Level 30)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/02/17/pc32/" rel="next" title="Python Challenge (Level 32)">
+      Python Challenge (Level 32) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KaKa</p>
+  <div class="site-description" itemprop="description">记录一些技术相关的东西</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KaKa</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

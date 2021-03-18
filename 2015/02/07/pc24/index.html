@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第24关 这一关是一张迷宫图片，看来是要解这个迷宫。 根据网页标题，迷宫是from top to bottom，黑色像素是路径，白色像素是墙。这张图片大小为641×641，入口在右上角(0, 639)， 出口是左下角(640, 1)。 解迷宫可以用BFS，也可以用DFS，但DFS不能保证是最短的路径。我用的是BFS. 查了下网上其他人的攻略，发现DFS也能得到同样结果，看来应该是只有一条路径吧。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Challenge (Level 24)">
+<meta property="og:url" content="http://example.com/2015/02/07/pc24/index.html">
+<meta property="og:site_name" content="苦海">
+<meta property="og:description" content="第24关 这一关是一张迷宫图片，看来是要解这个迷宫。 根据网页标题，迷宫是from top to bottom，黑色像素是路径，白色像素是墙。这张图片大小为641×641，入口在右上角(0, 639)， 出口是左下角(640, 1)。 解迷宫可以用BFS，也可以用DFS，但DFS不能保证是最短的路径。我用的是BFS. 查了下网上其他人的攻略，发现DFS也能得到同样结果，看来应该是只有一条路径吧。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-02-07T13:05:53.000Z">
+<meta property="article:modified_time" content="2020-01-14T00:29:58.000Z">
+<meta property="article:author" content="KaKa">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2015/02/07/pc24/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python Challenge (Level 24) | 苦海</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">苦海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学海无涯苦做舟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">0</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/07/pc24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KaKa">
+      <meta itemprop="description" content="记录一些技术相关的东西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苦海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python Challenge (Level 24)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-02-07 21:05:53" itemprop="dateCreated datePublished" datetime="2015-02-07T21:05:53+08:00">2015-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-14 08:29:58" itemprop="dateModified" datetime="2020-01-14T08:29:58+08:00">2020-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/hex/ambiguity.html">第24关</a></p>
+<p>这一关是一张迷宫图片，看来是要解这个迷宫。</p>
+<p>根据网页标题，迷宫是<strong>from top to bottom</strong>，黑色像素是路径，白色像素是墙。这张图片大小为641×641，入口在右上角(0, 639)， 出口是左下角(640, 1)。</p>
+<p>解迷宫可以用BFS，也可以用DFS，但DFS不能保证是最短的路径。我用的是BFS. 查了下网上其他人的攻略，发现DFS也能得到同样结果，看来应该是只有一条路径吧。</p>
+<p>迷宫的路径的Green、Blue通道都是0，而Red通道会0和非0交替。把非0值收集起来，写到文件，就可以得到zip文件。解压后，得到一张图片，包含通关信息——lake。里面还有mybroken.zip，暂时不知道有何用。</p>
+<span id="more"></span>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span>(<span class="params">imdata, startPos, endPos</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27; 广度优先搜索迷宫路径</span></span><br><span class="line"><span class="string">    :param imdata:  迷宫图片像素值, (height, width, channel)</span></span><br><span class="line"><span class="string">    :param startPos:  起始坐标, [x, y]</span></span><br><span class="line"><span class="string">    :param endPos:  终止坐标, [x, y]</span></span><br><span class="line"><span class="string">    :return: 返回记录父坐标的矩阵，上右下左分别用0, 1, 2, 3表示。</span></span><br><span class="line"><span class="string">             根据这个矩阵，可回溯得到最短路径。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    visited = np.zeros(imdata.shape[<span class="number">0</span> : <span class="number">2</span>], dtype=np.False_)</span><br><span class="line">    visited[<span class="number">0</span>, <span class="number">639</span>] = <span class="literal">True</span></span><br><span class="line">    visited[<span class="number">640</span>, <span class="number">1</span>] = <span class="literal">True</span></span><br><span class="line">    father = -np.ones(imdata.shape[<span class="number">0</span> : <span class="number">2</span>], dtype=np.int8)</span><br><span class="line">    dx = [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>] <span class="comment">#上右下左</span></span><br><span class="line">    dy = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>]</span><br><span class="line">    bfs_queue = []</span><br><span class="line">    bfs_queue.append(startPos)</span><br><span class="line">    <span class="keyword">while</span> bfs_queue:</span><br><span class="line">        cur_pos = bfs_queue.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> cur_pos == endPos:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">            x = cur_pos[<span class="number">0</span>] + dx[i]</span><br><span class="line">            y = cur_pos[<span class="number">1</span>] + dy[i]</span><br><span class="line">            <span class="keyword">if</span> imdata[x, y, <span class="number">1</span>] == imdata[x, y, <span class="number">2</span>] == <span class="number">0</span> <span class="keyword">and</span> <span class="keyword">not</span> visited[x, y]:</span><br><span class="line">                father[x, y] = i</span><br><span class="line">                bfs_queue.append([x, y])</span><br><span class="line">        visited[cur_pos[<span class="number">0</span>], cur_pos[<span class="number">1</span>]] = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> father</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mapXY</span>(<span class="params">pre, pos</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27; 根据父坐标类型和当前坐标，得到父坐标</span></span><br><span class="line"><span class="string">    :param pre: 0,1,2,3分别表示当前坐标位于父坐标的上右下左</span></span><br><span class="line"><span class="string">    :param pos: 当前坐标[x, y]</span></span><br><span class="line"><span class="string">    :return: 父坐标[x, y]</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> pre == <span class="number">0</span>:</span><br><span class="line">        pos[<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> pre == <span class="number">1</span>:</span><br><span class="line">        pos[<span class="number">1</span>] -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> pre == <span class="number">2</span>:</span><br><span class="line">        pos[<span class="number">0</span>] -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> pre == <span class="number">3</span>:</span><br><span class="line">        pos[<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> Exception(<span class="string">&quot;Invalid Father Pos!&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> pos</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getData</span>(<span class="params">imdata, father, startPos, endPos</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27; 回溯得到最短路径以及路径上每个像素点r通道的像素值</span></span><br><span class="line"><span class="string">    :param imdata: 迷宫图片像素值</span></span><br><span class="line"><span class="string">    :param father: 每个点的父坐标</span></span><br><span class="line"><span class="string">    :param startPos: 开始坐标 [x, y]</span></span><br><span class="line"><span class="string">    :param endPos: 结束坐标 [x, y]</span></span><br><span class="line"><span class="string">    :return: Red通道像素值, 用绿色像素标记的迷宫路径</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    data = []</span><br><span class="line">    curPos = endPos[:]</span><br><span class="line">    <span class="keyword">while</span> curPos != startPos:</span><br><span class="line">        <span class="comment">#取Red通道像素值</span></span><br><span class="line">        data.append(<span class="built_in">chr</span>(imdata[curPos[<span class="number">0</span>], curPos[<span class="number">1</span>], <span class="number">0</span>]))</span><br><span class="line">        <span class="comment">#路径用绿色像素标记</span></span><br><span class="line">        imdata[curPos[<span class="number">0</span>], curPos[<span class="number">1</span>]] = [<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>]</span><br><span class="line">        curPos = mapXY(father[curPos[<span class="number">0</span>], curPos[<span class="number">1</span>]], curPos)</span><br><span class="line">    data.append(<span class="built_in">chr</span>(imdata[startPos[<span class="number">0</span>], startPos[<span class="number">1</span>], <span class="number">0</span>]))</span><br><span class="line">    <span class="keyword">return</span> data, imdata</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span>():</span></span><br><span class="line">    im = Image.<span class="built_in">open</span>(<span class="string">&#x27;maze.png&#x27;</span>)</span><br><span class="line">    w, h = im.size</span><br><span class="line">    imdata = <span class="built_in">list</span>(im.getdata())</span><br><span class="line">    imdata = np.array(imdata)</span><br><span class="line">    imdata = imdata.reshape((h, w, -<span class="number">1</span>))</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;BFS&quot;</span></span><br><span class="line">    fatherMat = BFS(imdata, [<span class="number">1</span>, <span class="number">639</span>], [<span class="number">639</span>, <span class="number">1</span>])</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;Get Path and data&quot;</span></span><br><span class="line">    data, nimdata = getData(imdata, fatherMat, [<span class="number">1</span>, <span class="number">639</span>], [<span class="number">639</span>, <span class="number">1</span>])</span><br><span class="line">    <span class="built_in">open</span>(<span class="string">&#x27;maze.zip&#x27;</span>, <span class="string">&#x27;w&#x27;</span>).write(<span class="string">&#x27;&#x27;</span>.join(data[::-<span class="number">2</span>]))</span><br><span class="line"></span><br><span class="line">    nimdata = nimdata.reshape((-<span class="number">1</span>, <span class="number">4</span>)).tolist()</span><br><span class="line">    nimdata = [<span class="built_in">tuple</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> nimdata]</span><br><span class="line">    im.putdata(nimdata)</span><br><span class="line">    im.save(<span class="string">&#x27;mazeSolve.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span> : solve()</span><br></pre></td></tr></table></figure>
+
+<p>下一关 <a target="_blank" rel="noopener" href="http://www.pythonchallenge.com/pc/hex/lake.html">http://www.pythonchallenge.com/pc/hex/lake.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/02/06/pc23/" rel="prev" title="Python Challenge (Level 23)">
+      <i class="fa fa-chevron-left"></i> Python Challenge (Level 23)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/02/08/pc25/" rel="next" title="Python Challenge (Level 25)">
+      Python Challenge (Level 25) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KaKa</p>
+  <div class="site-description" itemprop="description">记录一些技术相关的东西</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KaKa</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
