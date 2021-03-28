@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"kwangka.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="第20关 这一关要用到httplib.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的解题过程非常详细。 看了解题过程后，总结一下主要有三个步骤：  从小到大修改请求的headers中的content-range,得到提示：invader 从大到小修改请求的headers中的content-range,得到密码redavni(即invader的rever">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Challenge (Level 20)">
-<meta property="og:url" content="http://example.com/2015/02/03/pc20/index.html">
+<meta property="og:url" content="http://kwangka.github.io/2015/02/03/pc20/index.html">
 <meta property="og:site_name" content="苦海">
 <meta property="og:description" content="第20关 这一关要用到httplib.很遗憾我对于HTTP以及httplib的了解几乎为零，只能找下网上的解题方法。这个外国人写的解题过程非常详细。 看了解题过程后，总结一下主要有三个步骤：  从小到大修改请求的headers中的content-range,得到提示：invader 从大到小修改请求的headers中的content-range,得到密码redavni(即invader的rever">
 <meta property="og:locale" content="zh_CN">
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2015/02/03/pc20/">
+<link rel="canonical" href="http://kwangka.github.io/2015/02/03/pc20/">
 
 
 <script id="page-configurations">
@@ -121,27 +121,27 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">32</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">0</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">2</span></a>
-
-  </li>
-        <li class="menu-item menu-item-commonweal">
-
-    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
 
   </li>
   </ul>
@@ -172,12 +172,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/03/pc20/">
+    <link itemprop="mainEntityOfPage" href="http://kwangka.github.io/2015/02/03/pc20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/OIP.jpeg">
       <meta itemprop="name" content="KaKa">
-      <meta itemprop="description" content="记录一些技术相关的东西">
+      <meta itemprop="description" content="Seize the day">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -233,7 +233,7 @@
 
 <p>利用这个方法，我们可以看看headers.注意看content-range.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">In [81]: r.getheaders()</span><br><span class="line">Out[81]: </span><br><span class="line">[(<span class="string">&#x27;x-powered-by&#x27;</span>, <span class="string">&#x27;PHP/5.3.3-7+squeeze17&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;transfer-encoding&#x27;</span>, <span class="string">&#x27;chunked&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;server&#x27;</span>, <span class="string">&#x27;lighttpd/1.4.28&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;content-range&#x27;</span>, <span class="string">&#x27;bytes 0-30202/2123456789&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;date&#x27;</span>, <span class="string">&#x27;Tue, 03 Feb 2015 09:37:11 GMT&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;content-type&#x27;</span>, <span class="string">&#x27;image/jpeg&#x27;</span>)]</span><br><span class="line"></span><br><span class="line">In [82]: r = get_range(<span class="string">&#x27;/pc/hex/unreal.jpg&#x27;</span>, 30203, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">In [83]: r.getheaders()</span><br><span class="line">Out[83]: </span><br><span class="line">[(<span class="string">&#x27;x-powered-by&#x27;</span>, <span class="string">&#x27;PHP/5.3.3-7+squeeze17&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;content-transfer-encoding&#x27;</span>, <span class="string">&#x27;binary&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;server&#x27;</span>, <span class="string">&#x27;lighttpd/1.4.28&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;transfer-encoding&#x27;</span>, <span class="string">&#x27;chunked&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;content-range&#x27;</span>, <span class="string">&#x27;bytes 30203-30236/2123456789&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;date&#x27;</span>, <span class="string">&#x27;Tue, 03 Feb 2015 09:37:33 GMT&#x27;</span>),</span><br><span class="line"> (<span class="string">&#x27;content-type&#x27;</span>, <span class="string">&#x27;application/octet-stream&#x27;</span>)]</span><br><span class="line"></span><br><span class="line">In [84]: r.read()</span><br><span class="line">Out[84]: <span class="string">&quot;Why don&#x27;t you respect my privacy?\n&quot;</span></span><br></pre></td></tr></table></figure>
-<p>可以看到，用不同的range,得到的response的内容不一样，同时headers里面有下一个range. 这有点像<a target="_blank" rel="noopener" href="http://kwangka.github.io/2015/01/18/PC-Part1/">第4关</a>，不断获取下一个网址。不断获取下一个range，再不断moveForward.</p>
+<p>可以看到，用不同的range,得到的response的内容不一样，同时headers里面有下一个range. 这有点像<a href="http://kwangka.github.io/2015/01/18/PC-Part1/">第4关</a>，不断获取下一个网址。不断获取下一个range，再不断moveForward.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">next_range</span>(<span class="params">base, bases, results</span>):</span></span><br><span class="line">    r = get_range(<span class="string">&#x27;/pc/hex/unreal.jpg&#x27;</span>, base, <span class="number">2123456789</span>)</span><br><span class="line">    bases.append(base)</span><br><span class="line">    results.append(r.read())</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        m = re.match(<span class="string">&#x27;bytes %d-([0-9]+)/2123456789&#x27;</span> % base, r.getheader(<span class="string">&#x27;content-range&#x27;</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">int</span>(m.group(<span class="number">1</span>)) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;ERR&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">moveForward</span>():</span></span><br><span class="line">    bases = []</span><br><span class="line">    results = []</span><br><span class="line">    b = <span class="number">30203</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        b = next_range(b, bases, results)</span><br><span class="line">        <span class="keyword">if</span> b == <span class="string">&quot;ERR&quot;</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    pprint(results)</span><br><span class="line">    pprint(bases)</span><br></pre></td></tr></table></figure>
 <p>我们会得到这些信息：</p>
 <blockquote>
@@ -340,8 +340,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KaKa"
+      src="/images/OIP.jpeg">
   <p class="site-author-name" itemprop="name">KaKa</p>
-  <div class="site-description" itemprop="description">记录一些技术相关的东西</div>
+  <div class="site-description" itemprop="description">Seize the day</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -353,11 +355,21 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kwangka" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kwangka" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/4455881/chenguangyi" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;4455881&#x2F;chenguangyi" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+  </div>
 
 
 
@@ -382,7 +394,7 @@
   &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-snowflake-o"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">KaKa</span>
 </div>
